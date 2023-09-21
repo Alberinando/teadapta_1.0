@@ -36,6 +36,7 @@
     <string name="profiss_o">Profissão:</string>
     <string name="nome_da_m_e">Nome da Mãe:</string>
     <string name="voltar">Voltar</string>
+    <string name="segue_alguma_religi_o">Segue alguma religião?</string>
 
     <string-array name="Escolha">
         <item>Sim</item>

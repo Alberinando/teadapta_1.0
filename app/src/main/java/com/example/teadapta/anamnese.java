@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 import java.util.Calendar;
 
 public class anamnese extends AppCompatActivity {
@@ -82,4 +84,6 @@ public class anamnese extends AppCompatActivity {
         Intent intent = new Intent(anamnese.this, com.example.teadapta.anamnesePais.class);
         startActivity(intent);
     }
+
+
 }
