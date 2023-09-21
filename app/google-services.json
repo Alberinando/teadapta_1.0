@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "534852965417",
+    "project_id": "teadapta-b010c",
+    "storage_bucket": "teadapta-b010c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534852965417:android:7d1b3106ca7ed2c4fdb838",
+        "android_client_info": {
+          "package_name": "com.example.teadapta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrQEL4yEumibpMpOCy7e6mrTu1smNltuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

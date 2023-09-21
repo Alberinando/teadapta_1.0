@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#deebf7"
+    tools:context=".Conhecendo_tea">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#deebf7"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/conhecendo_o_tea"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:justificationMode="inter_word"
+            android:text="@string/o_dsm_5_publica_o_oficial_da_associa_o_americana_de_psiquiatria_que_define_transtornos_psiqui_tricos_e_de_desenvolvimento_de_maio_de_2013_define_o_autismo_como_uma_nica_desordem_do_espectro_sendo_considerado_um_conjunto_de_crit_rios_que_descrevem_os_sintomas_que_podem_impactar_nas_reas_de_comunica_o_social_comportamento_flexibilidade_e_sensibilidade_sensorial"
+            android:textColor="#000000"
+            tools:ignore="VisualLintLongText"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center|start"
+            android:minHeight="48dp"
+            android:onClick="toggleText1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textMain1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="@string/nivel_1_exigindo_apoio"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <ImageView
+                android:id="@+id/arrowIcon1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:contentDescription="@string/todo"
+                android:focusable="true"
+                android:onClick="toggleText1"
+                android:src="@drawable/seta_para_baixo"
+                tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textAdditional1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:text="@string/n_vel_1_necessita_de_pouco_suporte_ncom_suporte_pode_ter_dificuldade_para_se_comunicar_mas_n_o_um_limitante_para_intera_es_sociais_problemas_de_organiza_o_e_planejamento_impedem_a_independ_ncia_precisam_de_dicas_e_aux_lios_pontuais"
+            android:textColor="#000000"
+            android:visibility="gone"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center|start"
+            android:minHeight="48dp"
+            android:onClick="toggleText2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textMain2"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="@string/n_vel_2_exigindo_apoio_substancial"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <ImageView
+                android:id="@+id/arrowIcon2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:contentDescription="@string/todo"
+                android:focusable="true"
+                android:onClick="toggleText2"
+                android:src="@drawable/seta_para_baixo"
+                tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textAdditional2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:text="@string/n_vel_2_semelhante_s_caracter_sticas_descritas_no_n_vel_3_mas_com_menor_intensidade_no_que_cabe_aos_transtornos_de_comunica_o_e_defici_ncia_de_linguagem"
+            android:textColor="#000000"
+            android:visibility="gone"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center|start"
+            android:minHeight="48dp"
+            android:onClick="toggleText3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textMain3"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="@string/n_vel_3_exigindo_apoio_muito_substancial"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <ImageView
+                android:id="@+id/arrowIcon3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:contentDescription="@string/todo"
+                android:focusable="true"
+                android:onClick="toggleText3"
+                android:src="@drawable/seta_para_baixo"
+                tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textAdditional3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:text="@string/n_vel_3_diz_respeito_queles_que_apresentam_um_d_ficit_considerado_grave_nas_habilidades_de_comunica_o_verbais_e_n_o_verbais_ou_seja_n_o_conseguem_se_comunicar_sem_contar_com_suporte_com_isso_apresentam_dificuldade_nas_intera_es_sociais_e_tem_cogni_o_reduzida_tamb_m_possuem_um_perfil_inflex_vel_de_comportamento_tendo_dificuldade_de_lidar_com_mudan_as_tendem_ao_isolamento_social_se_n_o_estimulados"
+            android:textColor="#000000"
+            android:visibility="gone"
+            tools:targetApi="o" />
+
+    </LinearLayout>
+</ScrollView>

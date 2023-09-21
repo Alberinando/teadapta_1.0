@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@android:color/black</item>
+        <item name="android:textColorHint">@android:color/black</item>
+    </style>
+
+    <style name="MyTextInputEditText" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorHint">@android:color/black</item>
+    </style>
+
+    <style name="FloatingHint" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="CustomCursorStyle" parent="@android:style/Widget.EditText">
+        <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
+    </style>
+</resources>
