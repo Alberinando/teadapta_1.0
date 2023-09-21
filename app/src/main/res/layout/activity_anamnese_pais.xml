@@ -369,6 +369,57 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextFieldpFamiliar"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/composi_o_familiar"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/familiar"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáàâãäéêëíîïóòôõöúûüÁÀÂÃÄÉÊËÍÎÏÓÒÔÕÖÚÛÜ "
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextFieldpEmail"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/e_mail_do_respons_vel"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Email"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
