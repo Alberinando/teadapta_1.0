@@ -78,4 +78,8 @@ public class anamnese extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+    public void submit (View view){
+        Intent intent = new Intent(anamnese.this, com.example.teadapta.anamnesePais.class);
+        startActivity(intent);
+    }
 }

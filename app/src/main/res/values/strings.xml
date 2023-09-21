@@ -29,6 +29,13 @@
     <string name="escolaridade">Escolaridade:</string>
     <string name="privada_ou_p_blica">Privada ou Pública?</string>
     <string name="pr_ximo">Próximo</string>
+    <string name="identifica_o_dos_pais">Identificação dos pais</string>
+    <string name="nome_do_pai">Nome do Pai:</string>
+    <string name="tel">Tel.:</string>
+    <string name="forma_o_acad_mica">Formação acadêmica:</string>
+    <string name="profiss_o">Profissão:</string>
+    <string name="nome_da_m_e">Nome da Mãe:</string>
+    <string name="voltar">Voltar</string>
 
     <string-array name="Escolha">
         <item>Sim</item>

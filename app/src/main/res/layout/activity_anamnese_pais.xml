@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#deebf7"
+    tools:context=".anamnese"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#deebf7"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/anamnese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/anamnese"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/identifica_o_dos_pais"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextFieldMae"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/nome_da_m_e"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputmae"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáàâãäéêëíîïóòôõöúûüÁÀÂÃÄÉÊËÍÎÏÓÒÔÕÖÚÛÜ "
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textIdadeMae"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:maxLength="3"
+            android:hint="@string/idade"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/IdadeMae"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textNumberTel"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:maxLength="3"
+            android:hint="@string/tel"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/NumberMae"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextFieldformacaoMae"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/forma_o_acad_mica"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/formacaoMae"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáàâãäéêëíîïóòôõöúûüÁÀÂÃÄÉÊËÍÎÏÓÒÔÕÖÚÛÜ "
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextFieldprofissaoMae"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/profiss_o"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profissaoMae"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáàâãäéêëíîïóòôõöúûüÁÀÂÃÄÉÊËÍÎÏÓÒÔÕÖÚÛÜ "
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextField"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/nome_do_pai"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáàâãäéêëíîïóòôõöúûüÁÀÂÃÄÉÊËÍÎÏÓÒÔÕÖÚÛÜ "
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textIdade"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:maxLength="3"
+            android:hint="@string/idade"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Idade"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textNumber"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:maxLength="3"
+            android:hint="@string/tel"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Number"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextFieldformacao"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/forma_o_acad_mica"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/formacao"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáàâãäéêëíîïóòôõöúûüÁÀÂÃÄÉÊËÍÎÏÓÒÔÕÖÚÛÜ "
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextFieldprofissao"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/profiss_o"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/profissao"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáàâãäéêëíîïóòôõöúûüÁÀÂÃÄÉÊËÍÎÏÓÒÔÕÖÚÛÜ "
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/voltar"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/background_button"
+                android:gravity="center|center_horizontal"
+                android:onClick="submit"
+                android:text="@string/voltar"
+                tools:ignore="VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/proximo"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/background_button"
+                android:gravity="center|center_horizontal"
+                android:onClick="submit"
+                android:text="@string/pr_ximo"
+                tools:ignore="VisualLintButtonSize" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
