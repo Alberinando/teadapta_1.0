@@ -6,4 +6,5 @@
         <item>@string/march</item>
         <!-- Adicione os nomes dos meses restantes aqui -->
     </string-array>
+    <string-array name="escolha" />
 </resources>

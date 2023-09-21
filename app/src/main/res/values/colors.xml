@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="md.sys.color.surfacecontainerhighest">#000000</color>
+    <color name="azul">#5b9bd5</color>
 </resources>

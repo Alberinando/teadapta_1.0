@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import com.google.android.material.textfield.TextInputEditText;
 import java.util.Calendar;
@@ -13,11 +15,16 @@ import java.util.Calendar;
 public class anamnese extends AppCompatActivity {
 
     private String selectedDate = "";
+    private AutoCompleteTextView escolha, escolaridade, escolar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anamnese);
+
+        escolha = findViewById(R.id.escolha);
+        escolaridade = findViewById(R.id.escolaridade);
+        escolar = findViewById(R.id.escolar);
 
         TextInputEditText dataEditText = findViewById(R.id.data);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -31,6 +38,24 @@ public class anamnese extends AppCompatActivity {
                 showDatePicker();
             }
         });
+
+        //Escolha de Sim ou Não
+        String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
+        ArrayAdapter<String> adapterEscolha = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, listaEscolha);
+        escolha.setAdapter(adapterEscolha);
+
+        //Escolha da Escolaridade
+        String[] listaEscolaridade = getResources().getStringArray(R.array.Escolaridade_infantil);
+        ArrayAdapter<String> adapterEscolhaEscolaridade = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, listaEscolaridade);
+        escolaridade.setAdapter(adapterEscolhaEscolaridade);
+
+        //Escolha da Escola
+        String[] listaEscola = getResources().getStringArray(R.array.Escola);
+        ArrayAdapter<String> adapterEscolhaEscola = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, listaEscola);
+        escolar.setAdapter(adapterEscolhaEscola);
     }
 
     public void showDatePicker() {

@@ -24,5 +24,44 @@
     <string name="idade">Idade:</string>
     <string name="peso">Peso (kg):</string>
     <string name="altura">Altura (Cm):</string>
+    <string name="selecionar">Selecionar</string>
+    <string name="filho_nico">Filho único?</string>
+    <string name="escolaridade">Escolaridade:</string>
+    <string name="privada_ou_p_blica">Privada ou Pública?</string>
+    <string name="pr_ximo">Próximo</string>
+
+    <string-array name="Escolha">
+        <item>Sim</item>
+        <item>Não</item>
+    </string-array>
+
+    <string-array name="Escolaridade_infantil">
+        <item>Educação infantil completo</item>
+        <item>Educação infantil incompleto</item>
+        <item>Ensino fundamental completo</item>
+        <item>Ensino fundamental incompleto</item>
+        <item>Ensino médio completo</item>
+        <item>Ensino médio incompleto</item>
+    </string-array>
+
+    <string-array name="Escolaridade_adulto">
+        <item>Ensino fundamental completo</item>
+        <item>Ensino fundamental incompleto</item>
+        <item>Ensino médio completo</item>
+        <item>Ensino médio incompleto</item>
+        <item>Ensino superior completo</item>
+        <item>Ensino superior incompleto</item>
+        <item>Pós-graduação completa</item>
+        <item>Pós-graduação incompleta</item>
+        <item>Mestrado completo</item>
+        <item>Mestrado incompleto</item>
+        <item>Doutorado completo</item>
+        <item>Doutorado incompleto</item>
+    </string-array>
+
+    <string-array name="Escola">
+        <item>Particular</item>
+        <item>Pública</item>
+    </string-array>
 </resources>
 

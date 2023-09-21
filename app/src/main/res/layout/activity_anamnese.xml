@@ -46,6 +46,7 @@
             android:hint="@string/nome"
             android:textColor="#000000"
             android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
             app:hintTextColor="#000000">
 
@@ -179,5 +180,112 @@
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/filho_nico"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Input"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/escolaridade"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolaridade"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputEscola"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/privada_ou_p_blica"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/proximo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/background_button"
+            android:gravity="center|center_horizontal"
+            android:onClick="submit2"
+            android:text="@string/pr_ximo" />
     </LinearLayout>
 </ScrollView>
