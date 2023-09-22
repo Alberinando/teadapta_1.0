@@ -422,27 +422,28 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/voltar"
-                android:layout_width="160dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/background_button"
                 android:gravity="center|center_horizontal"
-                android:onClick="submitBack"
+                android:onClick="Back"
                 android:text="@string/voltar"
                 tools:ignore="VisualLintButtonSize" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/proximo"
-                android:layout_width="160dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
@@ -451,6 +452,7 @@
                 android:onClick="submit"
                 android:text="@string/pr_ximo"
                 tools:ignore="VisualLintButtonSize" />
+
         </LinearLayout>
 
     </LinearLayout>

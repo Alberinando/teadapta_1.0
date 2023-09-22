@@ -39,6 +39,8 @@
     <string name="segue_alguma_religi_o">Segue alguma religião?</string>
     <string name="composi_o_familiar">Composição familiar:</string>
     <string name="e_mail_do_respons_vel">E-mail do responsável</string>
+    <string name="desenvolvimento_integral_da_crian_a_desenvolvimento_motor">Desenvolvimento integral da criança - Desenvolvimento motor</string>
+    <string name="sustentou_a_cabeca">Sustentou a cabeça:</string>
 
     <string-array name="Escolha">
         <item>Sim</item>
@@ -73,5 +75,17 @@
         <item>Particular</item>
         <item>Pública</item>
     </string-array>
+
+    <string name="meses">meses</string>
+    <string name="ficou_de_p_sem_apoio">Ficou de pé sem apoio:</string>
+    <string name="rolou_lateralmente">Rolou lateralmente:</string>
+    <string name="virou_se">Virou se:</string>
+    <string name="sentou_com_apoio">Sentou com apoio:</string>
+    <string name="arrastou_se">Arrastou se:</string>
+    <string name="engatinhou">Engatinhou:</string>
+    <string name="ficou_de_p_com_apoio">Ficou de pé com apoio:</string>
+    <string name="ficou_de_pe_sem_apoio">Ficou de pé sem apoio:</string>
+    <string name="andou_com_apoio">Andou com apoio:</string>
+    <string name="andou_sem_apoio">Andou sem apoio:</string>
 </resources>
 

@@ -14,13 +14,12 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class anamnesePais extends AppCompatActivity {
 
-    private AutoCompleteTextView escolha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anamnese_pais);
 
-        escolha = findViewById(R.id.escolha);
+        AutoCompleteTextView escolha = findViewById(R.id.escolha);
 
         //Escolha de Sim ou Não
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
@@ -33,7 +32,7 @@ public class anamnesePais extends AppCompatActivity {
         escolha.addTextChangedListener(new TextWatcher() {
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // Não é necessário
+
             }
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -53,18 +52,18 @@ public class anamnesePais extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                // Não é necessário
+
             }
         });
     }
 
-    public void submitBack (View view){
+    public void Back (View view){
         Intent intent = new Intent(anamnesePais.this, com.example.teadapta.anamnese.class);
         startActivity(intent);
     }
 
     public void submit (View view){
-        Intent intent = new Intent(anamnesePais.this, com.example.teadapta.anamnesePais.class);
+        Intent intent = new Intent(anamnesePais.this, com.example.teadapta.anamneseDesenvolvimento.class);
         startActivity(intent);
     }
 }
