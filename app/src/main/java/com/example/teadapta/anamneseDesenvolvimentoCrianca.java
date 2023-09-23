@@ -77,7 +77,7 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
     }
 
     public void submit (View view){
-        Intent intent = new Intent(anamneseDesenvolvimentoCrianca.this, com.example.teadapta.anamneseDesenvolvimentoCrianca.class);
+        Intent intent = new Intent(anamneseDesenvolvimentoCrianca.this, com.example.teadapta.anamneseDesenvolvimentoLinguistico.class);
         startActivity(intent);
     }
 }
