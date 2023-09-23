@@ -87,5 +87,16 @@
     <string name="ficou_de_pe_sem_apoio">Ficou de pé sem apoio:</string>
     <string name="andou_com_apoio">Andou com apoio:</string>
     <string name="andou_sem_apoio">Andou sem apoio:</string>
+    <string name="desenvolvimento_integral_da_crian_a_a_crian_a_atualmente">Desenvolvimento integral da criança - A criança atualmente</string>
+    <string name="usa_as_duas_m_os_indiscriminadamente">Usa as duas mãos indiscriminadamente?</string>
+    <string name="canhoto">Canhoto</string>
+    <string name="destro">Destro</string>
+    <string name="observa_dificuldade_de_coordena_o_motora_no_seu_filho">Observa dificuldade de coordenação motora no seu filho?</string>
+    <string name="cai_frequentemente">Cai frequentemente?</string>
+    <string name="apanha_objetos_sem_dificuldades">Apanha objetos sem dificuldades?</string>
+    <string name="imita_gestos_simples">Imita gestos simples?</string>
+    <string name="arremessa_objetos_sem_dificuldade">Arremessa objetos sem dificuldade?</string>
+    <string name="segura_objetos_sem_dificuldade">Segura objetos sem dificuldade?</string>
+    <string name="utiliza_formas_particulares_de_organiza_o_motora_tiques">Utiliza formas particulares de organização motora (tiques)?</string>
 </resources>
 
