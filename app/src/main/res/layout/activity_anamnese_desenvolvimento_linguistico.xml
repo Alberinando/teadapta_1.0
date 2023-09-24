@@ -33,7 +33,7 @@
             android:id="@+id/pais"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/desenvolvimento_integral_da_crian_a_desenvolvimento_motor"
+            android:text="@string/desenvolvimento_integral_da_crian_a_desenvolvimento_lingu_stico"
             android:textColor="#000000"
             android:textAlignment="center" />
 
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="@string/sustentou_a_cabeca"
+            android:hint="@string/respondeu_a_qualquer_som"
             android:textColor="#000000"
             android:textColorHint="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="@string/rolou_lateralmente"
+            android:hint="@string/respondeu_ao_som_da_voz_humana"
             android:textColor="#000000"
             android:textColorHint="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
@@ -97,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="@string/virou_se"
+            android:hint="@string/vocalizou"
             android:textColor="#000000"
             android:textColorHint="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
@@ -124,7 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="@string/sentou_com_apoio"
+            android:hint="@string/primeiras_palavras"
             android:textColor="#000000"
             android:textColorHint="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
@@ -144,6 +144,7 @@
                 tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/Field5"
@@ -151,7 +152,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="@string/arrastou_se"
+            android:hint="@string/frase"
             android:textColor="#000000"
             android:textColorHint="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
@@ -173,134 +174,63 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Field6"
-            style="@style/MyTextInputLayout"
+            android:id="@+id/InputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="@string/engatinhou"
+            android:hint="@string/atualmente_apresenta_problemas_na_comunica_o_verbal"
             android:textColor="#000000"
-            android:textColorHint="@color/black"
-            app:hintTextAppearance="@style/FloatingHint"
-            app:hintTextColor="#000000"
-            app:suffixText="Meses"
-            app:suffixTextColor="@color/black">
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
 
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/MyTextInputEditText"
+            <AutoCompleteTextView
+                android:id="@+id/escolha"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="0123456789"
-                android:inputType="number"
-                android:maxLength="3"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
                 android:textColor="#000000"
-                android:textColorHint="#616161"
-                tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
-
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Field7"
+            android:id="@+id/outlinedTextFieldreligiao"
             style="@style/MyTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="@string/ficou_de_p_com_apoio"
+            android:hint="@string/descrever"
+            android:visibility="gone"
             android:textColor="#000000"
             android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
-            app:hintTextColor="#000000"
-            app:suffixText="Meses"
-            app:suffixTextColor="@color/black">
+            app:hintTextColor="#000000">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/religiao"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="0123456789"
-                android:inputType="number"
-                android:maxLength="3"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáàâãäéêëíîïóòôõöúûüÁÀÂÃÄÉÊËÍÎÏÓÒÔÕÖÚÛÜ "
+                android:inputType="textCapWords|text"
                 android:textColor="#000000"
                 android:textColorHint="#616161"
-                tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:onClick="submit"
+                tools:ignore="VisualLintTextFieldSize" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Field8"
-            style="@style/MyTextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:hint="@string/ficou_de_pe_sem_apoio"
-            android:textColor="#000000"
-            android:textColorHint="@color/black"
-            app:hintTextAppearance="@style/FloatingHint"
-            app:hintTextColor="#000000"
-            app:suffixText="Meses"
-            app:suffixTextColor="@color/black">
-
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/MyTextInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="0123456789"
-                android:inputType="number"
-                android:maxLength="3"
-                android:textColor="#000000"
-                android:textColorHint="#616161"
-                tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Field9"
-            style="@style/MyTextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:hint="@string/andou_com_apoio"
-            android:textColor="#000000"
-            android:textColorHint="@color/black"
-            app:hintTextAppearance="@style/FloatingHint"
-            app:hintTextColor="#000000"
-            app:suffixText="Meses"
-            app:suffixTextColor="@color/black">
-
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/MyTextInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="0123456789"
-                android:inputType="number"
-                android:maxLength="3"
-                android:textColor="#000000"
-                android:textColorHint="#616161"
-                tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Field10"
-            style="@style/MyTextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:hint="@string/andou_sem_apoio"
-            android:textColor="#000000"
-            android:textColorHint="@color/black"
-            app:hintTextAppearance="@style/FloatingHint"
-            app:hintTextColor="#000000"
-            app:suffixText="Meses"
-            app:suffixTextColor="@color/black">
-
-            <com.google.android.material.textfield.TextInputEditText
-                style="@style/MyTextInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="0123456789"
-                android:inputType="number"
-                android:maxLength="3"
-                android:textColor="#000000"
-                android:textColorHint="#616161"
-                tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -336,7 +266,6 @@
                 android:onClick="submit"
                 android:text="@string/pr_ximo"
                 tools:ignore="VisualLintButtonSize" />
-
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

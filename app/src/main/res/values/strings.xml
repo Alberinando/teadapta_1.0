@@ -39,6 +39,8 @@
     <string name="segue_alguma_religi_o">Segue alguma religião?</string>
     <string name="composi_o_familiar">Composição familiar:</string>
     <string name="e_mail_do_respons_vel">E-mail do responsável</string>
+    <string name="desenvolvimento_integral_da_crian_a_desenvolvimento_motor">Desenvolvimento integral da criança - Desenvolvimento motor</string>
+    <string name="sustentou_a_cabeca">Sustentou a cabeça:</string>
 
     <string-array name="Escolha">
         <item>Sim</item>
@@ -73,5 +75,38 @@
         <item>Particular</item>
         <item>Pública</item>
     </string-array>
+
+    <string name="meses">meses</string>
+    <string name="ficou_de_p_sem_apoio">Ficou de pé sem apoio:</string>
+    <string name="rolou_lateralmente">Rolou lateralmente:</string>
+    <string name="virou_se">Virou se:</string>
+    <string name="sentou_com_apoio">Sentou com apoio:</string>
+    <string name="arrastou_se">Arrastou se:</string>
+    <string name="engatinhou">Engatinhou:</string>
+    <string name="ficou_de_p_com_apoio">Ficou de pé com apoio:</string>
+    <string name="ficou_de_pe_sem_apoio">Ficou de pé sem apoio:</string>
+    <string name="andou_com_apoio">Andou com apoio:</string>
+    <string name="andou_sem_apoio">Andou sem apoio:</string>
+    <string name="desenvolvimento_integral_da_crian_a_a_crian_a_atualmente">Desenvolvimento integral da criança - A criança atualmente</string>
+    <string name="usa_as_duas_m_os_indiscriminadamente">Usa as duas mãos indiscriminadamente?</string>
+    <string name="canhoto">Canhoto</string>
+    <string name="destro">Destro</string>
+    <string name="observa_dificuldade_de_coordena_o_motora_no_seu_filho">Observa dificuldade de coordenação motora no seu filho?</string>
+    <string name="cai_frequentemente">Cai frequentemente?</string>
+    <string name="apanha_objetos_sem_dificuldades">Apanha objetos sem dificuldades?</string>
+    <string name="imita_gestos_simples">Imita gestos simples?</string>
+    <string name="arremessa_objetos_sem_dificuldade">Arremessa objetos sem dificuldade?</string>
+    <string name="segura_objetos_sem_dificuldade">Segura objetos sem dificuldade?</string>
+    <string name="utiliza_formas_particulares_de_organiza_o_motora_tiques">Utiliza formas particulares de organização motora (tiques)?</string>
+    <string name="desenvolvimento_integral_da_crian_a_desenvolvimento_lingu_stico">Desenvolvimento integral da criança - Desenvolvimento linguístico</string>
+    <string name="respondeu_a_qualquer_som">Respondeu a qualquer som:</string>
+    <string name="respondeu_ao_som_da_voz_humana">Respondeu ao som da voz humana:</string>
+    <string name="vocalizou">Vocalizou:</string>
+    <string name="frase">Frase:</string>
+    <string name="primeiras_palavras">Primeiras palavras:</string>
+    <string name="atualmente_apresenta_problemas_na_comunica_o_verbal">Atualmente apresenta problemas na comunicação verbal?</string>
+    <string name="descrever">Descrever:</string>
+    <string name="qual">Qual?</string>
+
 </resources>
 

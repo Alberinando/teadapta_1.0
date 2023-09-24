@@ -2,7 +2,6 @@ package com.example.teadapta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,12 +11,12 @@ import android.widget.AutoCompleteTextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-public class anamnesePais extends AppCompatActivity {
+public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anamnese_pais);
+        setContentView(R.layout.activity_anamnese_desenvolvimento_linguistico);
 
         AutoCompleteTextView escolha = findViewById(R.id.escolha);
 
@@ -26,7 +25,6 @@ public class anamnesePais extends AppCompatActivity {
         ArrayAdapter<String> adapterEscolha = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, listaEscolha);
         escolha.setAdapter(adapterEscolha);
-
 
         // Adiciona um TextWatcher ao campo de escolha
         escolha.addTextChangedListener(new TextWatcher() {
@@ -55,15 +53,5 @@ public class anamnesePais extends AppCompatActivity {
 
             }
         });
-    }
-
-    public void Back (View view){
-        Intent intent = new Intent(anamnesePais.this, com.example.teadapta.anamnese.class);
-        startActivity(intent);
-    }
-
-    public void submit (View view){
-        Intent intent = new Intent(anamnesePais.this, com.example.teadapta.anamneseDesenvolvimento.class);
-        startActivity(intent);
     }
 }
