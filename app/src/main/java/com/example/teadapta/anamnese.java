@@ -3,12 +3,18 @@ package com.example.teadapta;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
+import android.widget.Spinner;
+import android.widget.Toast;
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -19,6 +25,11 @@ public class anamnese extends AppCompatActivity {
     private String selectedDate = "";
     private AutoCompleteTextView escolha, escolaridade, escolar;
 
+
+    private TextInputEditText outlinedTextField,textdata,textIdade,Field,altura;
+    private TextInputEditText editTextNome, editTextData,editTextIdade,editTextFi,editTextAltura;
+    //private Spinner escolar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +38,26 @@ public class anamnese extends AppCompatActivity {
         escolha = findViewById(R.id.escolha);
         escolaridade = findViewById(R.id.escolaridade);
         escolar = findViewById(R.id.escolar);
+
+       // outlinedTextField = findViewById(R.id.outlinedTextField);
+        TextInputLayout outlinedTextField = findViewById(R.id.outlinedTextField);
+        editTextNome = (TextInputEditText) outlinedTextField.getEditText();
+
+        TextInputLayout textdata = findViewById(R.id.textdata);
+        editTextData = (TextInputEditText) outlinedTextField.getEditText();
+
+        TextInputLayout textIdade = findViewById(R.id.textIdade);
+        editTextIdade = (TextInputEditText) outlinedTextField.getEditText();
+
+        TextInputLayout Field = findViewById(R.id.Field);
+        editTextFi = (TextInputEditText) outlinedTextField.getEditText();
+
+        TextInputLayout altura = findViewById(R.id.altura);
+        editTextAltura = (TextInputEditText) outlinedTextField.getEditText();
+        //...................................................................
+
+
+
 
         TextInputEditText dataEditText = findViewById(R.id.data);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -58,6 +89,7 @@ public class anamnese extends AppCompatActivity {
         ArrayAdapter<String> adapterEscolhaEscola = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, listaEscola);
         escolar.setAdapter(adapterEscolhaEscola);
+
     }
 
     public void showDatePicker() {
@@ -80,10 +112,70 @@ public class anamnese extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void submit (View view){
-        Intent intent = new Intent(anamnese.this, com.example.teadapta.anamnesePais.class);
-        startActivity(intent);
-    }
+    public void submit(View view) {
+        // Obtém o nome do aplicativo que o usuário digitou
+        String nome = editTextNome.getText().toString().trim();
+        String data = editTextData.getText().toString().trim();
+        String idade = editTextIdade.getText().toString().trim();
+        String fi = editTextFi.getText().toString().trim();
+        String altura = editTextAltura.getText().toString().trim();
 
+
+        String escolars = escolar.getText().toString().trim();
+        String escolaridades = escolaridade.getText().toString().trim();
+        String escolhas = escolha.getText().toString().trim();
+
+
+        // Verifica se o campo de nome está vazio ou se o AutoCompleteTextView não foi selecionado
+        if(nome.isEmpty() || data.isEmpty() || idade.isEmpty() || fi.isEmpty() || altura.isEmpty()){
+            if(nome.isEmpty()){
+                if(nome.isEmpty() && data.isEmpty()){
+                    if(nome.isEmpty() && data.isEmpty() && idade.isEmpty()){
+                        if(nome.isEmpty() && data.isEmpty() && idade.isEmpty() && fi.isEmpty()){
+                            if(nome.isEmpty() && data.isEmpty() && idade.isEmpty() && fi.isEmpty() && altura.isEmpty()){
+                                editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
+                                editTextData.setBackgroundResource(R.drawable.edittext_contorno);
+                                editTextIdade.setBackgroundResource(R.drawable.edittext_contorno);
+                                editTextFi.setBackgroundResource(R.drawable.edittext_contorno);
+                                editTextAltura.setBackgroundResource(R.drawable.edittext_contorno);
+                            }
+                            editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
+                            editTextData.setBackgroundResource(R.drawable.edittext_contorno);
+                            editTextIdade.setBackgroundResource(R.drawable.edittext_contorno);
+                            editTextFi.setBackgroundResource(R.drawable.edittext_contorno);
+                        }
+                        editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
+                        editTextData.setBackgroundResource(R.drawable.edittext_contorno);
+                        editTextIdade.setBackgroundResource(R.drawable.edittext_contorno);
+                    }
+                    editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
+                    editTextData.setBackgroundResource(R.drawable.edittext_contorno);
+                }
+               // editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
+            }
+
+        }
+
+        if(!escolars.equals("Particular") && !escolars.equals("Pública")) {
+            if(!escolhas.equals("Sim") && !escolhas.equals("Não")){
+                if(!escolaridades.equals("Educação infatil completo") && !escolaridades.equals("Educação infatil incompleto")
+                        && !escolaridades.equals("Ensino fundamental completo") && !escolaridades.equals("Ensino fundamental incompleto")
+                && !escolaridades.equals("Ensino médio completo") && !escolaridades.equals("Ensino médio incompleto")){
+                    escolar.setBackgroundResource(R.drawable.edittext_contorno);
+                    escolaridade.setBackgroundResource(R.drawable.edittext_contorno);
+                    escolha.setBackgroundResource(R.drawable.edittext_contorno);
+                }
+                escolar.setBackgroundResource(R.drawable.edittext_contorno);
+                escolha.setBackgroundResource(R.drawable.edittext_contorno);
+            }
+            escolar.setBackgroundResource(R.drawable.edittext_contorno);
+
+        } else {
+            // Se tudo estiver válido, avança para a próxima página
+            Intent intent = new Intent(anamnese.this, anamnesePais.class);
+            startActivity(intent);
+        }
+        //Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
+    }
 
 }
