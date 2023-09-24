@@ -44,16 +44,16 @@ public class anamnese extends AppCompatActivity {
         editTextNome = (TextInputEditText) outlinedTextField.getEditText();
 
         TextInputLayout textdata = findViewById(R.id.textdata);
-        editTextData = (TextInputEditText) outlinedTextField.getEditText();
+        editTextData = (TextInputEditText) textdata.getEditText();
 
         TextInputLayout textIdade = findViewById(R.id.textIdade);
-        editTextIdade = (TextInputEditText) outlinedTextField.getEditText();
+        editTextIdade = (TextInputEditText) textIdade.getEditText();
 
         TextInputLayout Field = findViewById(R.id.Field);
-        editTextFi = (TextInputEditText) outlinedTextField.getEditText();
+        editTextFi = (TextInputEditText) Field.getEditText();
 
         TextInputLayout altura = findViewById(R.id.altura);
-        editTextAltura = (TextInputEditText) outlinedTextField.getEditText();
+        editTextAltura = (TextInputEditText) altura.getEditText();
         //...................................................................
 
 
@@ -128,6 +128,7 @@ public class anamnese extends AppCompatActivity {
 
         // Verifica se o campo de nome está vazio ou se o AutoCompleteTextView não foi selecionado
         if(nome.isEmpty() || data.isEmpty() || idade.isEmpty() || fi.isEmpty() || altura.isEmpty()){
+
             if(nome.isEmpty()){
                 if(nome.isEmpty() && data.isEmpty()){
                     if(nome.isEmpty() && data.isEmpty() && idade.isEmpty()){
@@ -151,8 +152,10 @@ public class anamnese extends AppCompatActivity {
                     editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
                     editTextData.setBackgroundResource(R.drawable.edittext_contorno);
                 }
-               // editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
+                editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
             }
+
+            
 
         }
 
