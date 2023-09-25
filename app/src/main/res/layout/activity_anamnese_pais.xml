@@ -356,7 +356,7 @@
             app:hintTextColor="#000000">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/religiao"
+                android:id="@+id/subescolha"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

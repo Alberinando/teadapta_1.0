@@ -1,7 +1,11 @@
 package com.example.teadapta;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,9 +13,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
+    private TextInputEditText inputEditText;
+    private TextInputEditText dataEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +26,9 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
         setContentView(R.layout.activity_anamnese_desenvolvimento_linguistico);
 
         AutoCompleteTextView escolha = findViewById(R.id.escolha);
+
+        inputEditText = findViewById(R.id.respondeuSom);
+        dataEditText = findViewById(R.id.voz);
 
         //Escolha de Sim ou Não
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
@@ -53,5 +63,50 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
 
             }
         });
+    }
+
+    private boolean validateFields() {
+        boolean valid = true;
+        TextInputLayout inputLayout = findViewById(R.id.Field);
+        TextInputLayout dataLayout = findViewById(R.id.Field2);
+        int errorColor = ContextCompat.getColor(this, R.color.error_color);
+        int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
+
+        if (inputEditText.getText().toString().trim().isEmpty()) {
+            if (!inputEditText.isFocused()) { // Verifica se o campo não está em foco
+                inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                inputLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            inputLayout.setError(null);
+        }
+
+        if (dataEditText.getText().toString().trim().isEmpty()) {
+            if (!dataEditText.isFocused()) { // Verifica se o campo não está em foco
+                dataLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                dataLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                dataLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                dataLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            dataLayout.setError(null);
+        }
+
+        return valid;
+    }
+    public void Back (View view){
+        Intent intent = new Intent(anamneseDesenvolvimentoLinguistico.this, com.example.teadapta.anamneseDesenvolvimentoCrianca.class);
+        startActivity(intent);
+    }
+
+    public void submit (View view){
+        if (validateFields()) {
+            Intent intent = new Intent(anamneseDesenvolvimentoLinguistico.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional.class);
+            startActivity(intent);
+        }
     }
 }

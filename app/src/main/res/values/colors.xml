@@ -6,4 +6,7 @@
     <color name="md.sys.color.surfacecontainerhighest">#000000</color>
     <color name="azul">#5b9bd5</color>
     <color name="red">#ED0010</color>
+    <color name="fundo">#deebf7</color>
+    <color name="error_color">#FF0000</color>
+    <color name="error_icon_color">#FF0000</color>
 </resources>

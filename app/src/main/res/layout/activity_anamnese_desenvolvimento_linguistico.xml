@@ -49,9 +49,12 @@
             app:hintTextAppearance="@style/FloatingHint"
             app:hintTextColor="#000000"
             app:suffixText="Meses"
-            app:suffixTextColor="@color/black">
+            app:suffixTextColor="@color/black"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/respondeuSom"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,7 +63,9 @@
                 android:maxLength="3"
                 android:textColor="#000000"
                 android:textColorHint="#616161"
-                tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
+                tools:ignore="RtlHardcoded,VisualLintTextFieldSize"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,9 +81,12 @@
             app:hintTextAppearance="@style/FloatingHint"
             app:hintTextColor="#000000"
             app:suffixText="Meses"
-            app:suffixTextColor="@color/black">
+            app:suffixTextColor="@color/black"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/voz"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,7 +95,9 @@
                 android:maxLength="3"
                 android:textColor="#000000"
                 android:textColorHint="#616161"
-                tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
+                tools:ignore="RtlHardcoded,VisualLintTextFieldSize"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -103,7 +113,9 @@
             app:hintTextAppearance="@style/FloatingHint"
             app:hintTextColor="#000000"
             app:suffixText="Meses"
-            app:suffixTextColor="@color/black">
+            app:suffixTextColor="@color/black"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/MyTextInputEditText"
@@ -220,7 +232,7 @@
             app:hintTextColor="#000000">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/religiao"
+                android:id="@+id/subescolha"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
