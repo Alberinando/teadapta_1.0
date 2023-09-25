@@ -113,72 +113,89 @@ public class anamnese extends AppCompatActivity {
     }
 
     public void submit(View view) {
-        // Obtém o nome do aplicativo que o usuário digitou
+        // Obtém os valores dos campos de entrada
         String nome = editTextNome.getText().toString().trim();
         String data = editTextData.getText().toString().trim();
         String idade = editTextIdade.getText().toString().trim();
         String fi = editTextFi.getText().toString().trim();
         String altura = editTextAltura.getText().toString().trim();
 
-
         String escolars = escolar.getText().toString().trim();
         String escolaridades = escolaridade.getText().toString().trim();
         String escolhas = escolha.getText().toString().trim();
 
+        boolean camposPreenchidosCorretamente = true;
 
-        // Verifica se o campo de nome está vazio ou se o AutoCompleteTextView não foi selecionado
-        if(nome.isEmpty() || data.isEmpty() || idade.isEmpty() || fi.isEmpty() || altura.isEmpty()){
-
-            if(nome.isEmpty()){
-                if(nome.isEmpty() && data.isEmpty()){
-                    if(nome.isEmpty() && data.isEmpty() && idade.isEmpty()){
-                        if(nome.isEmpty() && data.isEmpty() && idade.isEmpty() && fi.isEmpty()){
-                            if(nome.isEmpty() && data.isEmpty() && idade.isEmpty() && fi.isEmpty() && altura.isEmpty()){
-                                editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
-                                editTextData.setBackgroundResource(R.drawable.edittext_contorno);
-                                editTextIdade.setBackgroundResource(R.drawable.edittext_contorno);
-                                editTextFi.setBackgroundResource(R.drawable.edittext_contorno);
-                                editTextAltura.setBackgroundResource(R.drawable.edittext_contorno);
-                            }
-                            editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
-                            editTextData.setBackgroundResource(R.drawable.edittext_contorno);
-                            editTextIdade.setBackgroundResource(R.drawable.edittext_contorno);
-                            editTextFi.setBackgroundResource(R.drawable.edittext_contorno);
-                        }
-                        editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
-                        editTextData.setBackgroundResource(R.drawable.edittext_contorno);
-                        editTextIdade.setBackgroundResource(R.drawable.edittext_contorno);
-                    }
-                    editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
-                    editTextData.setBackgroundResource(R.drawable.edittext_contorno);
-                }
-                editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
-            }
-
-            
-
+        // Verifica se algum campo obrigatório não está preenchido corretamente
+        if (nome.isEmpty()) {
+            editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        } else {
+            editTextNome.setBackgroundResource(R.drawable.edittext_novocontorno);
         }
 
-        if(!escolars.equals("Particular") && !escolars.equals("Pública")) {
-            if(!escolhas.equals("Sim") && !escolhas.equals("Não")){
-                if(!escolaridades.equals("Educação infatil completo") && !escolaridades.equals("Educação infatil incompleto")
-                        && !escolaridades.equals("Ensino fundamental completo") && !escolaridades.equals("Ensino fundamental incompleto")
-                && !escolaridades.equals("Ensino médio completo") && !escolaridades.equals("Ensino médio incompleto")){
-                    escolar.setBackgroundResource(R.drawable.edittext_contorno);
-                    escolaridade.setBackgroundResource(R.drawable.edittext_contorno);
-                    escolha.setBackgroundResource(R.drawable.edittext_contorno);
-                }
-                escolar.setBackgroundResource(R.drawable.edittext_contorno);
-                escolha.setBackgroundResource(R.drawable.edittext_contorno);
-            }
-            escolar.setBackgroundResource(R.drawable.edittext_contorno);
-
+        if (data.isEmpty()) {
+            editTextData.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
         } else {
+            editTextData.setBackgroundResource(R.drawable.edittext_novocontorno);
+        }
+
+        if (idade.isEmpty()) {
+            editTextIdade.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        } else {
+            editTextIdade.setBackgroundResource(R.drawable.edittext_novocontorno);
+        }
+
+        if (fi.isEmpty()) {
+            editTextFi.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        } else {
+            editTextFi.setBackgroundResource(R.drawable.edittext_novocontorno);
+        }
+
+        if (altura.isEmpty()) {
+            editTextAltura.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        } else {
+            editTextAltura.setBackgroundResource(R.drawable.edittext_novocontorno);
+        }
+
+        // Verifica se as escolhas são inválidas
+        if (!escolars.equals("Particular") && !escolars.equals("Pública")) {
+            escolar.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        } else {
+            escolar.setBackgroundResource(R.drawable.edittext_novocontorno);
+        }
+
+        if (!escolhas.equals("Sim") && !escolhas.equals("Não")) {
+            escolha.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        } else {
+            escolha.setBackgroundResource(R.drawable.edittext_novocontorno);
+        }
+
+        if (!escolaridades.equals("Educação infantil completo") &&
+                !escolaridades.equals("Educação infantil incompleto") &&
+                !escolaridades.equals("Ensino fundamental completo") &&
+                !escolaridades.equals("Ensino fundamental incompleto") &&
+                !escolaridades.equals("Ensino médio completo") &&
+                !escolaridades.equals("Ensino médio incompleto")) {
+            escolaridade.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        } else {
+            escolaridade.setBackgroundResource(R.drawable.edittext_novocontorno);
+        }
+
+        // Verifica se todos os campos estão preenchidos corretamente
+        if (camposPreenchidosCorretamente) {
             // Se tudo estiver válido, avança para a próxima página
             Intent intent = new Intent(anamnese.this, anamnesePais.class);
             startActivity(intent);
         }
-        //Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
     }
 
 }
+//Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
