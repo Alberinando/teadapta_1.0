@@ -78,6 +78,8 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
                 inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
                 inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
                 inputLayout.setError("Campo vazio");
+            } else {
+                inputLayout.setError(null);
             }
             valid = false;
         } else {
@@ -92,8 +94,6 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
                 dataLayout.setError("Campo vazio");
             }
             valid = false;
-        } else {
-            dataLayout.setError(null);
         }
 
         return valid;

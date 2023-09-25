@@ -81,9 +81,9 @@
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="none"
                 android:digits="0123456789/"
-                android:inputType="number"
-                android:onClick="onClick"
+                android:onClick="onPositiveButtonClick"
                 android:textColor="#000000"
                 android:textColorHint="#616161"
                 tools:ignore="VisualLintTextFieldSize" />

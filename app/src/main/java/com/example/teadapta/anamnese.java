@@ -2,6 +2,7 @@ package com.example.teadapta;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -15,18 +16,23 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class anamnese extends AppCompatActivity {
 
     private String selectedDate = "";
+
     private AutoCompleteTextView escolha, escolaridade, escolar;
 
 
-    private TextInputEditText outlinedTextField,textdata,textIdade,Field,altura;
     private TextInputEditText editTextNome, editTextData,editTextIdade,editTextFi,editTextAltura;
     //private Spinner escolar;
 
@@ -35,11 +41,86 @@ public class anamnese extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anamnese);
 
+        MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Selecione a Data")
+                .setSelection(MaterialDatePicker.todayInUtcMilliseconds())  // Seleção inicial (pode ser alterada conforme necessário)
+                .build();
+        TextInputEditText dataEditText = findViewById(R.id.data);
+        TextInputLayout textInputLayout = findViewById(R.id.textdata);
+
+        dataEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    // Abre o calendário quando o campo recebe foco
+                    datePicker.show(getSupportFragmentManager(), "DatePickerTag");
+
+                    // Limpa qualquer mensagem de erro que possa estar sendo exibida
+                    textInputLayout.setError(null);
+                }
+            }
+        });
+        dataEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Abre o calendário quando o usuário clica no campo de texto
+                datePicker.show(getSupportFragmentManager(), "DatePickerTag");
+
+                // Limpa qualquer mensagem de erro que possa estar sendo exibida
+                textInputLayout.setError(null);
+            }
+        });
+
+        datePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
+            @Override
+            public void onPositiveButtonClick(Long selection) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(selection);
+                calendar.add(Calendar.DAY_OF_MONTH, 1);
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                String selectedDateFormatted = sdf.format(calendar.getTime());
+
+                TextInputEditText dataEditText = findViewById(R.id.data);
+                dataEditText.setText(selectedDateFormatted);
+            }
+        });
+
+        datePicker.addOnNegativeButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Ação a ser realizada quando o usuário clica no botão "Cancelar"
+                TextInputLayout textInputLayout = findViewById(R.id.textdata);
+                String selectedDate = dataEditText.getText().toString().trim();
+
+                if (selectedDate.isEmpty()) {
+                    textInputLayout.setError("Campo obrigatório");
+                } else {
+                    textInputLayout.setError(null);
+                }
+            }
+        });
+
+        datePicker.addOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                // Ação a ser realizada quando o usuário cancela a seleção
+                TextInputLayout textInputLayout = findViewById(R.id.textdata);
+                String selectedDate2 = dataEditText.getText().toString().trim();
+                if (selectedDate2.isEmpty()) {
+                    textInputLayout.setError("Campo obrigatório");
+                } else {
+                    textInputLayout.setError(null);
+                }
+            }
+        });
+
+
         escolha = findViewById(R.id.escolha);
         escolaridade = findViewById(R.id.escolaridade);
         escolar = findViewById(R.id.escolar);
 
-       // outlinedTextField = findViewById(R.id.outlinedTextField);
+        // outlinedTextField = findViewById(R.id.outlinedTextField);
         TextInputLayout outlinedTextField = findViewById(R.id.outlinedTextField);
         editTextNome = (TextInputEditText) outlinedTextField.getEditText();
 
@@ -57,20 +138,9 @@ public class anamnese extends AppCompatActivity {
         //...................................................................
 
 
-
-
-        TextInputEditText dataEditText = findViewById(R.id.data);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             dataEditText.setTextCursorDrawable(R.drawable.custom_cursor);
         }
-
-        // Configurar o seletor de data quando o campo de data for clicado
-        dataEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePicker();
-            }
-        });
 
         //Escolha de Sim ou Não
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
@@ -90,26 +160,6 @@ public class anamnese extends AppCompatActivity {
                 android.R.layout.simple_dropdown_item_1line, listaEscola);
         escolar.setAdapter(adapterEscolhaEscola);
 
-    }
-
-    public void showDatePicker() {
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
-
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                // Aqui você pode lidar com a data selecionada pelo usuário
-                // Por exemplo, atualizar o campo de data com a data selecionada
-                selectedDate = String.format("%02d/%02d/%04d", dayOfMonth, month + 1, year);
-                TextInputEditText dataEditText = findViewById(R.id.data);
-                dataEditText.setText(selectedDate);
-            }
-        }, year, month, dayOfMonth);
-
-        datePickerDialog.show();
     }
 
     public void submit(View view) {
