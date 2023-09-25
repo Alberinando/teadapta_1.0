@@ -70,6 +70,437 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
+            android:id="@+id/checkBoxGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:background="@drawable/contorno"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/que_observa_es_voc_faz_sobre_o_comportamento_de_seu_filho"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/black"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/distraido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/distra_do"
+                    style="@style/Widget.App.CheckBox"
+                    android:textColor="@color/black" />
+
+                <CheckBox
+                    android:id="@+id/calmo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/Widget.App.CheckBox"
+                    android:textColor="@color/black"
+                    android:text="@string/calmo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/hiperativo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.App.CheckBox"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:text="@string/hiperativo" />
+
+                <CheckBox
+                    android:id="@+id/nervoso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.App.CheckBox"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:text="@string/nervoso" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/sensivelVi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/Widget.App.CheckBox"
+                    android:textColor="@color/black"
+                    android:text="Sensível a sensações de vibração" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/sensivelTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.App.CheckBox"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:text="@string/sens_vel_quando_tocado" />
+
+                <CheckBox
+                    android:id="@+id/desinteressado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.App.CheckBox"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:text="@string/desinteressado" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/brinca_com_crian_as_e_adultos"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/expressava_as_suas_necessidades"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/apresenta_birras_com_frequ_ncia"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/se_adapta_bem_em_casa_e_na_escola"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout6"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/chora_frequentemente"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout7"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/faz_amigos_com_facilidade"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout8"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/expressa_as_emo_es_com_facilidade"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout9"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/mostra_mudan_as_de_comportamento_com_estranhos"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout00"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/reage_favoravelmente_a_novidades"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha00"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout01"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/procura_frequentemente_a_prote_o_dos_pais"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

@@ -110,6 +110,26 @@
     <string name="desenvolvimento_integral_da_crian_a_desenvolvimento_socioemocional">Desenvolvimento integral da criança - Desenvolvimento socioemocional</string>
     <string name="reage_favoravelmente_s_pessoas">Reage favoravelmente às pessoas?</string>
     <string name="como_voc_costuma_observar_o_comportamento_de_seu_filho">Como você costuma observar o comportamento de seu filho?</string>
+    <string name="que_observa_es_voc_faz_sobre_o_comportamento_de_seu_filho">Que observações você faz sobre o comportamento de seu filho?</string>
+    <string name="reage_favoravelmente_a_novidades">Reage favoravelmente a novidades?</string>
+    <string name="procura_frequentemente_a_prote_o_dos_pais">Procura frequentemente a proteção dos pais?</string>
+    <string name="expressava_as_suas_necessidades">Expressava as suas necessidades?</string>
+    <string name="brinca_com_crian_as_e_adultos">Brinca com crianças e adultos?</string>
+    <string name="adapta_se_facilmente_s_situa_es_em_casa_e_na_escola">Adapta-se facilmente às situações em casa e na escola?</string>
+    <string name="comportamentos_desafiadores_como_birras_s_o_comuns">Comportamentos desafiadores, como birras, são comuns?</string>
+    <string name="chora_frequentemente">Chora frequentemente?</string>
+    <string name="faz_amigos_com_facilidade">Faz amigos com facilidade?</string>
+    <string name="altera_o_comportamento_na_presen_a_de_estranhos">Altera o comportamento na presença de estranhos?</string>
+    <string name="expressa_as_emo_es_com_facilidade">Expressa as emoções com facilidade?</string>
+    <string name="calmo">Calmo</string>
+    <string name="desinteressado">Desinteressado</string>
+    <string name="distra_do">Distraído</string>
+    <string name="hiperativo">Hiperativo</string>
+    <string name="nervoso">Nervoso</string>
+    <string name="sens_vel_quando_tocado">Sensível quando tocado</string>
+    <string name="apresenta_birras_com_frequ_ncia">Apresenta birras com frequência?</string>
+    <string name="se_adapta_bem_em_casa_e_na_escola">Se adapta bem em casa e na escola?</string>
+    <string name="mostra_mudan_as_de_comportamento_com_estranhos">Mostra mudanças de comportamento com estranhos?</string>
 
 </resources>
 

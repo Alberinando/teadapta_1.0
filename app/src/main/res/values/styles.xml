@@ -17,4 +17,9 @@
     <style name="CustomCursorStyle" parent="@android:style/Widget.EditText">
         <item name="android:textCursorDrawable">@drawable/custom_cursor</item>
     </style>
+
+    <style name="Widget.App.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="buttonTint">@color/white</item>
+        <item name="buttonIconTint">@color/black</item>
+    </style>
 </resources>
