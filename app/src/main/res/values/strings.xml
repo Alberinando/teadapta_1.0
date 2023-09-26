@@ -130,6 +130,11 @@
     <string name="apresenta_birras_com_frequ_ncia">Apresenta birras com frequência?</string>
     <string name="se_adapta_bem_em_casa_e_na_escola">Se adapta bem em casa e na escola?</string>
     <string name="mostra_mudan_as_de_comportamento_com_estranhos">Mostra mudanças de comportamento com estranhos?</string>
+    <string name="como_se_sente_quando_separada_dos_pais">Como se sente quando separada dos pais?</string>
+    <string name="medos_ou_fobias">Medos ou fobias?</string>
+    <string name="investe_em_momentos_em_fam_lia">Investe em momentos em família?</string>
+    <string name="alguma_informa_o_relevante_que_n_o_foi_mencionada_anteriormente">Alguma informação relevante que não foi mencionada anteriormente?</string>
+    <string name="informa_o_adicional_importante_n_o_mencionada">Informação adicional importante?</string>
 
 </resources>
 
