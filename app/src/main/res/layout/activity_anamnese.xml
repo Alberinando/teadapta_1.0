@@ -61,7 +61,9 @@
                 android:inputType="textCapWords|text"
                 android:textColor="#000000"
                 android:textColorHint="#616161"
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="VisualLintTextFieldSize"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,7 +78,9 @@
             android:textColor="#000000"
             android:textColorHint="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
-            app:hintTextColor="#000000">
+            app:hintTextColor="#000000"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/data"
@@ -88,7 +92,9 @@
                 android:onClick="onPositiveButtonClick"
                 android:textColor="#000000"
                 android:textColorHint="#616161"
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="VisualLintTextFieldSize"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,7 +110,9 @@
             android:textColor="#000000"
             android:textColorHint="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
-            app:hintTextColor="#000000">
+            app:hintTextColor="#000000"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Idade"
@@ -117,7 +125,9 @@
                 android:maxLength="3"
                 android:textColor="#000000"
                 android:textColorHint="#616161"
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="VisualLintTextFieldSize"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,7 +149,9 @@
                 android:textColor="#000000"
                 android:textColorHint="@color/black"
                 app:hintTextAppearance="@style/FloatingHint"
-                app:hintTextColor="#000000">
+                app:hintTextColor="#000000"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/MyTextInputEditText"
@@ -151,7 +163,9 @@
                     android:maxLength="6"
                     android:textColor="#000000"
                     android:textColorHint="#616161"
-                    tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
+                    tools:ignore="RtlHardcoded,VisualLintTextFieldSize"
+                    app:boxStrokeErrorColor="@color/error_color"
+                    app:errorIconTint="@color/error_icon_color"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -164,7 +178,9 @@
                 android:textColor="#000000"
                 android:textColorHint="@color/black"
                 app:hintTextAppearance="@style/FloatingHint"
-                app:hintTextColor="#000000">
+                app:hintTextColor="#000000"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/MyTextInputEditText"
@@ -178,7 +194,9 @@
                     android:maxLength="3"
                     android:textColor="#000000"
                     android:textColorHint="#616161"
-                    tools:ignore="VisualLintTextFieldSize" />
+                    tools:ignore="VisualLintTextFieldSize"
+                    app:boxStrokeErrorColor="@color/error_color"
+                    app:errorIconTint="@color/error_icon_color"/>
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -196,7 +214,9 @@
             app:endIconTint="@color/black"
             app:hintTextColor="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/editTextNome"
-            app:startIconTint="@color/black">
+            app:startIconTint="@color/black"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
 
             <AutoCompleteTextView
                 android:id="@+id/escolha"
@@ -212,7 +232,9 @@
                 android:textColorLink="@color/black"
                 android:textCursorDrawable="@color/azul"
                 app:layout_constraintTop_toBottomOf="@+id/InputLayout"
-                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+                tools:ignore="LabelFor,VisualLintTextFieldSize"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -244,7 +266,9 @@
                 android:textColorLink="@color/black"
                 android:textCursorDrawable="@color/azul"
                 app:layout_constraintTop_toBottomOf="@+id/InputLayout"
-                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+                tools:ignore="LabelFor,VisualLintTextFieldSize"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

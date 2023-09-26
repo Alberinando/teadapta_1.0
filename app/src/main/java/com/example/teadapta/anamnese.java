@@ -1,6 +1,8 @@
 package com.example.teadapta;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +10,8 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -384,7 +388,7 @@ public class anamnese extends AppCompatActivity {
             inputLayout.setError(null);
         }
         if (editTextFi.getText().toString().trim().isEmpty()) {
-            if (!inputEditText.isFocused()) {
+            if (!editTextFi.isFocused()) {
                 inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
                 inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
                 inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
@@ -395,7 +399,7 @@ public class anamnese extends AppCompatActivity {
             inputLayout.setError(null);
         }
         if (editTextAltura.getText().toString().trim().isEmpty()) {
-            if (!inputEditText.isFocused()) {
+            if (!editTextAltura.isFocused()) {
                 inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
                 inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
                 inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
