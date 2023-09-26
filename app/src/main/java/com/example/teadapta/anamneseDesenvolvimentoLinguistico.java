@@ -72,14 +72,56 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
 
+        // Ouvinte de texto para inputEditText
+        inputEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Nada a fazer antes da mudança de texto
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Nada a fazer durante a mudança de texto
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                inputLayout.setError(null); // Remove a mensagem de erro
+                inputLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                inputLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                inputLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        // Ouvinte de texto para dataEditText
+        dataEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Nada a fazer antes da mudança de texto
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Nada a fazer durante a mudança de texto
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                dataLayout.setError(null); // Remove a mensagem de erro
+                dataLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                dataLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                dataLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
         if (inputEditText.getText().toString().trim().isEmpty()) {
-            if (!inputEditText.isFocused()) { // Verifica se o campo não está em foco
+            if (!inputEditText.isFocused()) {
                 inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
                 inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
                 inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
                 inputLayout.setError("Campo vazio");
-            } else {
-                inputLayout.setError(null);
             }
             valid = false;
         } else {
@@ -87,13 +129,15 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
         }
 
         if (dataEditText.getText().toString().trim().isEmpty()) {
-            if (!dataEditText.isFocused()) { // Verifica se o campo não está em foco
+            if (!dataEditText.isFocused()) {
                 dataLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
                 dataLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
                 dataLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
                 dataLayout.setError("Campo vazio");
             }
             valid = false;
+        } else {
+            dataLayout.setError(null);
         }
 
         return valid;
