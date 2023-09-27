@@ -139,6 +139,10 @@
     <string name="pr_tica_de_exerc_cio_f_sico">Prática de exercício físico</string>
     <string name="h_limita_es_para_fazer_exerc_cios">Há limitações para fazer exercícios?</string>
     <string name="a_crian_a_est_se_exercitando_atualmente">A criança está se exercitando atualmente?</string>
+    <string name="qual_is">Qual(is)?</string>
+    <string name="menos_de_6_meses">Menos de 6 meses</string>
+    <string name="entre_seis_meses_a_1_ano">Entre seis meses a 1 ano</string>
+    <string name="mais_de_1_ano">Mais de 1 ano</string>
 
 </resources>
 

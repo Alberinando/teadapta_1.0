@@ -134,7 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:hint="@string/descrever"
+            android:hint="@string/qual_is"
             android:visibility="gone"
             android:textColor="#000000"
             android:textColorHint="@color/black"
@@ -154,6 +154,45 @@
                 tools:ignore="VisualLintTextFieldSize" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/checkBoxGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:background="@drawable/contorno"
+        android:orientation="vertical"
+        android:padding="2dp">
+
+        <CheckBox
+            android:id="@+id/seisMeses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/menos_de_6_meses"
+            style="@style/Widget.App.CheckBox"
+            android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/Entre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/Widget.App.CheckBox"
+            android:textColor="@color/black"
+            android:text="@string/entre_seis_meses_a_1_ano" />
+
+        <CheckBox
+            android:id="@+id/Mais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/Widget.App.CheckBox"
+            android:textColor="@color/black"
+            android:text="@string/mais_de_1_ano" />
+
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -188,7 +227,6 @@
                 android:onClick="submit"
                 android:text="@string/cadastrar"
                 tools:ignore="VisualLintButtonSize" />
-
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
