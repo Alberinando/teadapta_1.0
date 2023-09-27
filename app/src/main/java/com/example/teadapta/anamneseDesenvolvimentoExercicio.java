@@ -12,27 +12,22 @@ import android.widget.AutoCompleteTextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
+public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
+
     private AutoCompleteTextView escolha;
-    private AutoCompleteTextView escolha2;
     private TextInputLayout religiaoLayout;
-    private TextInputLayout lunedTextFieldDes2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anamnese_desenvolvimento_socio_emocional2);
-
+        setContentView(R.layout.activity_anamnese_desenvolvimento_exercicio);
         escolha = findViewById(R.id.escolha);
-        escolha2 = findViewById(R.id.escolha2);
         religiaoLayout = findViewById(R.id.TextField);
 
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, listaEscolha);
         escolha.setAdapter(adapterEscolha);
-        escolha2.setAdapter(adapterEscolha);
-
         escolha.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -41,28 +36,6 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String escolhaValue = s.toString().trim();
                 updateLayoutVisibility(escolhaValue, religiaoLayout);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
-
-        escolha2 = findViewById(R.id.escolha2);
-        lunedTextFieldDes2 = findViewById(R.id.lunedTextFieldDes2);
-
-        String[] listaEscolha2 = getResources().getStringArray(R.array.Escolha);
-        ArrayAdapter<String> adapterEscolha2 = new ArrayAdapter<>(this,
-                android.R.layout.simple_dropdown_item_1line, listaEscolha2);
-        escolha2.setAdapter(adapterEscolha2);
-
-        escolha2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String escolhaValue2 = s.toString().trim();
-                updateLayoutVisibility(escolhaValue2, lunedTextFieldDes2);
             }
 
             @Override
@@ -77,12 +50,9 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
             layout.setVisibility(View.GONE);
         }
     }
+
     public void Back (View view){
-        Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional2.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional.class);
-        startActivity(intent);
-    }
-    public void submit (View view){
-        Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional2.this, com.example.teadapta.anamneseDesenvolvimentoExercicio.class);
+        Intent intent = new Intent(anamneseDesenvolvimentoExercicio.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional2.class);
         startActivity(intent);
     }
 }

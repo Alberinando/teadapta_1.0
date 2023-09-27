@@ -135,6 +135,10 @@
     <string name="investe_em_momentos_em_fam_lia">Investe em momentos em família?</string>
     <string name="alguma_informa_o_relevante_que_n_o_foi_mencionada_anteriormente">Alguma informação relevante que não foi mencionada anteriormente?</string>
     <string name="informa_o_adicional_importante_n_o_mencionada">Informação adicional importante?</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="pr_tica_de_exerc_cio_f_sico">Prática de exercício físico</string>
+    <string name="h_limita_es_para_fazer_exerc_cios">Há limitações para fazer exercícios?</string>
+    <string name="a_crian_a_est_se_exercitando_atualmente">A criança está se exercitando atualmente?</string>
 
 </resources>
 
