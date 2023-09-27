@@ -143,6 +143,14 @@
     <string name="menos_de_6_meses">Menos de 6 meses</string>
     <string name="entre_seis_meses_a_1_ano">Entre seis meses a 1 ano</string>
     <string name="mais_de_1_ano">Mais de 1 ano</string>
+    <string name="frequ_ncia">Frequência:</string>
+    <string name="por_que_seu_filho_pratica_exerc_cios_f_sicos">Por que seu filho pratica exercícios físicos?</string>
+    <string name="a_crian_a_est_nas_aulas_de_educa_o_f_sica_escolar">A criança está nas aulas de Educação Física Escolar?</string>
+    <string name="existem_reas_em_casa_para_a_crian_a_brincar">Existem áreas em casa para a criança brincar?</string>
+    <string name="controlado">Controlado</string>
+    <string name="frequente">Frequente</string>
+    <string name="muito_frequente">Muito frequente</string>
+    <string name="raramente">Raramente</string>
 
 </resources>
 
