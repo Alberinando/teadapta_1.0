@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#deebf7"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/metas_de_apredizagem"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:layout_marginTop="100dp"
+            android:justificationMode="inter_word"
+            android:text="1 - Criar com o corpo formas diversificadas de expressão de sentimentos, sensações e emoções; \n\n2 - Demonstrar controle e adequação do uso de seu corpo em brincadeiras e jogos;\n\n3 - Criar movimentos, gestos, olhares e mímicas em brincadeiras, jogos e atividades artísticas;\n\n4 - Adotar hábitos de autocuidado relacionados a higiene, alimentação, conforto e aparência;\n\n5 - Coordenar suas habilidades manuais no atendimento adequado a seus interesses e em situações diversas."
+            android:textColor="#000000"
+            android:textSize="18sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

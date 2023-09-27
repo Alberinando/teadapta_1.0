@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#deebf7"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/corpo_gestos_e_movimentos"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:justificationMode="inter_word"
+            android:text="@string/professor_de_acordo_com_a_base_nacional_comum_curricular_brasil_2018_voc_deve"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:justificationMode="inter_word"
+            android:text="@string/_8226_oportunizar_a_explora_o_do_mundo_do_espa_o_e_dos_objetos_pela_crian_a_n_nestabelecer_rela_es_e_viv_ncias_que_produzem_conhecimentos_sobre_si_sobre_o_outro_e_sobre_o_universo_social_e_cultural_n_n_8226_possibilitar_o_conhecimento_e_reconhecimento_das_sensa_es_e_fun_es_de_seu_corpo_e_com_seus_gestos_e_movimentos_identificar_suas_potencialidades_e_seus_limites_n_n_8226_promover_oportunidades_ricas_para_que_as_crian_as_possam_com_seus_pares_explorar_e_vivenciar_um_amplo_repert_rio_de_movimentos_gestos_olhares_sons_e_m_micas_com_o_corpo_para_descobrir_variados_modos_de_ocupa_o_e_uso_do_espa_o_com_o_corpo"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
