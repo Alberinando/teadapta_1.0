@@ -2,6 +2,7 @@ package com.example.teadapta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -75,5 +76,13 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
         } else {
             layout.setVisibility(View.GONE);
         }
+    }
+    public void Back (View view){
+        Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional2.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional.class);
+        startActivity(intent);
+    }
+    public void submit (View view){
+        Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional2.this, com.example.teadapta.anamneseDesenvolvimentoExercicio.class);
+        startActivity(intent);
     }
 }

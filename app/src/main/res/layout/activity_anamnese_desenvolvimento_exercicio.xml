@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#deebf7"
+    tools:context=".anamnese"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#deebf7"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/anamnese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/anamnese"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pr_tica_de_exerc_cio_f_sico"
+            android:textColor="#000000"
+            android:textAlignment="center" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/h_limita_es_para_fazer_exerc_cios"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextField"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/descrever"
+            android:visibility="gone"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subescolha"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                android:onClick="submit"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/a_crian_a_est_se_exercitando_atualmente"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/checkBoxGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/contorno"
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:visibility="gone">
+
+            <CheckBox
+                android:id="@+id/seisMeses"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/menos_de_6_meses"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/Entre"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/entre_seis_meses_a_1_ano"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/Mais"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mais_de_1_ano"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextField2"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/qual_is"
+            android:visibility="gone"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subescolha2"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                android:onClick="submit"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextField3"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/frequ_ncia"
+            android:visibility="gone"
+            android:textColor="#000000"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000"
+            app:suffixText="Vezes"
+            app:suffixTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subescolha3"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                android:onClick="submit"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/por_que_seu_filho_pratica_exerc_cios_f_sicos"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextField4"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/descrever"
+            android:visibility="gone"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subescolha4"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                android:onClick="submit"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/existem_reas_em_casa_para_a_crian_a_brincar"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/checkBoxGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/contorno"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Qual é sua opinião sobre o uso de tecnologia pelo seu filho?" />
+
+            <CheckBox
+                android:id="@+id/controlado"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/controlado"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/frequente"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/frequente"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/muito"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/muito_frequente"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/raramente"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/raramente"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/nao"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Não usa"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/voltar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_button"
+                android:gravity="center|center_horizontal"
+                android:onClick="Back"
+                android:text="@string/voltar"
+                tools:ignore="VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/proximo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_button"
+                android:gravity="center|center_horizontal"
+                android:onClick="submit"
+                android:text="@string/cadastrar"
+                tools:ignore="VisualLintButtonSize" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

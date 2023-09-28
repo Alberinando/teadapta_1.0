@@ -122,11 +122,33 @@ public class anamnese extends AppCompatActivity {
         escolha = findViewById(R.id.escolha);
         escolaridade = findViewById(R.id.escolaridade);
         escolar = findViewById(R.id.escolar);
+//<<<<<<< HEAD
         //editTextPeso idi=Fields ide=Field
         editTextNome = findViewById(R.id.input);
         editTextIdade = findViewById(R.id.Idade);
         editTextPeso = findViewById(R.id.Fields);
         editTextAltura = findViewById(R.id.altura2);
+//=======
+        /*
+        // outlinedTextField = findViewById(R.id.outlinedTextField);
+        TextInputLayout outlinedTextField = findViewById(R.id.outlinedTextField);
+        editTextNome = (TextInputEditText) outlinedTextField.getEditText();
+
+        TextInputLayout textdata = findViewById(R.id.textdata);
+        editTextData = (TextInputEditText) textdata.getEditText();
+
+        TextInputLayout textIdade = findViewById(R.id.textIdade);
+        editTextIdade = (TextInputEditText) textIdade.getEditText();
+
+        TextInputLayout Field = findViewById(R.id.Field);
+        editTextFi = (TextInputEditText) Field.getEditText();
+
+        TextInputLayout altura = findViewById(R.id.altura);
+        editTextAltura = (TextInputEditText) altura.getEditText();
+        //...................................................................
+
+         */
+//>>>>>>> 06de745b5ad727cf953d53a8d40f727d408730c8
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             dataEditText.setTextCursorDrawable(R.drawable.custom_cursor);
@@ -152,6 +174,7 @@ public class anamnese extends AppCompatActivity {
 
     }
 
+//<<<<<<< HEAD
     private boolean validateFields() {
         boolean valid = true;
 
@@ -178,7 +201,17 @@ public class anamnese extends AppCompatActivity {
                 nomesLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
-        // Ouvinte de texto para dataEditText
+        if (editTextNome.getText().toString().trim().isEmpty()) {
+            if (!editTextNome.isFocused()) {
+                nomesLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                nomesLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                nomesLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                nomesLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            nomesLayout.setError(null);
+        }
         editTextIdade.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -195,6 +228,17 @@ public class anamnese extends AppCompatActivity {
                 idadeLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
+        if (editTextIdade.getText().toString().trim().isEmpty()) {
+            if (!editTextIdade.isFocused()) {
+                idadeLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                idadeLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                idadeLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                idadeLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            idadeLayout.setError(null);
+        }
         editTextPeso.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -211,6 +255,17 @@ public class anamnese extends AppCompatActivity {
                 pesoLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
+        if (editTextPeso.getText().toString().trim().isEmpty()) {
+            if (!editTextPeso.isFocused()) {
+                pesoLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                pesoLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                pesoLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                pesoLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            pesoLayout.setError(null);
+        }
         editTextAltura.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -227,41 +282,6 @@ public class anamnese extends AppCompatActivity {
                 alturaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
-
-        if (editTextNome.getText().toString().trim().isEmpty()) {
-            if (!editTextNome.isFocused()) {
-                nomesLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-                nomesLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-                nomesLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-                nomesLayout.setError("Campo vazio");
-            }
-            valid = false;
-        } else {
-            nomesLayout.setError(null);
-        }
-        
-        if (editTextIdade.getText().toString().trim().isEmpty()) {
-            if (!editTextIdade.isFocused()) {
-                idadeLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-                idadeLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-                idadeLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-                idadeLayout.setError("Campo vazio");
-            }
-            valid = false;
-        } else {
-            idadeLayout.setError(null);
-        }
-        if (editTextPeso.getText().toString().trim().isEmpty()) {
-            if (!editTextPeso.isFocused()) {
-                pesoLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-                pesoLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-                pesoLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-                pesoLayout.setError("Campo vazio");
-            }
-            valid = false;
-        } else {
-            pesoLayout.setError(null);
-        }
         if (editTextAltura.getText().toString().trim().isEmpty()) {
             if (!editTextAltura.isFocused()) {
                 alturaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
@@ -272,19 +292,92 @@ public class anamnese extends AppCompatActivity {
             valid = false;
         } else {
             alturaLayout.setError(null);
-        }
 
+        }
         return valid;
     }
-
     public void submit(View view) {
-      
+
         if (validateFields()) {
             // Se tudo estiver válido, avança para a próxima página
             Intent intent = new Intent(anamnese.this, anamnesePais.class);
             startActivity(intent);
         }
     }
+//=======
+            /*
+    public void submit(View view) {
+        // Obtém os valores dos campos de entrada
+        String nome = editTextNome.getText().toString().trim();
+        String data = editTextData.getText().toString().trim();
+        String idade = editTextIdade.getText().toString().trim();
+        String fi = editTextFi.getText().toString().trim();
+        String altura = editTextAltura.getText().toString().trim();
+
+        String escolars = escolar.getText().toString().trim();
+        String escolaridades = escolaridade.getText().toString().trim();
+        String escolhas = escolha.getText().toString().trim();
+
+        boolean camposPreenchidosCorretamente = true;
+
+        // Verifica se algum campo obrigatório não está preenchido corretamente
+        if (nome.isEmpty()) {
+            editTextNome.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        }
+
+        if (data.isEmpty()) {
+            editTextData.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        }
+        if (idade.isEmpty()) {
+            editTextIdade.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        }
+
+        if (fi.isEmpty()) {
+            editTextFi.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        }
+
+        if (altura.isEmpty()) {
+            editTextAltura.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        }
+
+        // Verifica se as escolhas são inválidas
+        if (!escolars.equals("Particular") && !escolars.equals("Pública")) {
+            escolar.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        }
+
+        if (!escolhas.equals("Sim") && !escolhas.equals("Não")) {
+            escolha.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+>>>>>>> 06de745b5ad727cf953d53a8d40f727d408730c8
+        }
+
+         */
+            /*
+        if (!escolaridades.equals("Educação infantil completo") &&
+                !escolaridades.equals("Educação infantil incompleto") &&
+                !escolaridades.equals("Ensino fundamental completo") &&
+                !escolaridades.equals("Ensino fundamental incompleto") &&
+                !escolaridades.equals("Ensino médio completo") &&
+                !escolaridades.equals("Ensino médio incompleto")) {
+            escolaridade.setBackgroundResource(R.drawable.edittext_contorno);
+            camposPreenchidosCorretamente = false;
+        }
+
+        // Verifica se todos os campos estão preenchidos corretamente
+        if (camposPreenchidosCorretamente) {
+            // Se tudo estiver válido, avança para a próxima página
+            Intent intent = new Intent(anamnese.this, anamnesePais.class);
+            startActivity(intent);
+        }
+
+             */
+
 
 }
 //Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
