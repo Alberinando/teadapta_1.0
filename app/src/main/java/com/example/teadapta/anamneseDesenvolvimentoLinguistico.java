@@ -18,7 +18,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
     private TextInputEditText inputEditText;
-    private TextInputEditText dataEditText;
+    private TextInputEditText dataEditText,vocalizouEditText,
+    primeirasPalavrasdataEditText,frasedataEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,9 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
 
         inputEditText = findViewById(R.id.respondeuSom);
         dataEditText = findViewById(R.id.voz);
+        vocalizouEditText = findViewById(R.id.Field3_);
+        primeirasPalavrasdataEditText = findViewById(R.id.Field4_);
+        frasedataEditText = findViewById(R.id.Field5_);
 
         //Escolha de Sim ou Não
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
@@ -69,6 +73,9 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
         boolean valid = true;
         TextInputLayout inputLayout = findViewById(R.id.Field);
         TextInputLayout dataLayout = findViewById(R.id.Field2);
+        TextInputLayout vocalizouLayout = findViewById(R.id.Field3);
+        TextInputLayout primeirasPalavrasdataLayout = findViewById(R.id.Field4);
+        TextInputLayout rasedataLayout = findViewById(R.id.Field5);
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
 
@@ -93,8 +100,17 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
                 inputLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
-
-        // Ouvinte de texto para dataEditText
+        if (inputEditText.getText().toString().trim().isEmpty()) {
+            if (!inputEditText.isFocused()) {
+                inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                inputLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            inputLayout.setError(null);
+        }
         dataEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -115,19 +131,6 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
                 dataLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
-
-        if (inputEditText.getText().toString().trim().isEmpty()) {
-            if (!inputEditText.isFocused()) {
-                inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-                inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-                inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-                inputLayout.setError("Campo vazio");
-            }
-            valid = false;
-        } else {
-            inputLayout.setError(null);
-        }
-
         if (dataEditText.getText().toString().trim().isEmpty()) {
             if (!dataEditText.isFocused()) {
                 dataLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
@@ -138,6 +141,90 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
             valid = false;
         } else {
             dataLayout.setError(null);
+        }
+        vocalizouEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+        
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+        
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                vocalizouLayout.setError(null); // Remove a mensagem de erro
+                vocalizouLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                vocalizouLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                vocalizouLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+        
+        if (vocalizouEditText.getText().toString().trim().isEmpty()) {
+            if (!vocalizouEditText.isFocused()) {
+                vocalizouLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                vocalizouLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                vocalizouLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                vocalizouLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            vocalizouLayout.setError(null);
+        }
+        primeirasPalavrasdataEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+        
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+        
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                primeirasPalavrasdataLayout.setError(null); // Remove a mensagem de erro
+                primeirasPalavrasdataLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                primeirasPalavrasdataLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                primeirasPalavrasdataLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+        
+        if (primeirasPalavrasdataEditText.getText().toString().trim().isEmpty()) {
+            if (!primeirasPalavrasdataEditText.isFocused()) {
+                primeirasPalavrasdataLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                primeirasPalavrasdataLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                primeirasPalavrasdataLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                primeirasPalavrasdataLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            primeirasPalavrasdataLayout.setError(null);
+        }
+        frasedataEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+        
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+        
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                rasedataLayout.setError(null); // Remove a mensagem de erro
+                rasedataLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                rasedataLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                rasedataLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+        
+        if (frasedataEditText.getText().toString().trim().isEmpty()) {
+            if (!frasedataEditText.isFocused()) {
+                rasedataLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                rasedataLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                rasedataLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                rasedataLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            rasedataLayout.setError(null);
         }
 
         return valid;

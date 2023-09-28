@@ -118,6 +118,7 @@
             app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field3_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -145,6 +146,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field4_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -173,6 +175,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field5_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

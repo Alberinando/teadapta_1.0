@@ -1,6 +1,8 @@
 package com.example.teadapta;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +10,8 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -33,7 +37,7 @@ public class anamnese extends AppCompatActivity {
     private AutoCompleteTextView escolha, escolaridade, escolar;
 
 
-    private TextInputEditText editTextNome, editTextData,editTextIdade,editTextFi,editTextAltura;
+    private TextInputEditText editTextNome, editTextIdade, editTextPeso,editTextAltura;
     //private Spinner escolar;
 
     @Override
@@ -115,36 +119,14 @@ public class anamnese extends AppCompatActivity {
             }
         });
 
-
         escolha = findViewById(R.id.escolha);
         escolaridade = findViewById(R.id.escolaridade);
         escolar = findViewById(R.id.escolar);
-
+        //editTextPeso idi=Fields ide=Field
         editTextNome = findViewById(R.id.input);
-        editTextData = findViewById(R.id.data);
         editTextIdade = findViewById(R.id.Idade);
-        editTextFi = findViewById(R.id.MyTextInputEditText);
-        editTextAltura = findViewById(R.id.MyTextInputEditText);
-
-        // outlinedTextField = findViewById(R.id.outlinedTextField);
-        /* 
-        TextInputLayout outlinedTextField = findViewById(R.id.outlinedTextField);
-        editTextNome = (TextInputEditText) outlinedTextField.getEditText();
-
-        TextInputLayout textdata = findViewById(R.id.textdata);
-        editTextData = (TextInputEditText) textdata.getEditText();
-
-        TextInputLayout textIdade = findViewById(R.id.textIdade);
-        editTextIdade = (TextInputEditText) textIdade.getEditText();
-
-        TextInputLayout Field = findViewById(R.id.Field);
-        editTextFi = (TextInputEditText) Field.getEditText();
-
-        TextInputLayout altura = findViewById(R.id.altura);
-        editTextAltura = (TextInputEditText) altura.getEditText();
-        */
-        //...................................................................
-
+        editTextPeso = findViewById(R.id.Fields);
+        editTextAltura = findViewById(R.id.altura2);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             dataEditText.setTextCursorDrawable(R.drawable.custom_cursor);
@@ -172,238 +154,124 @@ public class anamnese extends AppCompatActivity {
 
     private boolean validateFields() {
         boolean valid = true;
-        TextInputLayout inputLayout = findViewById(R.id.outlinedTextField);
-        TextInputLayout dataLayout = findViewById(R.id.textdata);
+
+        TextInputLayout nomesLayout = findViewById(R.id.outlinedTextField);
         TextInputLayout idadeLayout = findViewById(R.id.textIdade);
-        TextInputLayout MyTextInputEditTextLayout = findViewById(R.id.Field);
-        TextInputLayout MyTextInputEditTextLayout= findViewById(R.id.altura);
-        AutoCompleteTextView escolhaLayout = findViewById(R.id.InputLayout);
-        AutoCompleteTextView escolaridadeLayout = findViewById(R.id.Input);
-        AutoCompleteTextView escolarLayout = findViewById(R.id.InputEscola);
+        TextInputLayout pesoLayout = findViewById(R.id.Field);
+        TextInputLayout alturaLayout = findViewById(R.id.altura); 
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
 
-        // Ouvinte de texto para inputEditText
-        //editTextNome, editTextData,editTextIdade,editTextFi,editTextAltura
-        //escolha, escolaridade, escolar
         editTextNome.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer antes da mudança de texto
-            }
-
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}   // Nada a fazer antes da mudança de texto
+            
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer durante a mudança de texto
-            }
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
             @Override
             public void afterTextChanged(Editable editable) {
                 // Chamado após o texto ser alterado
-                inputLayout.setError(null); // Remove a mensagem de erro
-                inputLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
-                inputLayout.setErrorTextColor(null); // Remove a cor do texto de erro
-                inputLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                nomesLayout.setError(null); // Remove a mensagem de erro
+                nomesLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                nomesLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                nomesLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
-
         // Ouvinte de texto para dataEditText
-        editTextData.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer antes da mudança de texto
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer durante a mudança de texto
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                // Chamado após o texto ser alterado
-                dataLayout.setError(null); // Remove a mensagem de erro
-                dataLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
-                dataLayout.setErrorTextColor(null); // Remove a cor do texto de erro
-                dataLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
-            }
-        });
         editTextIdade.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer antes da mudança de texto
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer durante a mudança de texto
-            }
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
             @Override
             public void afterTextChanged(Editable editable) {
                 // Chamado após o texto ser alterado
-                inputLayout.setError(null); // Remove a mensagem de erro
-                inputLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
-                inputLayout.setErrorTextColor(null); // Remove a cor do texto de erro
-                inputLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                idadeLayout.setError(null); // Remove a mensagem de erro
+                idadeLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                idadeLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                idadeLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
-        editTextFi.addTextChangedListener(new TextWatcher() {
+        editTextPeso.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer antes da mudança de texto
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer durante a mudança de texto
-            }
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
             @Override
             public void afterTextChanged(Editable editable) {
                 // Chamado após o texto ser alterado
-                inputLayout.setError(null); // Remove a mensagem de erro
-                inputLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
-                inputLayout.setErrorTextColor(null); // Remove a cor do texto de erro
-                inputLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                pesoLayout.setError(null); // Remove a mensagem de erro
+                pesoLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                pesoLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                pesoLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
         editTextAltura.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer antes da mudança de texto
-            }
-
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+        
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer durante a mudança de texto
-            }
-
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+        
             @Override
             public void afterTextChanged(Editable editable) {
                 // Chamado após o texto ser alterado
-                inputLayout.setError(null); // Remove a mensagem de erro
-                inputLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
-                inputLayout.setErrorTextColor(null); // Remove a cor do texto de erro
-                inputLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
-            }
-        });
-        escolha.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer antes da mudança de texto
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer durante a mudança de texto
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                // Chamado após o texto ser alterado
-                inputLayout.setError(null); // Remove a mensagem de erro
-                inputLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
-                inputLayout.setErrorTextColor(null); // Remove a cor do texto de erro
-                inputLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
-            }
-        });
-        escolaridade.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer antes da mudança de texto
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer durante a mudança de texto
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                // Chamado após o texto ser alterado
-                inputLayout.setError(null); // Remove a mensagem de erro
-                inputLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
-                inputLayout.setErrorTextColor(null); // Remove a cor do texto de erro
-                inputLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
-            }
-        });
-        escolar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer antes da mudança de texto
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Nada a fazer durante a mudança de texto
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                // Chamado após o texto ser alterado
-                inputLayout.setError(null); // Remove a mensagem de erro
-                inputLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
-                inputLayout.setErrorTextColor(null); // Remove a cor do texto de erro
-                inputLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                alturaLayout.setError(null); // Remove a mensagem de erro
+                alturaLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                alturaLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                alturaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
             }
         });
 
         if (editTextNome.getText().toString().trim().isEmpty()) {
-            if (!inputEditText.isFocused()) {
-                inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-                inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-                inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-                inputLayout.setError("Campo vazio");
+            if (!editTextNome.isFocused()) {
+                nomesLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                nomesLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                nomesLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                nomesLayout.setError("Campo vazio");
             }
             valid = false;
         } else {
-            inputLayout.setError(null);
+            nomesLayout.setError(null);
         }
-
-        if (editTextData.getText().toString().trim().isEmpty()) {
-            if (!dataEditText.isFocused()) {
-                dataLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-                dataLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-                dataLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-                dataLayout.setError("Campo vazio");
-            }
-            valid = false;
-        } else {
-            dataLayout.setError(null);
-        }
+        
         if (editTextIdade.getText().toString().trim().isEmpty()) {
-            if (!inputEditText.isFocused()) {
-                inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-                inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-                inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-                inputLayout.setError("Campo vazio");
+            if (!editTextIdade.isFocused()) {
+                idadeLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                idadeLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                idadeLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                idadeLayout.setError("Campo vazio");
             }
             valid = false;
         } else {
-            inputLayout.setError(null);
+            idadeLayout.setError(null);
         }
-        if (editTextFi.getText().toString().trim().isEmpty()) {
-            if (!inputEditText.isFocused()) {
-                inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-                inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-                inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-                inputLayout.setError("Campo vazio");
+        if (editTextPeso.getText().toString().trim().isEmpty()) {
+            if (!editTextPeso.isFocused()) {
+                pesoLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                pesoLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                pesoLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                pesoLayout.setError("Campo vazio");
             }
             valid = false;
         } else {
-            inputLayout.setError(null);
+            pesoLayout.setError(null);
         }
         if (editTextAltura.getText().toString().trim().isEmpty()) {
-            if (!inputEditText.isFocused()) {
-                inputLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-                inputLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-                inputLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-                inputLayout.setError("Campo vazio");
+            if (!editTextAltura.isFocused()) {
+                alturaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                alturaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                alturaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                alturaLayout.setError("Campo vazio");
             }
             valid = false;
         } else {
-            inputLayout.setError(null);
+            alturaLayout.setError(null);
         }
 
         return valid;

@@ -49,9 +49,12 @@
             app:hintTextAppearance="@style/FloatingHint"
             app:hintTextColor="#000000"
             app:suffixText="Meses"
-            app:suffixTextColor="@color/black">
+            app:suffixTextColor="@color/black"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,6 +82,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field2_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,6 +110,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field3_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -133,6 +138,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field4_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -160,6 +166,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field5_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -187,6 +194,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field6_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -214,6 +222,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field7_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -240,6 +249,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field8_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -266,6 +276,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field9_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -292,6 +303,7 @@
             app:suffixTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Field10_"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
