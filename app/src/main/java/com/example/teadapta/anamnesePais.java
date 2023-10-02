@@ -1,5 +1,6 @@
 package com.example.teadapta;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -12,9 +13,14 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class anamnesePais extends AppCompatActivity {
 
@@ -25,6 +31,55 @@ public class anamnesePais extends AppCompatActivity {
     editTextFormacaoAcademica, editTextProfissaoMae,editTextIdadePai,editTextNomePai,
     editTextTelefonePai,editTextFormacaoAcademicaPai,editTextProfissaoPai,editTextFamilia
     ,editTextEmail;
+
+    public TextInputEditText getEditTextIdadeMae() {
+        return editTextIdadeMae;
+    }
+
+    public TextInputEditText getEditTextNomeMae() {
+        return editTextNomeMae;
+    }
+
+    public TextInputEditText getEditTextTelefoneMae() {
+        return editTextTelefoneMae;
+    }
+
+    public TextInputEditText getEditTextFormacaoAcademica() {
+        return editTextFormacaoAcademica;
+    }
+
+    public TextInputEditText getEditTextProfissaoMae() {
+        return editTextProfissaoMae;
+    }
+
+    public TextInputEditText getEditTextIdadePai() {
+        return editTextIdadePai;
+    }
+
+    public TextInputEditText getEditTextNomePai() {
+        return editTextNomePai;
+    }
+
+    public TextInputEditText getEditTextTelefonePai() {
+        return editTextTelefonePai;
+    }
+
+    public TextInputEditText getEditTextFormacaoAcademicaPai() {
+        return editTextFormacaoAcademicaPai;
+    }
+
+    public TextInputEditText getEditTextProfissaoPai() {
+        return editTextProfissaoPai;
+    }
+
+    public TextInputEditText getEditTextFamilia() {
+        return editTextFamilia;
+    }
+
+    public TextInputEditText getEditTextEmail() {
+        return editTextEmail;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +155,16 @@ public class anamnesePais extends AppCompatActivity {
         TextInputLayout profissaoPaiLayout = findViewById(R.id.outlinedTextFieldprofissao);
         TextInputLayout familiaLayout = findViewById(R.id.outlinedTextFieldpFamiliar);
         TextInputLayout emailLayout = findViewById(R.id.outlinedTextFieldpEmail);
+        /*
+        anamnese instanciaAnamnese = new anamnese();
+
+        //AutoCompleteTextView escolha = instanciaAnamnese.getEscolha();
+        TextInputEditText editTextNome = instanciaAnamnese.getEditTextNome();
+        TextInputEditText editTextIdade = instanciaAnamnese.getEditTextIdade();
+        TextInputEditText editTextPeso = instanciaAnamnese.getEditTextPeso();
+        TextInputEditText editTextAltura = instanciaAnamnese.getEditTextAltura();
+
+         */
         
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
@@ -449,10 +514,21 @@ public class anamnesePais extends AppCompatActivity {
 
     public void submit (View view){
         if (validateFields()) {
-            // Se tudo estiver válido, avança para a próxima página
+
+            String nomeMae = editTextNomeMae.getText().toString().trim();
+            int idadeMae = Integer.parseInt(editTextIdadeMae.getText().toString().trim());
+
+            DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+            dadosCompartilhados.setNomeMae(nomeMae);
+            dadosCompartilhados.setIdadeMae(idadeMae);
+
             Intent intent = new Intent(anamnesePais.this, com.example.teadapta.anamneseDesenvolvimento.class);
             startActivity(intent);
+
+
         }
+
+
         
     }
 

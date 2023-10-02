@@ -1,5 +1,6 @@
 package com.example.teadapta;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,8 +11,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
@@ -26,7 +32,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         escolha2 = findViewById(R.id.escolha2);
         escolha3 = findViewById(R.id.escolha3);
         escolha4 = findViewById(R.id.escolha4);
-        escolha5 = findViewById(R.id.escolha5);
+       // escolha5 = findViewById(R.id.escolha5);
         religiaoLayout = findViewById(R.id.TextField);
         religiaoLayout2 = findViewById(R.id.TextField2);
         religiaoLayout3 = findViewById(R.id.TextField3);
@@ -155,7 +161,48 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
     }
 
     public void Back (View view){
+
         Intent intent = new Intent(anamneseDesenvolvimentoExercicio.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional2.class);
         startActivity(intent);
     }
-}
+    public void submit (View view) {
+        DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+        String nome = dadosCompartilhados.getNome();
+        int idade = dadosCompartilhados.getIdade();
+        double peso = dadosCompartilhados.getPeso();
+        double altura = dadosCompartilhados.getAltura();
+
+        String nomeMae = dadosCompartilhados.getNomeMae();
+        int idadeMae = dadosCompartilhados.getIdadeMae();
+
+
+        String escolhaValue = dadosCompartilhados.getEscolhaValue();
+        String escolaridadeValue = dadosCompartilhados.getEscolaridadeValue();
+        String escolarValue = dadosCompartilhados.getEscolarValue();
+
+        // Crie um objeto Usuario com os valores obtidos
+        Usuario usuario = new Usuario(nome, idade, peso, altura, escolhaValue, escolaridadeValue, escolarValue,nomeMae,idadeMae);
+
+        // Inicialize o Firestore
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Crie um novo documento na coleção "usuarios" com um ID automático
+        db.collection("usuarios")
+                .add(usuario)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(anamneseDesenvolvimentoExercicio.this, "Dados inseridos com sucesso.", Toast.LENGTH_SHORT).show();
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(anamneseDesenvolvimentoExercicio.this, "Erro ao inserir os dados: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+        }
+
+    }
+
