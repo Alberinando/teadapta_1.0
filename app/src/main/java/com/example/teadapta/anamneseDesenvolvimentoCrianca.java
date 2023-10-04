@@ -72,8 +72,7 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
         escolha8.setAdapter(adapterEscolha8);
     }
     public void Back (View view){
-        Intent intent = new Intent(anamneseDesenvolvimentoCrianca.this, com.example.teadapta.anamneseDesenvolvimento.class);
-        startActivity(intent);
+        super.onBackPressed();
     }
 
     public void submit (View view){

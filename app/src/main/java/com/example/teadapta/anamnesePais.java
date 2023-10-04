@@ -4,6 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.telephony.PhoneNumberFormattingTextWatcher;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
+
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -99,8 +104,14 @@ public class anamnesePais extends AppCompatActivity {
         editTextFormacaoAcademicaPai = findViewById(R.id.formacao);
         editTextProfissaoPai = findViewById(R.id.profissao);
         editTextFamilia = findViewById(R.id.familiar);
-        editTextEmail = findViewById(R.id.Email); 
+        editTextEmail = findViewById(R.id.Email);
 
+        EditText phoneNumberEditText = findViewById(R.id.NumberMae);
+        EditText phoneNumberEditTextPAI = findViewById(R.id.Number);
+        PhoneNumberFormattingTextWatcher phoneNumberWatcher = new PhoneNumberFormattingTextWatcher("BR");
+        phoneNumberEditText.addTextChangedListener(phoneNumberWatcher);
+        PhoneNumberFormattingTextWatcher phoneNumberWatcher2 = new PhoneNumberFormattingTextWatcher("BR");
+        phoneNumberEditTextPAI.addTextChangedListener(phoneNumberWatcher2);
 
         //Escolha de Sim ou Não
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
@@ -139,7 +150,7 @@ public class anamnesePais extends AppCompatActivity {
         
     }
 
-    
+
     private boolean validateFields() {
         boolean valid = true; //editTextIdadeMae
 
@@ -507,9 +518,9 @@ public class anamnesePais extends AppCompatActivity {
         return valid;
     }
 
+
     public void Back (View view){
-        Intent intent = new Intent(anamnesePais.this, com.example.teadapta.anamnese.class);
-        startActivity(intent);
+        super.onBackPressed();
     }
 
     public void submit (View view){
@@ -527,11 +538,5 @@ public class anamnesePais extends AppCompatActivity {
 
 
         }
-
-
-        
     }
-
-
-
 }

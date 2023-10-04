@@ -345,8 +345,7 @@ public class anamneseDesenvolvimento extends AppCompatActivity {
     }
     
     public void Back (View view){
-        Intent intent = new Intent(anamneseDesenvolvimento.this, com.example.teadapta.anamnesePais.class);
-        startActivity(intent);
+        super.onBackPressed();
     }
 
     public void submit (View view){

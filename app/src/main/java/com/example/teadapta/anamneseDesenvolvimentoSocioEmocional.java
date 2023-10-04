@@ -118,8 +118,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
 
     }
     public void Back (View view){
-        Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional.this, com.example.teadapta.anamneseDesenvolvimentoLinguistico.class);
-        startActivity(intent);
+        super.onBackPressed();
     }
     public void submit (View view){
         Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional2.class);

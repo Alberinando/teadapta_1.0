@@ -331,7 +331,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:text="Qual é sua opinião sobre o uso de tecnologia pelo seu filho?" />
+                android:text="Qual é sua opinião sobre o uso de tecnologia pelo seu filho?"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/black"
+                android:textColorLink="@color/black" />
 
             <CheckBox
                 android:id="@+id/controlado"

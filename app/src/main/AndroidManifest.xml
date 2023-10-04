@@ -43,12 +43,6 @@
             android:name=".anamnese"
             android:exported="false" />
         <activity
-            android:name=".anamnese3"
-            android:exported="false" />
-        <activity
-            android:name=".anamnese2"
-            android:exported="false" />
-        <activity
             android:name=".observacao"
             android:exported="false" />
         <activity
@@ -56,9 +50,6 @@
             android:exported="false" />
         <activity
             android:name=".direcionamento"
-            android:exported="false" />
-        <activity
-            android:name=".avaliacao_de_ambiente"
             android:exported="false" />
         <activity
             android:name=".Conhecendo_tea"

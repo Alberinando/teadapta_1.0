@@ -230,8 +230,7 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
         return valid;
     }
     public void Back (View view){
-        Intent intent = new Intent(anamneseDesenvolvimentoLinguistico.this, com.example.teadapta.anamneseDesenvolvimentoCrianca.class);
-        startActivity(intent);
+        super.onBackPressed();
     }
 
     public void submit (View view){

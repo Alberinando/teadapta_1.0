@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
-    private AutoCompleteTextView escolha, escolha2, escolha3, escolha4, escolha5;
+    private AutoCompleteTextView escolha, escolha2, escolha3, escolha4;
     private TextInputLayout religiaoLayout, religiaoLayout2, religiaoLayout3, religiaoLayout4;
 
     @Override
@@ -32,7 +32,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         escolha2 = findViewById(R.id.escolha2);
         escolha3 = findViewById(R.id.escolha3);
         escolha4 = findViewById(R.id.escolha4);
-       // escolha5 = findViewById(R.id.escolha5);
+
         religiaoLayout = findViewById(R.id.TextField);
         religiaoLayout2 = findViewById(R.id.TextField2);
         religiaoLayout3 = findViewById(R.id.TextField3);
@@ -64,7 +64,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String escolhaValue = s.toString().trim();
-                updateLayoutVisibility(escolhaValue, religiaoLayout4);
+                updateLayoutVisibility(escolhaValue, religiaoLayout);
             }
 
             @Override

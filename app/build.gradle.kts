@@ -33,6 +33,9 @@ android {
 }
 
 dependencies {
+
+    implementation ("com.github.pires:obd-java-api:1.0");
+    implementation ("com.googlecode.libphonenumber:libphonenumber:8.12.32");
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     implementation("com.google.firebase:firebase-firestore")
     implementation ("com.google.firebase:firebase-core:20.0.0")
@@ -44,6 +47,4 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
-
 }
