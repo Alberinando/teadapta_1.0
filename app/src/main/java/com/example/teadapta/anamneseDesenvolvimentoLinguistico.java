@@ -16,17 +16,22 @@ import android.widget.AutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.xmlpull.v1.XmlPullParser;
+
 public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
     private TextInputEditText inputEditText;
     private TextInputEditText dataEditText,vocalizouEditText,
     primeirasPalavrasdataEditText,frasedataEditText;
+    private AutoCompleteTextView escolha;
+    private AutoCompleteTextView escolhaProblemasComunicacao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anamnese_desenvolvimento_linguistico);
 
-        AutoCompleteTextView escolha = findViewById(R.id.escolha);
+        escolhaProblemasComunicacao = findViewById(R.id.escolhaProblemasComunicacao);
 
         inputEditText = findViewById(R.id.respondeuSom);
         dataEditText = findViewById(R.id.voz);
@@ -38,10 +43,10 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, listaEscolha);
-        escolha.setAdapter(adapterEscolha);
+        escolhaProblemasComunicacao.setAdapter(adapterEscolha);
 
         // Adiciona um TextWatcher ao campo de escolha
-        escolha.addTextChangedListener(new TextWatcher() {
+        escolhaProblemasComunicacao.addTextChangedListener(new TextWatcher() {
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -235,6 +240,28 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
 
     public void submit (View view){
         if (validateFields()) {
+
+            String respondruSom = inputEditText.getText().toString().trim();
+            String respondeuSomHumano = dataEditText.getText().toString().trim();
+            String vocalizou = vocalizouEditText.getText().toString().trim();
+            String primeirasPalavras = primeirasPalavrasdataEditText.getText().toString().trim();
+            String frase = frasedataEditText.getText().toString().trim();
+            String problemasComunicacao = escolhaProblemasComunicacao.getText().toString();
+
+
+            DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+            dadosCompartilhados.setRespondruSom(respondruSom);
+            dadosCompartilhados.setRespondeuSomHumano(respondeuSomHumano);
+            dadosCompartilhados.setVocalizou(vocalizou);
+            dadosCompartilhados.setPrimeirasPalavras(primeirasPalavras);
+            dadosCompartilhados.setFrase(frase);
+            dadosCompartilhados.setProblemasComunicacao(problemasComunicacao);
+
+            //Foi identificado um erro nesse campo em baixo, sempre que ele é asionado
+            //o app fecha e não passa para proxima tela
+
+
+
             Intent intent = new Intent(anamneseDesenvolvimentoLinguistico.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional.class);
             startActivity(intent);
         }

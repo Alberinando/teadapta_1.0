@@ -11,12 +11,29 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.RadioButton;
 
+import android.util.Log;
+
+import org.xmlpull.v1.XmlPullParser;
+
 public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
+
+    private AutoCompleteTextView escolha, escolha2,escolha3,escolha4,escolha5,escolha6,escolha7, escolha8;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anamnese_desenvolvimento_crianca);
+        escolha = findViewById(R.id.escolha);
+        escolha2 = findViewById(R.id.escolha2);
+        escolha3 = findViewById(R.id.escolha3);
+        escolha4 = findViewById(R.id.escolha4);
+        escolha5 = findViewById(R.id.escolha5);
+        escolha6 = findViewById(R.id.escolha6);
+        escolha7 = findViewById(R.id.escolha7);
+        escolha8 = findViewById(R.id.escolha8);
+
         AutoCompleteTextView escolha = findViewById(R.id.escolha);
         AutoCompleteTextView escolha2 = findViewById(R.id.escolha2);
         AutoCompleteTextView escolha3 = findViewById(R.id.escolha3);
@@ -24,7 +41,7 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
         AutoCompleteTextView escolha5 = findViewById(R.id.escolha5);
         AutoCompleteTextView escolha6 = findViewById(R.id.escolha6);
         AutoCompleteTextView escolha7 = findViewById(R.id.escolha7);
-        AutoCompleteTextView escolha8 = findViewById(R.id.escolha8);
+        AutoCompleteTextView escolha_8 = findViewById(R.id.escolha8);
         RadioButton radioDestro = findViewById(R.id.radioDestro);
         RadioButton radioCanhoto = findViewById(R.id.radioCanhoto);
 
@@ -69,13 +86,35 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
         String[] listaEscolha8 = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha8 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, listaEscolha8);
-        escolha8.setAdapter(adapterEscolha8);
+        escolha_8.setAdapter(adapterEscolha8);
     }
     public void Back (View view){
         super.onBackPressed();
     }
 
     public void submit (View view){
+
+        String usoDuasMaos = escolha.getText().toString();
+        String dificuldadeCordenacao= escolha2.getText().toString();
+        String caiComFrequencia = escolha3.getText().toString();
+        String  apanhaObjetosSemDiculdade= escolha4.getText().toString();
+        String imitaGestosSimples= escolha5.getText().toString();
+        String arremessaObjetosSemDiculdade = escolha6.getText().toString();
+        String seguraObjetosSemDiculdade = escolha7.getText().toString();
+        String formasPeculiaresDeOrganizacaoMotora = escolha8.getText().toString();
+
+        DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+        dadosCompartilhados.setUsoDuasMaos (usoDuasMaos);
+        dadosCompartilhados.setDificuldadeCordenacao(dificuldadeCordenacao);
+        dadosCompartilhados.setCaiComFrequencia(caiComFrequencia);
+        dadosCompartilhados.setApanhaObjetosSemDiculdade(apanhaObjetosSemDiculdade);
+        dadosCompartilhados.setImitaGestosSimples(imitaGestosSimples);
+        dadosCompartilhados.setArremessaObjetosSemDiculdade(arremessaObjetosSemDiculdade);
+        dadosCompartilhados.setSeguraObjetosSemDiculdade(seguraObjetosSemDiculdade);
+        dadosCompartilhados.setFormasPeculiaresDeOrganizacaoMotora(formasPeculiaresDeOrganizacaoMotora);
+
+
+
         Intent intent = new Intent(anamneseDesenvolvimentoCrianca.this, com.example.teadapta.anamneseDesenvolvimentoLinguistico.class);
         startActivity(intent);
     }

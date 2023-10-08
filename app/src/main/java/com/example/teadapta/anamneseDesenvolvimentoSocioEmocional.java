@@ -13,12 +13,29 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.xmlpull.v1.XmlPullParser;
+
 public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
+
+    private AutoCompleteTextView escolha,escolha2,escolha3,escolha4,escolha5,escolha6,escolha7,escolha8,escolha9,
+            escolha00,escolha01;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anamnese_desenvolvimento_socio_emocional);
+
+        escolha = findViewById(R.id.escolha);
+        escolha2 = findViewById(R.id.escolha2);
+        escolha3 = findViewById(R.id.escolha3);
+        escolha4 = findViewById(R.id.escolha4);
+        escolha5 = findViewById(R.id.escolha5);
+        escolha6 = findViewById(R.id.escolha6);
+         escolha7 = findViewById(R.id.escolha7);
+        escolha8 = findViewById(R.id.escolha8);
+        escolha9 = findViewById(R.id.escolha9);
+        escolha00 = findViewById(R.id.escolha00);
+        escolha01 = findViewById(R.id.escolha01);
 
         AutoCompleteTextView escolha = findViewById(R.id.escolha);
         AutoCompleteTextView escolha2 = findViewById(R.id.escolha2);
@@ -121,6 +138,34 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
         super.onBackPressed();
     }
     public void submit (View view){
+
+        String reageFavoravelmentePessoa = escolha.getText().toString();
+        String brincaCriancaAdulto = escolha2.getText().toString();
+        String expressaNecessidades = escolha3.getText().toString();
+        String apresentaBirrasComFrequencia = escolha4.getText().toString();
+        String seAdaptaCasaEscola = escolha5.getText().toString();
+        String choraFrequencia = escolha6.getText().toString();
+        String fazAmigosFacilidade = escolha7.getText().toString();
+        String expressaEmocoesComFacilidade = escolha8.getText().toString();
+        String mudaComportamentoComEstranho = escolha9.getText().toString();
+        String reageFavoravelmenteNovidades = escolha00.getText().toString();
+        String procuraProtecaoPais = escolha01.getText().toString();
+
+        DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+        dadosCompartilhados.setReageFavoravelmentePessoa(reageFavoravelmentePessoa);
+        dadosCompartilhados.setBrincaCriancaAdulto(brincaCriancaAdulto);
+        dadosCompartilhados.setExpressaNecessidades(expressaNecessidades);
+        dadosCompartilhados.setApresentaBirrasComFrequenciae(apresentaBirrasComFrequencia);
+        dadosCompartilhados.setSeAdaptaCasaEscola(seAdaptaCasaEscola);
+        dadosCompartilhados.setChoraFrequencia(choraFrequencia);
+        dadosCompartilhados.setFazAmigosFacilidade(fazAmigosFacilidade);
+        dadosCompartilhados.setExpressaEmocoesComFacilidade(expressaEmocoesComFacilidade);
+        dadosCompartilhados.setMudaComportamentoComEstranho(mudaComportamentoComEstranho);
+        dadosCompartilhados.setReageFavoravelmenteNovidades(reageFavoravelmenteNovidades);
+        dadosCompartilhados.setProcuraProtecaoPais(procuraProtecaoPais);
+
+
+
         Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional2.class);
         startActivity(intent);
     }

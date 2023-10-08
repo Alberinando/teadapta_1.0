@@ -23,6 +23,9 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
     private AutoCompleteTextView escolha, escolha2, escolha3, escolha4;
     private TextInputLayout religiaoLayout, religiaoLayout2, religiaoLayout3, religiaoLayout4;
+    private String investeMomentosFamilia;
+    private String medosFobias;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,14 +177,92 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         String nomeMae = dadosCompartilhados.getNomeMae();
         int idadeMae = dadosCompartilhados.getIdadeMae();
+        String telefoneMae = dadosCompartilhados.getTelefoneMae();
+        String profissaoMae = dadosCompartilhados.getProfissaoMae();
+        String formacaoAcademica = dadosCompartilhados.getFormacaoAcademica();
+        String nomePai = dadosCompartilhados.getNomePai();
+        int idadePai = dadosCompartilhados.getIdadePai();
+        String telefonePai = dadosCompartilhados.getTelefonePai();
+        String formacaoAcademicaPai = dadosCompartilhados.getFormacaoAcademicaPai();
+        String profissaoPai = dadosCompartilhados.getProfissaoPai();
+
+        int andouSemApoio = dadosCompartilhados.getAndouSemApoio();
+        int sustentouCabeca = dadosCompartilhados.getSustentouCabeca();
+        int rolouLateralmente = dadosCompartilhados.getRolouLateralmente();
+        int virouSe = dadosCompartilhados.getVirouSe();
+        int sentouComApoio = dadosCompartilhados.getSentouComApoio();
+        int arrastou = dadosCompartilhados.getArrastou();
+        int engatinhou = dadosCompartilhados.getEngatinhou();
+        int ficouDePeComApoio = dadosCompartilhados.getFicouDePeComApoio();
+        int ficouDePeSemApoio = dadosCompartilhados.getFicouDePeSemApoio();
+        int andouComApoio = dadosCompartilhados.getAndouComApoio();
+
 
 
         String escolhaValue = dadosCompartilhados.getEscolhaValue();
         String escolaridadeValue = dadosCompartilhados.getEscolaridadeValue();
         String escolarValue = dadosCompartilhados.getEscolarValue();
 
+        String usoDuasMaos = dadosCompartilhados.getUsoDuasMaos();
+        String dificuldadeCordenacao = dadosCompartilhados.getDificuldadeCordenacao();
+        String caiComFrequencia= dadosCompartilhados.getCaiComFrequencia();
+        String apanhaObjetosSemDiculdade= dadosCompartilhados.getApanhaObjetosSemDiculdade();
+        String imitaGestosSimples= dadosCompartilhados.getImitaGestosSimples();
+        String arremessaObjetosSemDiculdade= dadosCompartilhados.getArremessaObjetosSemDiculdade();
+        String seguraObjetosSemDiculdade= dadosCompartilhados.getSeguraObjetosSemDiculdade();
+        String formasPeculiaresDeOrganizacaoMotora= dadosCompartilhados.getFormasPeculiaresDeOrganizacaoMotora();
+
+        String investeMomentosFamilia= dadosCompartilhados.getInvesteMomentosFamilia();
+        String medosFobias= dadosCompartilhados.getMedosFobias();
+
+        String frase = dadosCompartilhados.getFrase();
+        String primeirasPalavras = dadosCompartilhados.getPrimeirasPalavras();
+        String vocalizou= dadosCompartilhados.getVocalizou();
+        String respondeuSomHumano= dadosCompartilhados.getRespondeuSomHumano();
+        String respondruSom= dadosCompartilhados.getRespondruSom();
+        String problemasComunicacao= dadosCompartilhados.getProblemasComunicacao();
+
+        String reageFavoravelmentePessoa = dadosCompartilhados.getReageFavoravelmentePessoa();
+        String brincaCriancaAdulto = dadosCompartilhados.getBrincaCriancaAdulto();
+        String expressaNecessidades= dadosCompartilhados.getExpressaNecessidades();
+        String apresentaBirrasComFrequencia= dadosCompartilhados.getApresentaBirrasComFrequencia();
+        String seAdaptaCasaEscola= dadosCompartilhados.getImitaGestosSimples();
+        String choraFrequencia= dadosCompartilhados.getChoraFrequencia();
+        String fazAmigosFacilidade= dadosCompartilhados.getFazAmigosFacilidade();
+        String expressaEmocoesComFacilidade= dadosCompartilhados.getExpressaEmocoesComFacilidade();
+        String mudaComportamentoComEstranho= dadosCompartilhados.getMudaComportamentoComEstranho();
+        String reageFavoravelmenteNovidades= dadosCompartilhados.getReageFavoravelmenteNovidades();
+        String procuraProtecaoPais = dadosCompartilhados.getProcuraProtecaoPais();
+
+
+
+
+
+
         // Crie um objeto Usuario com os valores obtidos
-        Usuario usuario = new Usuario(nome, idade, peso, altura, escolhaValue, escolaridadeValue, escolarValue,nomeMae,idadeMae);
+        Usuario usuario = new Usuario(nome, idade, peso, altura, escolhaValue, escolaridadeValue, escolarValue,
+
+                nomeMae, idadeMae, telefoneMae, formacaoAcademica, profissaoMae, nomePai, idadePai, formacaoAcademicaPai,
+                profissaoPai, telefonePai
+
+                ,andouSemApoio, sustentouCabeca, rolouLateralmente, virouSe, sentouComApoio, arrastou,
+                engatinhou, ficouDePeComApoio, ficouDePeSemApoio, andouComApoio,
+
+                usoDuasMaos, dificuldadeCordenacao,caiComFrequencia,apanhaObjetosSemDiculdade,imitaGestosSimples,
+                arremessaObjetosSemDiculdade,seguraObjetosSemDiculdade,formasPeculiaresDeOrganizacaoMotora
+
+                ,frase, primeirasPalavras,vocalizou, respondeuSomHumano, respondruSom,
+                problemasComunicacao,
+
+                //......................Anamnese Desenvolvimento SocioEmocional................................
+
+                reageFavoravelmentePessoa, brincaCriancaAdulto,expressaNecessidades,
+                apresentaBirrasComFrequencia,seAdaptaCasaEscola, choraFrequencia,fazAmigosFacilidade,
+                 expressaEmocoesComFacilidade, mudaComportamentoComEstranho,reageFavoravelmenteNovidades,
+                 procuraProtecaoPais
+
+                , investeMomentosFamilia,medosFobias);
+
 
         // Inicialize o Firestore
         FirebaseFirestore db = FirebaseFirestore.getInstance();

@@ -26,6 +26,7 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
         escolha = findViewById(R.id.escolha);
         escolha2 = findViewById(R.id.escolha2);
         religiaoLayout = findViewById(R.id.TextField);
+       // lunedTextFieldDes2 = findViewById(R.id.outlinedTextField2);
 
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha = new ArrayAdapter<>(this,
@@ -81,6 +82,16 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
         super.onBackPressed();
     }
     public void submit (View view){
+
+        String medosFobias = escolha.getText().toString();
+        String investeMomentosFamilia = escolha2.getText().toString();
+        //String comoSeSenteLogePais = editTextNome.getText().toString().trim();
+        //String informacoesAdicioonais = editTextNome.getText().toString().trim();
+
+        DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+        dadosCompartilhados.setMedosFobias(medosFobias);
+        dadosCompartilhados.setInvesteMomentosFamilia(investeMomentosFamilia);
+
         Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional2.this, com.example.teadapta.anamneseDesenvolvimentoExercicio.class);
         startActivity(intent);
     }

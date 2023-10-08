@@ -30,13 +30,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class anamnesePais extends AppCompatActivity {
 
     private AutoCompleteTextView familiar;
-    private AutoCompleteTextView escolha;
+    private AutoCompleteTextView escolha2;
 
     private TextInputEditText editTextIdadeMae, editTextNomeMae, editTextTelefoneMae,
     editTextFormacaoAcademica, editTextProfissaoMae,editTextIdadePai,editTextNomePai,
     editTextTelefonePai,editTextFormacaoAcademicaPai,editTextProfissaoPai,editTextFamilia
     ,editTextEmail;
 
+    public AutoCompleteTextView getEscolhas() {
+        return escolha2;
+    }
     public TextInputEditText getEditTextIdadeMae() {
         return editTextIdadeMae;
     }
@@ -91,15 +94,15 @@ public class anamnesePais extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anamnese_pais);
 
-        escolha = findViewById(R.id.escolha);
+        escolha2 = findViewById(R.id.escolha);
 
         editTextIdadeMae = findViewById(R.id.IdadeMae);
         editTextNomeMae = findViewById(R.id.inputmae);
         editTextTelefoneMae = findViewById(R.id.NumberMae);
         editTextFormacaoAcademica = findViewById(R.id.formacaoMae);
         editTextProfissaoMae = findViewById(R.id.profissaoMae);
-        editTextIdadePai = findViewById(R.id.input);
-        editTextNomePai = findViewById(R.id.Idade);
+        editTextIdadePai = findViewById(R.id.Idade);
+        editTextNomePai = findViewById(R.id.input);
         editTextTelefonePai = findViewById(R.id.Number);
         editTextFormacaoAcademicaPai = findViewById(R.id.formacao);
         editTextProfissaoPai = findViewById(R.id.profissao);
@@ -117,11 +120,11 @@ public class anamnesePais extends AppCompatActivity {
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, listaEscolha);
-        escolha.setAdapter(adapterEscolha);
+        escolha2.setAdapter(adapterEscolha);
 
 
         // Adiciona um TextWatcher ao campo de escolha
-        escolha.addTextChangedListener(new TextWatcher() {
+        escolha2.addTextChangedListener(new TextWatcher() {
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -166,16 +169,7 @@ public class anamnesePais extends AppCompatActivity {
         TextInputLayout profissaoPaiLayout = findViewById(R.id.outlinedTextFieldprofissao);
         TextInputLayout familiaLayout = findViewById(R.id.outlinedTextFieldpFamiliar);
         TextInputLayout emailLayout = findViewById(R.id.outlinedTextFieldpEmail);
-        /*
-        anamnese instanciaAnamnese = new anamnese();
 
-        //AutoCompleteTextView escolha = instanciaAnamnese.getEscolha();
-        TextInputEditText editTextNome = instanciaAnamnese.getEditTextNome();
-        TextInputEditText editTextIdade = instanciaAnamnese.getEditTextIdade();
-        TextInputEditText editTextPeso = instanciaAnamnese.getEditTextPeso();
-        TextInputEditText editTextAltura = instanciaAnamnese.getEditTextAltura();
-
-         */
         
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
@@ -528,10 +522,34 @@ public class anamnesePais extends AppCompatActivity {
 
             String nomeMae = editTextNomeMae.getText().toString().trim();
             int idadeMae = Integer.parseInt(editTextIdadeMae.getText().toString().trim());
+            String telefoneMae = editTextTelefoneMae.getText().toString().trim();
+            String profissaoMae = editTextProfissaoMae.getText().toString().trim();
+            String formacaoAcademica = editTextFormacaoAcademica.getText().toString().trim();
+            String nomePai = editTextNomePai.getText().toString().trim();
+            int idadePai = Integer.parseInt(editTextIdadePai.getText().toString().trim());
+            String telefonePai = editTextTelefonePai.getText().toString().trim();
+            String formacaoAcademicaPai = editTextFormacaoAcademicaPai.getText().toString().trim();
+            String profissaoPai = editTextProfissaoPai.getText().toString().trim();
+            String escolhaValores = escolha2.getText().toString();
+
+
 
             DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
             dadosCompartilhados.setNomeMae(nomeMae);
             dadosCompartilhados.setIdadeMae(idadeMae);
+            dadosCompartilhados.setProfissaoMae(profissaoMae);
+            dadosCompartilhados.setFormacaoAcademica(formacaoAcademica);
+            dadosCompartilhados.setTelefoneMae(telefoneMae);
+            dadosCompartilhados.setNomePai(nomePai);
+            dadosCompartilhados.setIdadePai(idadePai);
+            dadosCompartilhados.setTelefonePai(telefonePai);
+            dadosCompartilhados.setFormacaoAcademicaPai(formacaoAcademicaPai);
+            dadosCompartilhados.setProfissaoPai(profissaoPai);
+            dadosCompartilhados.setEscolhaValores (escolhaValores );
+
+
+
+
 
             Intent intent = new Intent(anamnesePais.this, com.example.teadapta.anamneseDesenvolvimento.class);
             startActivity(intent);

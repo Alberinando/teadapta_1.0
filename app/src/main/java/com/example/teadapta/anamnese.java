@@ -51,10 +51,12 @@ public class anamnese extends AppCompatActivity {
 
     private TextInputEditText editTextNome, editTextIdade, editTextPeso,editTextAltura;
     //private Spinner escolar;
-
+/*
     public AutoCompleteTextView getEscolha() {
         return escolha;
     }
+
+ */
 
     // Getters para as variáveis de texto
     public TextInputEditText getEditTextNome() {

@@ -21,6 +21,47 @@ public class anamneseDesenvolvimento extends AppCompatActivity {
     editTextSentouComApoio, editTextArrastou,editTextEngatinhou,editTextFicouDePeComApoio,
     editTextFicouDePeSemApoio,editTextAndouComApio,editTextAndouSemApoio;
 
+    public TextInputEditText getEditTextSustentouCabeca() {
+        return editTextSustentouCabeca;
+    }
+
+    public TextInputEditText getEditTextRolouLateralmente() {
+        return editTextRolouLateralmente;
+    }
+
+    public TextInputEditText getEditTextVirouse() {
+        return editTextVirouse;
+    }
+
+    public TextInputEditText getEditTextSentouComApoio() {
+        return editTextSentouComApoio;
+    }
+
+    public TextInputEditText getEditTextArrastou() {
+        return editTextArrastou;
+    }
+
+    public TextInputEditText getEditTextEngatinhou() {
+        return editTextEngatinhou;
+    }
+
+    public TextInputEditText getEditTextFicouDePeComApoio() {
+        return editTextFicouDePeComApoio;
+    }
+
+    public TextInputEditText getEditTextFicouDePeSemApoio() {
+        return editTextFicouDePeSemApoio;
+    }
+
+    public TextInputEditText getEditTextAndouComApoio() {
+        return editTextAndouComApio;
+    }
+
+    public TextInputEditText getEditTextAndouSemApoio() {
+        return editTextAndouSemApoio;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -351,6 +392,35 @@ public class anamneseDesenvolvimento extends AppCompatActivity {
     public void submit (View view){
 
         if (validateFields()) {
+
+
+            int sustentouCabeca = Integer.parseInt(editTextSustentouCabeca.getText().toString().trim());
+            int rolouLateralmente = Integer.parseInt(editTextRolouLateralmente.getText().toString().trim());
+            int virouse = Integer.parseInt(editTextVirouse.getText().toString().trim());
+            int sentouComApoio = Integer.parseInt(editTextSentouComApoio.getText().toString().trim());
+            int arrastou = Integer.parseInt(editTextArrastou.getText().toString().trim());
+            int engatinhou = Integer.parseInt(editTextEngatinhou.getText().toString().trim());
+            int ficouDePeComApoio = Integer.parseInt(editTextFicouDePeComApoio.getText().toString().trim());
+            int ficouDePeSemApoio = Integer.parseInt(editTextFicouDePeSemApoio.getText().toString().trim());
+            int andouComApio = Integer.parseInt(editTextAndouComApio.getText().toString().trim());
+            int andouSemApoio = Integer.parseInt(editTextAndouSemApoio.getText().toString().trim());
+
+
+            DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+            dadosCompartilhados.setSustentouCabeca(sustentouCabeca);
+            dadosCompartilhados.setRolouLateralmente(rolouLateralmente);
+            dadosCompartilhados.setVirouse(virouse);
+            dadosCompartilhados.setSentouComApoio(sentouComApoio);
+            dadosCompartilhados.setArrastou(arrastou);
+            dadosCompartilhados.setEngatinhou (engatinhou );
+            dadosCompartilhados.setFicouDePeComApoio (ficouDePeComApoio );
+            dadosCompartilhados.setFicouDePeSemApoio (ficouDePeSemApoio );
+            dadosCompartilhados.setAndouComApio(andouComApio);
+            dadosCompartilhados.setAndouSemApoio(andouSemApoio);
+
+
+
+
             // Se tudo estiver válido, avança para a próxima página
             Intent intent = new Intent(anamneseDesenvolvimento.this, com.example.teadapta.anamneseDesenvolvimentoCrianca.class);
             startActivity(intent);
