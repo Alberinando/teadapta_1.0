@@ -1,5 +1,9 @@
 package com.example.teadapta;
 
+import android.view.View;
+
+import com.google.android.material.textfield.TextInputEditText;
+
 public class DadosCompartilhados {
     private static DadosCompartilhados instance;
     
@@ -12,6 +16,8 @@ public class DadosCompartilhados {
     private String escolhaValue;
     private String escolaridadeValue;
     private String escolarValue;
+
+    private String data;
     //...................................Fim...................................................
     
     //...................................Anamenese Pai.........................................
@@ -27,6 +33,10 @@ public class DadosCompartilhados {
     private String formacaoAcademica;
     private String profissaoMae;
     private String escolhaValores;
+    private String email;
+    private String composicaoFamilia;
+    private String descricaoEscolhaValores;
+
     //..............................................Fim............................................
     
     
@@ -37,7 +47,6 @@ public class DadosCompartilhados {
     private int andouSemApoio;
     private int sustentouCabeca;
     private int rolouLateralmente;
-    private int virouse;
     private int sentouComApoio;
     private int arrastou;
     private int engatinhou;
@@ -75,6 +84,7 @@ public class DadosCompartilhados {
     private String arremessaObjetosSemDiculdade;
     private String seguraObjetosSemDiculdade;
     private String formasPeculiaresDeOrganizacaoMotora;
+    private String escolhaAMao;
 
 
 
@@ -87,7 +97,7 @@ public class DadosCompartilhados {
     private String reageFavoravelmentePessoa;
     private String expressaNecessidades;
     private String brincaCriancaAdulto;
-    private String apresentaBirrasComFrequenciae;
+    private String apresentaBirrasComFrequencia;
     private String seAdaptaCasaEscola;
     private String choraFrequencia;
     private String fazAmigosFacilidade;
@@ -104,9 +114,30 @@ public class DadosCompartilhados {
 
     private String investeMomentosFamilia;
     private String medosFobias;
-    private String apresentaBirrasComFrequencia;
+    private String comoSeSenteLogePais;
+    private String informacoesAdicioonais;
+    private String descricaoMedoFobia;
+    private String descricaoInvesteMomentosFamilia;
+
 
     //..................................Fim.........................................................
+
+
+
+    //......................Anamnese Desenvolvimento Exercicio................................
+
+    private String temLugarParaBrincar;
+    private String praticaExercicios;
+    private String estaExercitando;
+    private String haLimitacao;
+    private String haLimitacaoExercicios;
+    private String selectedOptionTechnology;
+    private TextInputEditText limitacaoExercicios;
+    private View descriPraticaExercicios;
+
+
+    //..................................Fim.........................................................
+
 
 
     private DadosCompartilhados() {
@@ -178,6 +209,16 @@ public class DadosCompartilhados {
     public void setEscolarValue(String escolarValue) {
         this.escolarValue = escolarValue;
     }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+
     
     
     //....................................Fim.................................................
@@ -274,6 +315,29 @@ public class DadosCompartilhados {
     public String getEscolhaValores() {
         return escolhaValores;
     }
+
+    public void setComposicaoFamilia(String composicaoFamilia) {
+        this.composicaoFamilia = composicaoFamilia;
+    }
+
+    public String getComposicaoFamilia() {
+        return composicaoFamilia;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setDescricaoEscolhaValores(String descricaoEscolhaValores) {
+        this.descricaoEscolhaValores = descricaoEscolhaValores;
+    }
+
+    public String getDescricaoEscolhaValores() {
+        return descricaoEscolhaValores;
+    }
     
     
     
@@ -300,13 +364,6 @@ public class DadosCompartilhados {
         return rolouLateralmente;
     }
 
-    public void setVirouse(int virouse) {
-        this.virouse = virouse;
-    }
-
-    public int getVirouse() {
-        return virouse;
-    }
 
     public void setSentouComApoio(int sentouComApoio) {
         this.sentouComApoio = sentouComApoio;
@@ -401,6 +458,10 @@ public class DadosCompartilhados {
     }
 
     public void setVocalizou(String vocalizou) {
+        this.vocalizou = vocalizou;
+    }
+    public String getVocalizou() {
+        return vocalizou;
     }
 
     public void setPrimeirasPalavras(String primeirasPalavras) {
@@ -500,6 +561,14 @@ public class DadosCompartilhados {
     public String getFormasPeculiaresDeOrganizacaoMotora() {
         return formasPeculiaresDeOrganizacaoMotora;
     }
+
+    public void setEscolhaAMao(String escolhaAMao) {
+        this.escolhaAMao = escolhaAMao;
+    }
+
+    public String getEscolhaAMao() {
+        return escolhaAMao;
+    }
     //....................................Fim.......................................................
 
 
@@ -530,17 +599,14 @@ public class DadosCompartilhados {
         return brincaCriancaAdulto;
     }
 
-    public void setApresentaBirrasComFrequenciae(String apresentaBirrasComFrequenciae) {
-        this.apresentaBirrasComFrequenciae = apresentaBirrasComFrequenciae;
+    public void setApresentaBirrasComFrequencia(String apresentaBirrasComFrequencia) {
+        this.apresentaBirrasComFrequencia = apresentaBirrasComFrequencia;
     }
 
     public String getApresentaBirrasComFrequencia() {
         return apresentaBirrasComFrequencia;
     }
 
-    public void setApresentaBirrasComFrequencia(String apresentaBirrasComFrequencia) {
-        this.apresentaBirrasComFrequencia = apresentaBirrasComFrequencia;
-    }
 
     public String getSeAdaptaCasaEscola() {
         return seAdaptaCasaEscola;
@@ -621,16 +687,111 @@ public class DadosCompartilhados {
         return investeMomentosFamilia;
     }
 
-    public String getVocalizou() {
-        return vocalizou;
+
+
+    public void setComoSeSenteLogePais(String comoSeSenteLogePais) {
+        this.comoSeSenteLogePais = comoSeSenteLogePais;
     }
 
+    public String getComoSeSenteLogePais() {
+        return comoSeSenteLogePais;
+    }
+
+    public void setInformacoesAdicioonais(String informacoesAdicioonais) {
+        this.informacoesAdicioonais = informacoesAdicioonais;
+    }
+
+    public String getInformacoesAdicioonais() {
+        return informacoesAdicioonais;
+    }
+    public void setDescricaoMedoFobia(String descricaoMedoFobia) {
+        this.descricaoMedoFobia = descricaoMedoFobia;
+    }
+
+    public String getDescricaoMedoFobia() {
+        return descricaoMedoFobia;
+    }
+    public void setDescricaoInvesteMomentosFamilia(String descricaoInvesteMomentosFamilia) {
+        this.descricaoInvesteMomentosFamilia = descricaoInvesteMomentosFamilia;
+    }
+
+    public String getDescricaoInvesteMomentosFamilia() {
+        return descricaoInvesteMomentosFamilia;
+    }
 
 
 
     //....................................Fim......................................................
 
 
+
+    //......................Anamnese Desenvolvimento Exercicio................................
+
+    public void setHaLimitacao(String haLimitacao) {
+        this.haLimitacao = haLimitacao;
+    }
+
+    public String getHaLimitacao() {
+        return haLimitacao;
+    }
+
+
+    public void setEstaExercitando(String estaExercitando) {
+        this.estaExercitando = estaExercitando;
+    }
+
+    public String getEstaExercitando() {
+        return estaExercitando;
+    }
+
+    public void setPraticaExercicios(String praticaExercicios) {
+        this.praticaExercicios = praticaExercicios;
+    }
+
+    public String getPraticaExercicios() {
+        return praticaExercicios;
+    }
+
+    public void setTemLugarParaBrincar(String temLugarParaBrincar) {
+        this.temLugarParaBrincar = temLugarParaBrincar;
+    }
+
+    public String getTemLugarParaBrincar() {
+        return temLugarParaBrincar;
+    }
+
+
+    public void setHaLimitacaoExercicios(String haLimitacaoExercicios) {
+        this.haLimitacaoExercicios = haLimitacaoExercicios;
+    }
+
+    public String getHaLimitacaoExercicios() {
+        return haLimitacaoExercicios;
+    }
+
+    public void setSelectedOptionTechnology(String selectedOptionTechnology) {
+        this.selectedOptionTechnology = selectedOptionTechnology;
+    }
+
+    public String getSelectedOptionTechnology() {
+        return selectedOptionTechnology;
+    }
+
+    public void setLimitacaoExercicios(TextInputEditText limitacaoExercicios) {
+        this.limitacaoExercicios = limitacaoExercicios;
+    }
+
+    public TextInputEditText getLimitacaoExercicios() {
+        return limitacaoExercicios;
+    }
+
+    public void setDescriPraticaExercicios(View descriPraticaExercicios) {
+        this.descriPraticaExercicios = descriPraticaExercicios;
+    }
+
+    public View getDescriPraticaExercicios() {
+        return descriPraticaExercicios;
+    }
 }
 
 

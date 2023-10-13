@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
@@ -49,7 +50,7 @@ public class anamnese extends AppCompatActivity {
     private AutoCompleteTextView escolha, escolaridade, escolar;
 
 
-    private TextInputEditText editTextNome, editTextIdade, editTextPeso,editTextAltura;
+    private TextInputEditText editTextNome, editTextIdade, editTextPeso,editTextAltura,editTextData;
     //private Spinner escolar;
 /*
     public AutoCompleteTextView getEscolha() {
@@ -61,6 +62,9 @@ public class anamnese extends AppCompatActivity {
     // Getters para as variáveis de texto
     public TextInputEditText getEditTextNome() {
         return editTextNome;
+    }
+    public TextInputEditText getEditTextData() {
+        return editTextData;
     }
 
     public TextInputEditText getEditTextIdade() {
@@ -156,12 +160,13 @@ public class anamnese extends AppCompatActivity {
                 }
             }
         });
-
+        escolha = findViewById(R.id.escolha);
         escolha = findViewById(R.id.escolha);
         escolaridade = findViewById(R.id.escolaridade);
         escolar = findViewById(R.id.escolar);
 
         editTextNome = findViewById(R.id.input);
+        editTextData = findViewById(R.id.data);
         editTextIdade = findViewById(R.id.Idade);
         editTextPeso = findViewById(R.id.Fields);
         editTextAltura = findViewById(R.id.altura2);
@@ -198,7 +203,9 @@ public class anamnese extends AppCompatActivity {
         TextInputLayout nomesLayout = findViewById(R.id.outlinedTextField);
         TextInputLayout idadeLayout = findViewById(R.id.textIdade);
         TextInputLayout pesoLayout = findViewById(R.id.Field);
-        TextInputLayout alturaLayout = findViewById(R.id.altura); 
+        TextInputLayout alturaLayout = findViewById(R.id.altura);
+        //TextInputLayout escolhaLayout = findViewById(R.id.InputLayout); // Substitua pelo ID correto
+
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
 
@@ -311,6 +318,8 @@ public class anamnese extends AppCompatActivity {
             alturaLayout.setError(null);
 
         }
+
+
         return valid;
     }
 
@@ -318,6 +327,7 @@ public class anamnese extends AppCompatActivity {
         if (validateFields()) {
             // Obtém os valores dos campos de entrada
             String nome = editTextNome.getText().toString().trim();
+            String data = editTextData.getText().toString().trim();
             int idade = Integer.parseInt(editTextIdade.getText().toString().trim());
             double peso = Double.parseDouble(editTextPeso.getText().toString().trim());
             double altura = Double.parseDouble(editTextAltura.getText().toString().trim());
@@ -330,6 +340,7 @@ public class anamnese extends AppCompatActivity {
             dadosCompartilhados.setIdade(idade);
             dadosCompartilhados.setPeso(peso);
             dadosCompartilhados.setAltura(altura);
+            dadosCompartilhados.setData(data);
 
             dadosCompartilhados.setEscolhaValue(escolhaValue);
             dadosCompartilhados.setEscolaridadeValue(escolaridadeValue);

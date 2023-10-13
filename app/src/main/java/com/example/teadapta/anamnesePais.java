@@ -29,7 +29,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class anamnesePais extends AppCompatActivity {
 
-    private AutoCompleteTextView familiar;
+    private TextInputEditText descreva;
     private AutoCompleteTextView escolha2;
 
     private TextInputEditText editTextIdadeMae, editTextNomeMae, editTextTelefoneMae,
@@ -95,6 +95,7 @@ public class anamnesePais extends AppCompatActivity {
         setContentView(R.layout.activity_anamnese_pais);
 
         escolha2 = findViewById(R.id.escolha);
+        descreva = findViewById(R.id.subescolha);
 
         editTextIdadeMae = findViewById(R.id.IdadeMae);
         editTextNomeMae = findViewById(R.id.inputmae);
@@ -530,7 +531,11 @@ public class anamnesePais extends AppCompatActivity {
             String telefonePai = editTextTelefonePai.getText().toString().trim();
             String formacaoAcademicaPai = editTextFormacaoAcademicaPai.getText().toString().trim();
             String profissaoPai = editTextProfissaoPai.getText().toString().trim();
+            String composicaoFamilia = editTextFamilia.getText().toString().trim();
+            String email = editTextEmail.getText().toString().trim();
+
             String escolhaValores = escolha2.getText().toString();
+            String descricaoEscolhaValores= descreva.getText().toString();
 
 
 
@@ -545,7 +550,10 @@ public class anamnesePais extends AppCompatActivity {
             dadosCompartilhados.setTelefonePai(telefonePai);
             dadosCompartilhados.setFormacaoAcademicaPai(formacaoAcademicaPai);
             dadosCompartilhados.setProfissaoPai(profissaoPai);
+            dadosCompartilhados.setComposicaoFamilia(composicaoFamilia);
+            dadosCompartilhados.setEmail(email);
             dadosCompartilhados.setEscolhaValores (escolhaValores );
+            dadosCompartilhados.setDescricaoEscolhaValores (descricaoEscolhaValores );
 
 
 

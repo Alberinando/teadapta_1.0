@@ -3,10 +3,20 @@ package com.example.teadapta;
 public class Usuario {
 
 
+    public int descriPraticaExercicios;
+    public String selectedOptionTechnology;
+    public String haLimitacaoExercicios;
+    public String estaExercitando;
+    public String temLugarParaBrincar;
+    public String praticaExercicios;
+    public String haLimitacao;
+
+
     //......................Anamnese Desenvolvimento SocioEmocional2................................
 
     public String investeMomentosFamilia;
     public String medosFobias;
+
 
 
     //........................................Fim...................................................
@@ -40,6 +50,7 @@ public class Usuario {
     public String seguraObjetosSemDiculdade;
     public String formasPeculiaresDeOrganizacaoMotora;
     public String usoDuasMaos;
+    public String escolhaAMao;
 
     //........................................Fim...................................................
 
@@ -83,6 +94,8 @@ public class Usuario {
     public String escolaridadeValue;
     public String escolarValue;
 
+    public String data;
+
     //.............................Fim ..........................................
 
 
@@ -97,6 +110,10 @@ public class Usuario {
     public String nomePai;
     public String formacaoAcademica;
     public String profissaoMae;
+    public String email;
+    public String composicaoFamilia;
+    public String escolhaValores;
+    public String descricaoEscolhaValores;
 
     //..................................Fim.............................................
     public Usuario() {
@@ -104,10 +121,11 @@ public class Usuario {
     }
 
     public Usuario(//....................anamnese..............................................................
-            String nome, int idade, double peso, double altura, String escolhaValue, String escolaridadeValue, String escolarValue
+            String nome, int idade,String data, double peso, double altura, String escolhaValue, String escolaridadeValue, String escolarValue
             //..............................anamnese pai.........................................................
             , String nomeMae, int idadeMae, String telefoneMae, String formacaoAcademica,String profissaoMae, String nomePai,
-            int idadePai, String formacaoAcademicaPai, String profissaoPai,String telefonePai
+            int idadePai, String formacaoAcademicaPai, String profissaoPai,String telefonePai,  String email,String composicaoFamilia,
+                   String escolhaValores,String descricaoEscolhaValores
 
 
             //..............................Anamnese Desenvolvimento.................................................
@@ -118,7 +136,7 @@ public class Usuario {
 
             , String usoDuasMaos,String dificuldadeCordenacao,String caiComFrequencia,String apanhaObjetosSemDiculdade,
                    String imitaGestosSimples,String arremessaObjetosSemDiculdade,String seguraObjetosSemDiculdade,
-                   String formasPeculiaresDeOrganizacaoMotora,
+                   String formasPeculiaresDeOrganizacaoMotora, String escolhaAMao,
 
                    //...........................Anamnese Desenvolvimento Linguistico...............................
 
@@ -134,7 +152,11 @@ public class Usuario {
 
                    //......................Anamnese Desenvolvimento SocioEmocional2................................
 
-                   String investeMomentosFamilia,String medosFobias) {
+                   String investeMomentosFamilia,String medosFobias
+
+
+                  ,String haLimitacao,String estaExercitando,String praticaExercicios,String temLugarParaBrincar,
+                   String haLimitacaoExercicios,String selectedOptionTechnology) {
 
 
 
@@ -147,6 +169,7 @@ public class Usuario {
         this.escolhaValue = escolhaValue;
         this.escolaridadeValue = escolaridadeValue;
         this.escolarValue = escolarValue;
+        this.data= data;
 
 
         //...............................Fim.................................................
@@ -163,6 +186,10 @@ public class Usuario {
         this.formacaoAcademicaPai = formacaoAcademicaPai;
         this.telefonePai = telefonePai;
         this.profissaoMae = profissaoMae;
+        this.escolhaValores = escolhaValores;
+        this.email = email;
+        this.composicaoFamilia = composicaoFamilia;
+        this.descricaoEscolhaValores = descricaoEscolhaValores;
         //.............................Fim......................................................
 
 
@@ -208,6 +235,7 @@ public class Usuario {
         this.arremessaObjetosSemDiculdade = arremessaObjetosSemDiculdade;
         this.seguraObjetosSemDiculdade = seguraObjetosSemDiculdade;
         this.formasPeculiaresDeOrganizacaoMotora = formasPeculiaresDeOrganizacaoMotora;
+        this.escolhaAMao = escolhaAMao;
 
         //.......................................Fim...............................................
 
@@ -236,7 +264,25 @@ public class Usuario {
         this.investeMomentosFamilia = investeMomentosFamilia;
         this.medosFobias = medosFobias;
 
+
+
         //.......................................Fim...............................................
 
+
+
+        this.haLimitacao=haLimitacao;
+        this.estaExercitando=estaExercitando;
+        this.praticaExercicios=praticaExercicios;
+        this.temLugarParaBrincar=temLugarParaBrincar;
+        this.haLimitacaoExercicios=haLimitacaoExercicios;
+        this.selectedOptionTechnology=selectedOptionTechnology;
+
+
+
+
+
+
+
     }
+
 }

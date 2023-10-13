@@ -155,7 +155,8 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
         dadosCompartilhados.setReageFavoravelmentePessoa(reageFavoravelmentePessoa);
         dadosCompartilhados.setBrincaCriancaAdulto(brincaCriancaAdulto);
         dadosCompartilhados.setExpressaNecessidades(expressaNecessidades);
-        dadosCompartilhados.setApresentaBirrasComFrequenciae(apresentaBirrasComFrequencia);
+
+        dadosCompartilhados.setApresentaBirrasComFrequencia(apresentaBirrasComFrequencia);
         dadosCompartilhados.setSeAdaptaCasaEscola(seAdaptaCasaEscola);
         dadosCompartilhados.setChoraFrequencia(choraFrequencia);
         dadosCompartilhados.setFazAmigosFacilidade(fazAmigosFacilidade);

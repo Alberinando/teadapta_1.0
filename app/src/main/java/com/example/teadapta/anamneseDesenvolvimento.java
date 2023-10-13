@@ -396,26 +396,26 @@ public class anamneseDesenvolvimento extends AppCompatActivity {
 
             int sustentouCabeca = Integer.parseInt(editTextSustentouCabeca.getText().toString().trim());
             int rolouLateralmente = Integer.parseInt(editTextRolouLateralmente.getText().toString().trim());
-            int virouse = Integer.parseInt(editTextVirouse.getText().toString().trim());
+            int virouSe = Integer.parseInt(editTextVirouse.getText().toString().trim());
             int sentouComApoio = Integer.parseInt(editTextSentouComApoio.getText().toString().trim());
             int arrastou = Integer.parseInt(editTextArrastou.getText().toString().trim());
             int engatinhou = Integer.parseInt(editTextEngatinhou.getText().toString().trim());
             int ficouDePeComApoio = Integer.parseInt(editTextFicouDePeComApoio.getText().toString().trim());
             int ficouDePeSemApoio = Integer.parseInt(editTextFicouDePeSemApoio.getText().toString().trim());
-            int andouComApio = Integer.parseInt(editTextAndouComApio.getText().toString().trim());
+            int andouComApoio = Integer.parseInt(editTextAndouComApio.getText().toString().trim());
             int andouSemApoio = Integer.parseInt(editTextAndouSemApoio.getText().toString().trim());
 
 
             DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
             dadosCompartilhados.setSustentouCabeca(sustentouCabeca);
             dadosCompartilhados.setRolouLateralmente(rolouLateralmente);
-            dadosCompartilhados.setVirouse(virouse);
+            dadosCompartilhados.setVirouSe(virouSe);
             dadosCompartilhados.setSentouComApoio(sentouComApoio);
             dadosCompartilhados.setArrastou(arrastou);
             dadosCompartilhados.setEngatinhou (engatinhou );
             dadosCompartilhados.setFicouDePeComApoio (ficouDePeComApoio );
             dadosCompartilhados.setFicouDePeSemApoio (ficouDePeSemApoio );
-            dadosCompartilhados.setAndouComApio(andouComApio);
+            dadosCompartilhados.setAndouComApoio(andouComApoio);
             dadosCompartilhados.setAndouSemApoio(andouSemApoio);
 
 

@@ -10,11 +10,13 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -23,8 +25,9 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
     private AutoCompleteTextView escolha, escolha2, escolha3, escolha4;
     private TextInputLayout religiaoLayout, religiaoLayout2, religiaoLayout3, religiaoLayout4;
-    private String investeMomentosFamilia;
-    private String medosFobias;
+    private TextInputEditText limitacaoExercicios;
+    private String selectedOptionTechnology;
+    private View descriPraticaExercicios;
 
 
     @Override
@@ -40,6 +43,72 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         religiaoLayout2 = findViewById(R.id.TextField2);
         religiaoLayout3 = findViewById(R.id.TextField3);
         religiaoLayout4 = findViewById(R.id.TextField4);
+
+        limitacaoExercicios = findViewById(R.id.subescolha);
+        descriPraticaExercicios = findViewById(R.id.subescolha4);
+
+        final CheckBox controladoCheckBox = findViewById(R.id.controlado);
+        final CheckBox frequenteCheckBox = findViewById(R.id.frequente);
+        final CheckBox muitoFrequenteCheckBox = findViewById(R.id.muito);
+        final CheckBox raramenteCheckBox = findViewById(R.id.raramente);
+        final CheckBox naoUsaCheckBox = findViewById(R.id.nao);
+
+        // Adicione outros CheckBoxes aqui
+
+        controladoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                selectedOptionTechnology = "Controlado";
+                frequenteCheckBox.setChecked(false);
+                muitoFrequenteCheckBox.setChecked(false);
+                raramenteCheckBox.setChecked(false);
+                naoUsaCheckBox.setChecked(false);
+                // Desmarque os outros CheckBoxes aqui, se necessário
+            }
+        });
+
+        frequenteCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                selectedOptionTechnology = "Frequente";
+                controladoCheckBox.setChecked(false);
+                muitoFrequenteCheckBox.setChecked(false);
+                raramenteCheckBox.setChecked(false);
+                naoUsaCheckBox.setChecked(false);
+                // Desmarque os outros CheckBoxes aqui, se necessário
+            }
+        });
+        muitoFrequenteCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                selectedOptionTechnology = "Muito Frequente";
+                frequenteCheckBox.setChecked(false);
+                controladoCheckBox.setChecked(false);
+                raramenteCheckBox.setChecked(false);
+                naoUsaCheckBox.setChecked(false);
+                // Desmarque os outros CheckBoxes aqui, se necessário
+            }
+        });
+
+        raramenteCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                selectedOptionTechnology = "Raramente";
+                naoUsaCheckBox.setChecked(false);
+                controladoCheckBox.setChecked(false);
+                frequenteCheckBox.setChecked(false);
+                muitoFrequenteCheckBox.setChecked(false);
+
+                // Desmarque os outros CheckBoxes aqui, se necessário
+            }
+        });
+        naoUsaCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                selectedOptionTechnology = "Não Usa";
+                controladoCheckBox.setChecked(false);
+                frequenteCheckBox.setChecked(false);
+                muitoFrequenteCheckBox.setChecked(false);
+                raramenteCheckBox.setChecked(false);
+                // Desmarque os outros CheckBoxes aqui, se necessário
+            }
+        });
+
 
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha = new ArrayAdapter<>(this,
@@ -131,6 +200,8 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         });
     }
 
+
+
     private void updateLayoutVisibility(String escolhaValue, TextInputLayout layout) {
         if (escolhaValue.equalsIgnoreCase("Sim")) {
             layout.setVisibility(View.VISIBLE);
@@ -168,9 +239,44 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         Intent intent = new Intent(anamneseDesenvolvimentoExercicio.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional2.class);
         startActivity(intent);
     }
+
+
     public void submit (View view) {
+
+
+        String haLimitacao = escolha.getText().toString(); // Valor do primeiro AutoCompleteTextView
+        String estaExercitando = escolha2.getText().toString(); // Valor do segundo AutoCompleteTextView
+        String praticaExercicios = escolha3.getText().toString();
+        String temLugarParaBrincar = escolha4.getText().toString();
+        String haLimitacaoExercicios = limitacaoExercicios.getText().toString().trim();
+
+        descriPraticaExercicios = descriPraticaExercicios;
+
+        selectedOptionTechnology =selectedOptionTechnology;
+
+
+       // DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+
+
+
+
+
         DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+
+        dadosCompartilhados.setHaLimitacao(haLimitacao);
+        dadosCompartilhados.setEstaExercitando(estaExercitando);
+        dadosCompartilhados.setPraticaExercicios(praticaExercicios);
+        dadosCompartilhados.setTemLugarParaBrincar(temLugarParaBrincar);
+        dadosCompartilhados.setHaLimitacaoExercicios(haLimitacaoExercicios);
+
+
+        dadosCompartilhados.setSelectedOptionTechnology(selectedOptionTechnology);
+        dadosCompartilhados.setDescriPraticaExercicios(descriPraticaExercicios);
+
+
+
         String nome = dadosCompartilhados.getNome();
+        String data = dadosCompartilhados.getData();
         int idade = dadosCompartilhados.getIdade();
         double peso = dadosCompartilhados.getPeso();
         double altura = dadosCompartilhados.getAltura();
@@ -185,6 +291,11 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         String telefonePai = dadosCompartilhados.getTelefonePai();
         String formacaoAcademicaPai = dadosCompartilhados.getFormacaoAcademicaPai();
         String profissaoPai = dadosCompartilhados.getProfissaoPai();
+        String email = dadosCompartilhados.getEmail();
+        String composicaoFamilia = dadosCompartilhados.getComposicaoFamilia();
+        String escolhaValores = dadosCompartilhados.getEscolhaValores();
+        String descricaoEscolhaValores = dadosCompartilhados.getDescricaoEscolhaValores();
+
 
         int andouSemApoio = dadosCompartilhados.getAndouSemApoio();
         int sustentouCabeca = dadosCompartilhados.getSustentouCabeca();
@@ -211,9 +322,19 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         String arremessaObjetosSemDiculdade= dadosCompartilhados.getArremessaObjetosSemDiculdade();
         String seguraObjetosSemDiculdade= dadosCompartilhados.getSeguraObjetosSemDiculdade();
         String formasPeculiaresDeOrganizacaoMotora= dadosCompartilhados.getFormasPeculiaresDeOrganizacaoMotora();
+        String escolhaAMao= dadosCompartilhados.getEscolhaAMao();
+
 
         String investeMomentosFamilia= dadosCompartilhados.getInvesteMomentosFamilia();
         String medosFobias= dadosCompartilhados.getMedosFobias();
+        /*
+        String comoSeSenteLogePais= dadosCompartilhados.getComoSeSenteLogePais();
+        String informacoesAdicioonais= dadosCompartilhados.getInformacoesAdicioonais();
+        String descricaoMedoFobia= dadosCompartilhados.getDescricaoMedoFobia();
+        String descricaoInvesteMomentosFamilia= dadosCompartilhados.getDescricaoInvesteMomentosFamilia();
+
+         */
+
 
         String frase = dadosCompartilhados.getFrase();
         String primeirasPalavras = dadosCompartilhados.getPrimeirasPalavras();
@@ -221,6 +342,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         String respondeuSomHumano= dadosCompartilhados.getRespondeuSomHumano();
         String respondruSom= dadosCompartilhados.getRespondruSom();
         String problemasComunicacao= dadosCompartilhados.getProblemasComunicacao();
+
 
         String reageFavoravelmentePessoa = dadosCompartilhados.getReageFavoravelmentePessoa();
         String brincaCriancaAdulto = dadosCompartilhados.getBrincaCriancaAdulto();
@@ -236,32 +358,59 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
 
 
+        haLimitacao = dadosCompartilhados.getHaLimitacao();
+        estaExercitando = dadosCompartilhados.getEstaExercitando();
+        praticaExercicios = dadosCompartilhados.getPraticaExercicios();
+        temLugarParaBrincar = dadosCompartilhados.getTemLugarParaBrincar();
+        haLimitacaoExercicios = dadosCompartilhados.getHaLimitacaoExercicios();
+        selectedOptionTechnology = dadosCompartilhados.getSelectedOptionTechnology();
+        descriPraticaExercicios = dadosCompartilhados.getDescriPraticaExercicios();
+
+
+
+
 
 
 
         // Crie um objeto Usuario com os valores obtidos
-        Usuario usuario = new Usuario(nome, idade, peso, altura, escolhaValue, escolaridadeValue, escolarValue,
+        Usuario usuario = new Usuario(//....................anamnese..............................................................
+                 nome, idade,data, peso, altura, escolhaValue,escolaridadeValue,  escolarValue
 
-                nomeMae, idadeMae, telefoneMae, formacaoAcademica, profissaoMae, nomePai, idadePai, formacaoAcademicaPai,
-                profissaoPai, telefonePai
+                //..............................anamnese pai.........................................................
+                , nomeMae, idadeMae, telefoneMae,  formacaoAcademica, profissaoMae, nomePai,
+         idadePai, formacaoAcademicaPai,  profissaoPai, telefonePai,  email,composicaoFamilia,
+                escolhaValores,descricaoEscolhaValores
 
-                ,andouSemApoio, sustentouCabeca, rolouLateralmente, virouSe, sentouComApoio, arrastou,
-                engatinhou, ficouDePeComApoio, ficouDePeSemApoio, andouComApoio,
 
-                usoDuasMaos, dificuldadeCordenacao,caiComFrequencia,apanhaObjetosSemDiculdade,imitaGestosSimples,
-                arremessaObjetosSemDiculdade,seguraObjetosSemDiculdade,formasPeculiaresDeOrganizacaoMotora
+        //..............................Anamnese Desenvolvimento.................................................
+            , andouSemApoio, sustentouCabeca, rolouLateralmente, virouSe, sentouComApoio, arrastou, engatinhou
+            ,ficouDePeComApoio, ficouDePeSemApoio, andouComApoio
 
-                ,frase, primeirasPalavras,vocalizou, respondeuSomHumano, respondruSom,
+        //............................Anamnese Desenvolvimento Crianca.........................................................
+
+            , usoDuasMaos,dificuldadeCordenacao,caiComFrequencia, apanhaObjetosSemDiculdade,
+                 imitaGestosSimples,arremessaObjetosSemDiculdade,seguraObjetosSemDiculdade,
+                 formasPeculiaresDeOrganizacaoMotora, escolhaAMao,
+
+                //...........................Anamnese Desenvolvimento Linguistico...............................
+
+                frase,  primeirasPalavras, vocalizou,respondeuSomHumano, respondruSom,
                 problemasComunicacao,
 
                 //......................Anamnese Desenvolvimento SocioEmocional................................
 
-                reageFavoravelmentePessoa, brincaCriancaAdulto,expressaNecessidades,
-                apresentaBirrasComFrequencia,seAdaptaCasaEscola, choraFrequencia,fazAmigosFacilidade,
-                 expressaEmocoesComFacilidade, mudaComportamentoComEstranho,reageFavoravelmenteNovidades,
-                 procuraProtecaoPais
+                reageFavoravelmentePessoa, brincaCriancaAdulto, expressaNecessidades,
+                 apresentaBirrasComFrequencia, seAdaptaCasaEscola,choraFrequencia ,fazAmigosFacilidade,
+                 expressaEmocoesComFacilidade, mudaComportamentoComEstranho, reageFavoravelmenteNovidades,
+                 procuraProtecaoPais,
 
-                , investeMomentosFamilia,medosFobias);
+                //......................Anamnese Desenvolvimento SocioEmocional2................................
+
+                 investeMomentosFamilia,medosFobias
+
+
+                ,haLimitacao,estaExercitando, praticaExercicios,temLugarParaBrincar,
+                haLimitacaoExercicios, selectedOptionTechnology);
 
 
         // Inicialize o Firestore

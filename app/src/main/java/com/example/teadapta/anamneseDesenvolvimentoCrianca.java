@@ -10,15 +10,19 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
 
 import android.util.Log;
+import android.widget.RadioGroup;
 
 import org.xmlpull.v1.XmlPullParser;
 
 public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
 
     private AutoCompleteTextView escolha, escolha2,escolha3,escolha4,escolha5,escolha6,escolha7, escolha8;
-
+    private String escolhaAMao = "";
+    private XmlPullParser radioDestro;
 
 
     @Override
@@ -42,8 +46,32 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
         AutoCompleteTextView escolha6 = findViewById(R.id.escolha6);
         AutoCompleteTextView escolha7 = findViewById(R.id.escolha7);
         AutoCompleteTextView escolha_8 = findViewById(R.id.escolha8);
+
+
+
+
         RadioButton radioDestro = findViewById(R.id.radioDestro);
         RadioButton radioCanhoto = findViewById(R.id.radioCanhoto);
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
+
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.radioDestro) {
+                    escolhaAMao = "destro";
+                } else if (checkedId == R.id.radioCanhoto) {
+                    escolhaAMao = "canhoto";
+                }
+            }
+        });
+
+
+
+
+
+
+
 
         radioDestro.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#000000")));
         radioCanhoto.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#000000")));
@@ -102,6 +130,7 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
         String arremessaObjetosSemDiculdade = escolha6.getText().toString();
         String seguraObjetosSemDiculdade = escolha7.getText().toString();
         String formasPeculiaresDeOrganizacaoMotora = escolha8.getText().toString();
+        escolhaAMao = escolhaAMao;
 
         DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
         dadosCompartilhados.setUsoDuasMaos (usoDuasMaos);
@@ -112,6 +141,7 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
         dadosCompartilhados.setArremessaObjetosSemDiculdade(arremessaObjetosSemDiculdade);
         dadosCompartilhados.setSeguraObjetosSemDiculdade(seguraObjetosSemDiculdade);
         dadosCompartilhados.setFormasPeculiaresDeOrganizacaoMotora(formasPeculiaresDeOrganizacaoMotora);
+        dadosCompartilhados.setEscolhaAMao(escolhaAMao);
 
 
 

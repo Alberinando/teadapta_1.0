@@ -26,7 +26,7 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
         escolha = findViewById(R.id.escolha);
         escolha2 = findViewById(R.id.escolha2);
         religiaoLayout = findViewById(R.id.TextField);
-       // lunedTextFieldDes2 = findViewById(R.id.outlinedTextField2);
+        // lunedTextFieldDes2 = findViewById(R.id.outlinedTextField2);
 
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha = new ArrayAdapter<>(this,
