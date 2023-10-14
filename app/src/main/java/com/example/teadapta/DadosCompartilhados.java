@@ -121,7 +121,9 @@ public class DadosCompartilhados {
     private String informacoesAdicioonais;
     private String descricaoMedoFobia;
     private String descricaoInvesteMomentosFamilia;
-    private TextInputLayout comoSeSenteSeparadoDosPais;
+    private String comoSeSenteSeparadoDosPais;
+    private String informacoesAdicionais;
+    private String investeEmMomentosFamilia;
 
 
     //..................................Fim.........................................................
@@ -741,12 +743,27 @@ public class DadosCompartilhados {
     public String getDescricaoInvesteMomentosFamilia() {
         return descricaoInvesteMomentosFamilia;
     }
-    public void setComoSeSenteSeparadoDosPais(TextInputLayout comoSeSenteSeparadoDosPais) {
+    public void setComoSeSenteSeparadoDosPais(String comoSeSenteSeparadoDosPais) {
         this.comoSeSenteSeparadoDosPais = comoSeSenteSeparadoDosPais;
     }
 
-    public TextInputLayout getComoSeSenteSeparadoDosPais() {
+    public String getComoSeSenteSeparadoDosPais() {
         return comoSeSenteSeparadoDosPais;
+    }
+    public void setInformacoesAdicionais(String informacoesAdicionais) {
+        this.informacoesAdicionais = informacoesAdicionais;
+    }
+
+    public String getInformacoesAdicionais() {
+        return informacoesAdicionais;
+    }
+
+    public void setInvesteEmMomentosFamilia(String investeEmMomentosFamilia) {
+        this.investeEmMomentosFamilia = investeEmMomentosFamilia;
+    }
+
+    public String getInvesteEmMomentosFamilia() {
+        return investeEmMomentosFamilia;
     }
 
 

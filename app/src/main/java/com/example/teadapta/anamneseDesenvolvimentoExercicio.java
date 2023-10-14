@@ -297,6 +297,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         descriPraticaExercicios = descriPraticaExercicios;
 
+
         selectedOptionTechnology =selectedOptionTechnology;
 
         acriancaEstaSeExercitandoAtualmene=acriancaEstaSeExercitandoAtualmene;
@@ -383,14 +384,11 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         String investeMomentosFamilia= dadosCompartilhados.getInvesteMomentosFamilia();
         String medosFobias= dadosCompartilhados.getMedosFobias();
-       // String comoSeSenteSeparadoDosPais = dadosCompartilhados.getComoSeSenteSeparadoDosPais();
-        /*
-        String comoSeSenteLogePais= dadosCompartilhados.getComoSeSenteLogePais();
-        String informacoesAdicioonais= dadosCompartilhados.getInformacoesAdicioonais();
-        String descricaoMedoFobia= dadosCompartilhados.getDescricaoMedoFobia();
-        String descricaoInvesteMomentosFamilia= dadosCompartilhados.getDescricaoInvesteMomentosFamilia();
+        String comoSeSenteSeparadoDosPais = dadosCompartilhados.getComoSeSenteSeparadoDosPais();
+        String informacoesAdicionais = dadosCompartilhados.getInformacoesAdicionais();
+        String descricaoMedoFobia = dadosCompartilhados.getDescricaoMedoFobia();
+        String investeEmMomentosFamilia = dadosCompartilhados.getInvesteEmMomentosFamilia();
 
-         */
 
 
         String frase = dadosCompartilhados.getFrase();
@@ -469,7 +467,8 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
                 //......................Anamnese Desenvolvimento SocioEmocional2................................
 
-                 investeMomentosFamilia,medosFobias/*,comoSeSenteSeparadoDosPais*/
+                 investeMomentosFamilia,medosFobias,comoSeSenteSeparadoDosPais,informacoesAdicionais,descricaoMedoFobia,
+                investeEmMomentosFamilia
 
 
                 ,haLimitacao,estaExercitando, praticaExercicios,temLugarParaBrincar,

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
         escolha = findViewById(R.id.escolha);
         escolha2 = findViewById(R.id.escolha2);
         religiaoLayout = findViewById(R.id.TextField);
-        // lunedTextFieldDes2 = findViewById(R.id.outlinedTextField2);
+
 
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha = new ArrayAdapter<>(this,
@@ -85,12 +86,32 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
 
         String medosFobias = escolha.getText().toString();
         String investeMomentosFamilia = escolha2.getText().toString();
-        //String comoSeSenteLogePais = editTextNome.getText().toString().trim();
-        //String informacoesAdicioonais = editTextNome.getText().toString().trim();
+
+        TextInputLayout textInputLayout = findViewById(R.id.outlinedTextField);
+        TextInputEditText textInputEditText = textInputLayout.findViewById(R.id.input);
+        String comoSeSenteSeparadoDosPais = textInputEditText.getText().toString().trim();
+
+        TextInputLayout informacoes= findViewById(R.id.outlinedTextField2);
+        TextInputEditText textInputInformacoes = informacoes.findViewById(R.id.input2);
+        String informacoesAdicionais = textInputInformacoes.getText().toString().trim();
+
+        TextInputLayout descricao= findViewById(R.id.TextField);
+        TextInputEditText textInputDescricao = descricao.findViewById(R.id.subescolha);
+        String descricaoMedoFobia = textInputDescricao.getText().toString().trim();
+
+        TextInputLayout investeMomentos= findViewById(R.id.TextField);
+        TextInputEditText textInputInvesteMomentos = investeMomentos.findViewById(R.id.subescolha);
+        String investeEmMomentosFamilia = textInputInvesteMomentos.getText().toString().trim();
+
 
         DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
         dadosCompartilhados.setMedosFobias(medosFobias);
         dadosCompartilhados.setInvesteMomentosFamilia(investeMomentosFamilia);
+        dadosCompartilhados.setComoSeSenteSeparadoDosPais(comoSeSenteSeparadoDosPais);
+        dadosCompartilhados.setInformacoesAdicionais(informacoesAdicionais);
+        dadosCompartilhados.setDescricaoMedoFobia(descricaoMedoFobia);
+        dadosCompartilhados.setInvesteEmMomentosFamilia(investeEmMomentosFamilia);
+
 
         Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional2.this, com.example.teadapta.anamneseDesenvolvimentoExercicio.class);
         startActivity(intent);

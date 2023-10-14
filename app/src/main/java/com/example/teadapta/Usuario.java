@@ -23,6 +23,9 @@ public class Usuario {
     public String investeMomentosFamilia;
     public String medosFobias;
     public String comoSeSenteSeparadoDosPais;
+    public String informacoesAdicionais;
+    public String descricaoMedoFobia;
+    public String investeEmMomentosFamilia;
 
 
 
@@ -160,7 +163,8 @@ public class Usuario {
 
                    //......................Anamnese Desenvolvimento SocioEmocional2................................
 
-                   String investeMomentosFamilia,String medosFobias/*,String comoSeSenteSeparadoDosPais*/
+                   String investeMomentosFamilia,String medosFobias,String comoSeSenteSeparadoDosPais,String informacoesAdicionais,
+                   String descricaoMedoFobia,String investeEmMomentosFamilia
 
 
                   ,String haLimitacao,String estaExercitando,String praticaExercicios,String temLugarParaBrincar,
@@ -275,6 +279,9 @@ public class Usuario {
         this.investeMomentosFamilia = investeMomentosFamilia;
         this.medosFobias = medosFobias;
         this.comoSeSenteSeparadoDosPais = comoSeSenteSeparadoDosPais;
+        this.informacoesAdicionais = informacoesAdicionais;
+        this.descricaoMedoFobia = descricaoMedoFobia;
+        this.investeEmMomentosFamilia = investeEmMomentosFamilia;
 
 
 
