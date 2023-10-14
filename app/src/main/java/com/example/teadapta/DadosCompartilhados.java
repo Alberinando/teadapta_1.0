@@ -3,6 +3,7 @@ package com.example.teadapta;
 import android.view.View;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class DadosCompartilhados {
     private static DadosCompartilhados instance;
@@ -70,6 +71,7 @@ public class DadosCompartilhados {
     private String respondeuSomHumano;
     private String respondruSom;
     private String problemasComunicacao;
+    private String descricaoDoProblemaComunicacao;
 
 
     //................................................Fim...........................................
@@ -105,6 +107,7 @@ public class DadosCompartilhados {
     private String mudaComportamentoComEstranho;
     private String reageFavoravelmenteNovidades;
     private String procuraProtecaoPais;
+    private String comportamentoDoFilho;
 
 
     //..................................Fim.........................................................
@@ -118,6 +121,7 @@ public class DadosCompartilhados {
     private String informacoesAdicioonais;
     private String descricaoMedoFobia;
     private String descricaoInvesteMomentosFamilia;
+    private TextInputLayout comoSeSenteSeparadoDosPais;
 
 
     //..................................Fim.........................................................
@@ -134,6 +138,10 @@ public class DadosCompartilhados {
     private String selectedOptionTechnology;
     private TextInputEditText limitacaoExercicios;
     private View descriPraticaExercicios;
+    private String acriancaEstaSeExercitandoAtualmene;
+    private TextInputEditText descricaoDeQuais;
+    private TextInputEditText descricaoFrequencia;
+
 
 
     //..................................Fim.........................................................
@@ -488,6 +496,14 @@ public class DadosCompartilhados {
         return problemasComunicacao;
     }
 
+    public void setDescricaoDoProblemaComunicacao(String descricaoDoProblemaComunicacao) {
+        this.descricaoDoProblemaComunicacao = descricaoDoProblemaComunicacao;
+    }
+
+    public String getDescricaoDoProblemaComunicacao() {
+        return descricaoDoProblemaComunicacao;
+    }
+
 
     //.......................................Fim...............................................
 
@@ -662,6 +678,13 @@ public class DadosCompartilhados {
     public String getProcuraProtecaoPais() {
         return procuraProtecaoPais;
     }
+    public void setComportamentoDoFilho(String comportamentoDoFilho) {
+        this.comportamentoDoFilho = comportamentoDoFilho;
+    }
+
+    public String getComportamentoDoFilho() {
+        return comportamentoDoFilho;
+    }
 
 
     //....................................Fim......................................................
@@ -717,6 +740,13 @@ public class DadosCompartilhados {
 
     public String getDescricaoInvesteMomentosFamilia() {
         return descricaoInvesteMomentosFamilia;
+    }
+    public void setComoSeSenteSeparadoDosPais(TextInputLayout comoSeSenteSeparadoDosPais) {
+        this.comoSeSenteSeparadoDosPais = comoSeSenteSeparadoDosPais;
+    }
+
+    public TextInputLayout getComoSeSenteSeparadoDosPais() {
+        return comoSeSenteSeparadoDosPais;
     }
 
 
@@ -792,6 +822,33 @@ public class DadosCompartilhados {
     public View getDescriPraticaExercicios() {
         return descriPraticaExercicios;
     }
+
+
+    public String getAcriancaEstaSeExercitandoAtualmene() {
+        return acriancaEstaSeExercitandoAtualmene;
+    }
+
+    public void setAcriancaEstaSeExercitandoAtualmene(String acriancaEstaSeExercitandoAtualmene) {
+        this.acriancaEstaSeExercitandoAtualmene = acriancaEstaSeExercitandoAtualmene;
+    }
+
+    public void setDescricaoDeQuais(TextInputEditText descricaoDeQuais) {
+        this.descricaoDeQuais = descricaoDeQuais;
+    }
+
+    public TextInputEditText getDescricaoDeQuais() {
+        return descricaoDeQuais;
+    }
+
+    public void setDescricaoFrequencia(TextInputEditText descricaoFrequencia) {
+        this.descricaoFrequencia = descricaoFrequencia;
+    }
+
+    public TextInputEditText getDescricaoFrequencia() {
+        return descricaoFrequencia;
+    }
+
+
 }
 
 

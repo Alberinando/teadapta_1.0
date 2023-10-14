@@ -21,6 +21,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.xmlpull.v1.XmlPullParser;
+
 public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
     private AutoCompleteTextView escolha, escolha2, escolha3, escolha4;
@@ -28,6 +30,11 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
     private TextInputEditText limitacaoExercicios;
     private String selectedOptionTechnology;
     private View descriPraticaExercicios;
+    private String comportamentoDoFilho;
+    private String acriancaEstaSeExercitandoAtualmene;
+    private TextInputEditText descricaoFrequencia2;
+    private TextInputEditText descricaoDeQuais2;
+    private XmlPullParser textInputEditText;
 
 
     @Override
@@ -44,8 +51,13 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         religiaoLayout3 = findViewById(R.id.TextField3);
         religiaoLayout4 = findViewById(R.id.TextField4);
 
-        limitacaoExercicios = findViewById(R.id.subescolha);
-        descriPraticaExercicios = findViewById(R.id.subescolha4);
+       // descricaoFrequencia = findViewById(R.id.subescolha3);
+
+        limitacaoExercicios = findViewById(R.id.subescolha);//Há limitação para fazer exercicios
+        descriPraticaExercicios = findViewById(R.id.subescolha4);//Porque seu filho pratica exercicios fisicos
+
+        descricaoDeQuais2 = findViewById(R.id.subescolha2);
+        descricaoFrequencia2=findViewById(R.id.subescolha3);
 
         final CheckBox controladoCheckBox = findViewById(R.id.controlado);
         final CheckBox frequenteCheckBox = findViewById(R.id.frequente);
@@ -106,6 +118,39 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 muitoFrequenteCheckBox.setChecked(false);
                 raramenteCheckBox.setChecked(false);
                 // Desmarque os outros CheckBoxes aqui, se necessário
+            }
+        });
+
+
+
+        final CheckBox seisMesesCheckBox = findViewById(R.id.seisMeses);
+        final CheckBox EntreCheckBox = findViewById(R.id.Entre);
+        final CheckBox MaisCheckBox = findViewById(R.id.Mais);
+
+
+
+        // Adicione outros CheckBoxes aqui
+
+        seisMesesCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                acriancaEstaSeExercitandoAtualmene = "Menos de 6 meses";
+                EntreCheckBox.setChecked(false);
+                MaisCheckBox.setChecked(false);
+            }
+        });
+
+        EntreCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                acriancaEstaSeExercitandoAtualmene = "Entre seis meses a 1 ano";
+                seisMesesCheckBox.setChecked(false);
+                MaisCheckBox.setChecked(false);
+            }
+        });
+        MaisCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                acriancaEstaSeExercitandoAtualmene = "Mais de 1 ano";
+                seisMesesCheckBox.setChecked(false);
+                EntreCheckBox.setChecked(false);
             }
         });
 
@@ -254,6 +299,13 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         selectedOptionTechnology =selectedOptionTechnology;
 
+        acriancaEstaSeExercitandoAtualmene=acriancaEstaSeExercitandoAtualmene;
+
+        String descricaoDeQuais = descricaoDeQuais2.getText().toString();
+        String descricaoFrequencia = descricaoFrequencia2.getText().toString();
+
+       // descricaoDeQuais=descricaoDeQuais;
+
 
        // DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
 
@@ -272,6 +324,10 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         dadosCompartilhados.setSelectedOptionTechnology(selectedOptionTechnology);
         dadosCompartilhados.setDescriPraticaExercicios(descriPraticaExercicios);
+
+        dadosCompartilhados.setDescricaoDeQuais(descricaoDeQuais2);
+        dadosCompartilhados.setDescricaoFrequencia(descricaoFrequencia2);
+        dadosCompartilhados.setAcriancaEstaSeExercitandoAtualmene(acriancaEstaSeExercitandoAtualmene);
 
 
 
@@ -327,6 +383,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         String investeMomentosFamilia= dadosCompartilhados.getInvesteMomentosFamilia();
         String medosFobias= dadosCompartilhados.getMedosFobias();
+       // String comoSeSenteSeparadoDosPais = dadosCompartilhados.getComoSeSenteSeparadoDosPais();
         /*
         String comoSeSenteLogePais= dadosCompartilhados.getComoSeSenteLogePais();
         String informacoesAdicioonais= dadosCompartilhados.getInformacoesAdicioonais();
@@ -342,6 +399,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         String respondeuSomHumano= dadosCompartilhados.getRespondeuSomHumano();
         String respondruSom= dadosCompartilhados.getRespondruSom();
         String problemasComunicacao= dadosCompartilhados.getProblemasComunicacao();
+        String descricaoDoProblemaComunicacao= dadosCompartilhados.getDescricaoDoProblemaComunicacao();
 
 
         String reageFavoravelmentePessoa = dadosCompartilhados.getReageFavoravelmentePessoa();
@@ -365,6 +423,11 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         haLimitacaoExercicios = dadosCompartilhados.getHaLimitacaoExercicios();
         selectedOptionTechnology = dadosCompartilhados.getSelectedOptionTechnology();
         descriPraticaExercicios = dadosCompartilhados.getDescriPraticaExercicios();
+        comportamentoDoFilho = dadosCompartilhados.getComportamentoDoFilho();
+        acriancaEstaSeExercitandoAtualmene = dadosCompartilhados.getAcriancaEstaSeExercitandoAtualmene();
+        descricaoDeQuais2 = dadosCompartilhados.getDescricaoDeQuais();
+        descricaoFrequencia2 = dadosCompartilhados.getDescricaoFrequencia();
+
 
 
 
@@ -395,22 +458,23 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 //...........................Anamnese Desenvolvimento Linguistico...............................
 
                 frase,  primeirasPalavras, vocalizou,respondeuSomHumano, respondruSom,
-                problemasComunicacao,
+                problemasComunicacao,descricaoDoProblemaComunicacao,
 
                 //......................Anamnese Desenvolvimento SocioEmocional................................
 
                 reageFavoravelmentePessoa, brincaCriancaAdulto, expressaNecessidades,
                  apresentaBirrasComFrequencia, seAdaptaCasaEscola,choraFrequencia ,fazAmigosFacilidade,
                  expressaEmocoesComFacilidade, mudaComportamentoComEstranho, reageFavoravelmenteNovidades,
-                 procuraProtecaoPais,
+                 procuraProtecaoPais,comportamentoDoFilho,
 
                 //......................Anamnese Desenvolvimento SocioEmocional2................................
 
-                 investeMomentosFamilia,medosFobias
+                 investeMomentosFamilia,medosFobias/*,comoSeSenteSeparadoDosPais*/
 
 
                 ,haLimitacao,estaExercitando, praticaExercicios,temLugarParaBrincar,
-                haLimitacaoExercicios, selectedOptionTechnology);
+                haLimitacaoExercicios, selectedOptionTechnology,acriancaEstaSeExercitandoAtualmene,descricaoDeQuais
+                ,descricaoFrequencia);
 
 
         // Inicialize o Firestore

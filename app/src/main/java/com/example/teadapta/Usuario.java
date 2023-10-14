@@ -1,8 +1,14 @@
 package com.example.teadapta;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class Usuario {
 
 
+
+    public String descricaoFrequencia;
+    public String descricaoDeQuais;
+    public String acriancaEstaSeExercitandoAtualmene;
     public int descriPraticaExercicios;
     public String selectedOptionTechnology;
     public String haLimitacaoExercicios;
@@ -16,6 +22,7 @@ public class Usuario {
 
     public String investeMomentosFamilia;
     public String medosFobias;
+    public String comoSeSenteSeparadoDosPais;
 
 
 
@@ -36,6 +43,7 @@ public class Usuario {
     public String expressaNecessidades;
     public String brincaCriancaAdulto;
     public String procuraProtecaoPais;
+    public String comportamentoDoFilho;
 
     //........................................Fim...................................................
 
@@ -64,7 +72,7 @@ public class Usuario {
     public String respondruSom;
 
     public String problemasComunicacao;
-
+    public String descricaoDoProblemaComunicacao;
 
     //..........................................Fim..............................................
 
@@ -141,22 +149,23 @@ public class Usuario {
                    //...........................Anamnese Desenvolvimento Linguistico...............................
 
                    String frase, String primeirasPalavras,String vocalizou,String respondeuSomHumano,String respondruSom,
-                   String problemasComunicacao,
+                   String problemasComunicacao,String descricaoDoProblemaComunicacao,
 
                    //......................Anamnese Desenvolvimento SocioEmocional................................
 
                    String reageFavoravelmentePessoa,String brincaCriancaAdulto,String expressaNecessidades,
                    String apresentaBirrasComFrequencia,String seAdaptaCasaEscola,String choraFrequencia,String fazAmigosFacilidade,
                    String expressaEmocoesComFacilidade,String mudaComportamentoComEstranho,String reageFavoravelmenteNovidades,
-                   String procuraProtecaoPais,
+                   String procuraProtecaoPais, String comportamentoDoFilho,
 
                    //......................Anamnese Desenvolvimento SocioEmocional2................................
 
-                   String investeMomentosFamilia,String medosFobias
+                   String investeMomentosFamilia,String medosFobias/*,String comoSeSenteSeparadoDosPais*/
 
 
                   ,String haLimitacao,String estaExercitando,String praticaExercicios,String temLugarParaBrincar,
-                   String haLimitacaoExercicios,String selectedOptionTechnology) {
+                   String haLimitacaoExercicios,String selectedOptionTechnology, String acriancaEstaSeExercitandoAtualmene
+                    ,String descricaoDeQuais , String descricaoFrequencia) {
 
 
 
@@ -221,6 +230,7 @@ public class Usuario {
         this.respondeuSomHumano = respondeuSomHumano;
         this.respondruSom = respondruSom;
         this.problemasComunicacao = problemasComunicacao;
+        this.descricaoDoProblemaComunicacao = descricaoDoProblemaComunicacao;
 
         //.......................................Fim...............................................
 
@@ -255,6 +265,7 @@ public class Usuario {
         this.mudaComportamentoComEstranho = mudaComportamentoComEstranho;
         this.reageFavoravelmenteNovidades = reageFavoravelmenteNovidades;
         this.procuraProtecaoPais = procuraProtecaoPais;
+        this.comportamentoDoFilho = comportamentoDoFilho;
 
         //.......................................Fim...............................................
 
@@ -263,6 +274,7 @@ public class Usuario {
 
         this.investeMomentosFamilia = investeMomentosFamilia;
         this.medosFobias = medosFobias;
+        this.comoSeSenteSeparadoDosPais = comoSeSenteSeparadoDosPais;
 
 
 
@@ -276,6 +288,9 @@ public class Usuario {
         this.temLugarParaBrincar=temLugarParaBrincar;
         this.haLimitacaoExercicios=haLimitacaoExercicios;
         this.selectedOptionTechnology=selectedOptionTechnology;
+        this.acriancaEstaSeExercitandoAtualmene=acriancaEstaSeExercitandoAtualmene;
+        this.descricaoDeQuais=descricaoDeQuais;
+        this.descricaoFrequencia=descricaoFrequencia;
 
 
 

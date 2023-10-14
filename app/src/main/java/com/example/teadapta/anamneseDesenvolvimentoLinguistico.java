@@ -21,8 +21,8 @@ import org.xmlpull.v1.XmlPullParser;
 public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
     private TextInputEditText inputEditText;
     private TextInputEditText dataEditText,vocalizouEditText,
-    primeirasPalavrasdataEditText,frasedataEditText;
-    private AutoCompleteTextView escolha;
+    primeirasPalavrasdataEditText,frasedataEditText,descricaoProblemaComunicacao;
+    //private AutoCompleteTextView descricaoProblemaComunicacao;
     private AutoCompleteTextView escolhaProblemasComunicacao;
 
 
@@ -32,6 +32,7 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
         setContentView(R.layout.activity_anamnese_desenvolvimento_linguistico);
 
         escolhaProblemasComunicacao = findViewById(R.id.escolhaProblemasComunicacao);
+        descricaoProblemaComunicacao = findViewById(R.id.subescolha);
 
         inputEditText = findViewById(R.id.respondeuSom);
         dataEditText = findViewById(R.id.voz);
@@ -81,6 +82,7 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
         TextInputLayout vocalizouLayout = findViewById(R.id.Field3);
         TextInputLayout primeirasPalavrasdataLayout = findViewById(R.id.Field4);
         TextInputLayout rasedataLayout = findViewById(R.id.Field5);
+        TextInputLayout descricaoProblemaLayout = findViewById(R.id.outlinedTextFieldreligiao);
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
 
@@ -247,6 +249,7 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
             String primeirasPalavras = primeirasPalavrasdataEditText.getText().toString().trim();
             String frase = frasedataEditText.getText().toString().trim();
             String problemasComunicacao = escolhaProblemasComunicacao.getText().toString();
+            String descricaoDoProblemaComunicacao = descricaoProblemaComunicacao.getText().toString();
 
 
             DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
@@ -256,6 +259,7 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
             dadosCompartilhados.setPrimeirasPalavras(primeirasPalavras);
             dadosCompartilhados.setFrase(frase);
             dadosCompartilhados.setProblemasComunicacao(problemasComunicacao);
+            dadosCompartilhados.setDescricaoDoProblemaComunicacao(descricaoDoProblemaComunicacao);
 
             //Foi identificado um erro nesse campo em baixo, sempre que ele é asionado
             //o app fecha e não passa para proxima tela

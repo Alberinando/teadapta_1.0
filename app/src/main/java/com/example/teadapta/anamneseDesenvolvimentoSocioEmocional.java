@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -19,6 +20,8 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
 
     private AutoCompleteTextView escolha,escolha2,escolha3,escolha4,escolha5,escolha6,escolha7,escolha8,escolha9,
             escolha00,escolha01;
+
+    private String comportamentoDoFilho;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +108,106 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 android.R.layout.simple_dropdown_item_1line, listaEscolha01);
         escolha01.setAdapter(adapterEscolha01);
 
-        // Adiciona um TextWatcher ao campo de escolha
+
+        final CheckBox destraidoCheckBox = findViewById(R.id.distraido);
+        final CheckBox hiperativoCheckBox = findViewById(R.id.hiperativo);
+        final CheckBox sensivelVibracoesCheckBox = findViewById(R.id.sensivelVi);
+        final CheckBox sensivelQuandoTocadoCheckBox = findViewById(R.id.sensivelTo);
+        final CheckBox calmoCheckBox = findViewById(R.id.calmo);
+        final CheckBox nervosoCheckBox = findViewById(R.id.nervoso);
+        final CheckBox desinteressadoCheckBox = findViewById(R.id.desinteressado);
+
+
+
+        // Adicione outros CheckBoxes aqui
+
+        destraidoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                comportamentoDoFilho = "Destraido";
+                hiperativoCheckBox.setChecked(false);
+                sensivelVibracoesCheckBox.setChecked(false);
+                sensivelQuandoTocadoCheckBox.setChecked(false);
+                calmoCheckBox.setChecked(false);
+                nervosoCheckBox.setChecked(false);
+                desinteressadoCheckBox.setChecked(false);
+                // Desmarque os outros CheckBoxes aqui, se necessário
+            }
+        });
+
+        hiperativoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                comportamentoDoFilho = "Hiperativo";
+                destraidoCheckBox.setChecked(false);
+                sensivelVibracoesCheckBox.setChecked(false);
+                sensivelQuandoTocadoCheckBox.setChecked(false);
+                calmoCheckBox.setChecked(false);
+                nervosoCheckBox.setChecked(false);
+                desinteressadoCheckBox.setChecked(false);
+            }
+        });
+        sensivelVibracoesCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                comportamentoDoFilho = "Sensível a sensação de vibração";
+                destraidoCheckBox.setChecked(false);
+                hiperativoCheckBox.setChecked(false);
+                sensivelQuandoTocadoCheckBox.setChecked(false);
+                calmoCheckBox.setChecked(false);
+                nervosoCheckBox.setChecked(false);
+                desinteressadoCheckBox.setChecked(false);
+            }
+        });
+
+        sensivelQuandoTocadoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                comportamentoDoFilho = "Sensível quando tocado";
+                destraidoCheckBox.setChecked(false);
+                hiperativoCheckBox.setChecked(false);
+                sensivelVibracoesCheckBox.setChecked(false);
+                calmoCheckBox.setChecked(false);
+                nervosoCheckBox.setChecked(false);
+                desinteressadoCheckBox.setChecked(false);
+            }
+        });
+        calmoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                comportamentoDoFilho = "Calmo";
+                destraidoCheckBox.setChecked(false);
+                hiperativoCheckBox.setChecked(false);
+                sensivelVibracoesCheckBox.setChecked(false);
+                sensivelQuandoTocadoCheckBox.setChecked(false);
+                nervosoCheckBox.setChecked(false);
+                desinteressadoCheckBox.setChecked(false);
+            }
+        });
+        nervosoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                comportamentoDoFilho = "Nervoso";
+                destraidoCheckBox.setChecked(false);
+                hiperativoCheckBox.setChecked(false);
+                sensivelVibracoesCheckBox.setChecked(false);
+                sensivelQuandoTocadoCheckBox.setChecked(false);
+                calmoCheckBox.setChecked(false);
+                desinteressadoCheckBox.setChecked(false);
+            }
+        });
+
+        desinteressadoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                comportamentoDoFilho = "Desinteressado";
+                destraidoCheckBox.setChecked(false);
+                hiperativoCheckBox.setChecked(false);
+                sensivelVibracoesCheckBox.setChecked(false);
+                sensivelQuandoTocadoCheckBox.setChecked(false);
+                calmoCheckBox.setChecked(false);
+                nervosoCheckBox.setChecked(false);
+
+            }
+        });
+
+
+
+
+
         escolha.addTextChangedListener(new TextWatcher() {
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -151,6 +253,9 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
         String reageFavoravelmenteNovidades = escolha00.getText().toString();
         String procuraProtecaoPais = escolha01.getText().toString();
 
+
+        comportamentoDoFilho=comportamentoDoFilho;
+
         DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
         dadosCompartilhados.setReageFavoravelmentePessoa(reageFavoravelmentePessoa);
         dadosCompartilhados.setBrincaCriancaAdulto(brincaCriancaAdulto);
@@ -164,6 +269,8 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
         dadosCompartilhados.setMudaComportamentoComEstranho(mudaComportamentoComEstranho);
         dadosCompartilhados.setReageFavoravelmenteNovidades(reageFavoravelmenteNovidades);
         dadosCompartilhados.setProcuraProtecaoPais(procuraProtecaoPais);
+
+        dadosCompartilhados.setComportamentoDoFilho(comportamentoDoFilho);
 
 
 
