@@ -54,7 +54,9 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
        // descricaoFrequencia = findViewById(R.id.subescolha3);
 
         limitacaoExercicios = findViewById(R.id.subescolha);//Há limitação para fazer exercicios
-        descriPraticaExercicios = findViewById(R.id.subescolha4);//Porque seu filho pratica exercicios fisicos
+        //descriPraticaExercicios = findViewById(R.id.subescolha4);//Porque seu filho pratica exercicios fisicos
+
+
 
         descricaoDeQuais2 = findViewById(R.id.subescolha2);
         descricaoFrequencia2=findViewById(R.id.subescolha3);
@@ -295,7 +297,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         String temLugarParaBrincar = escolha4.getText().toString();
         String haLimitacaoExercicios = limitacaoExercicios.getText().toString().trim();
 
-        descriPraticaExercicios = descriPraticaExercicios;
+      //  descriPraticaExercicios = descriPraticaExercicios;
 
 
         selectedOptionTechnology =selectedOptionTechnology;
@@ -305,7 +307,13 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         String descricaoDeQuais = descricaoDeQuais2.getText().toString();
         String descricaoFrequencia = descricaoFrequencia2.getText().toString();
 
-       // descricaoDeQuais=descricaoDeQuais;
+        TextInputLayout textInputLayout = findViewById(R.id.TextField4);
+        TextInputEditText textInputEditText = textInputLayout.findViewById(R.id.subescolha4);
+
+        String descriPraticaExercicios = textInputEditText.getText().toString().trim();
+
+
+        // descricaoDeQuais=descricaoDeQuais;
 
 
        // DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
@@ -473,7 +481,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
                 ,haLimitacao,estaExercitando, praticaExercicios,temLugarParaBrincar,
                 haLimitacaoExercicios, selectedOptionTechnology,acriancaEstaSeExercitandoAtualmene,descricaoDeQuais
-                ,descricaoFrequencia);
+                ,descricaoFrequencia,descriPraticaExercicios);
 
 
         // Inicialize o Firestore

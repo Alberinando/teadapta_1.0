@@ -9,7 +9,7 @@ public class Usuario {
     public String descricaoFrequencia;
     public String descricaoDeQuais;
     public String acriancaEstaSeExercitandoAtualmene;
-    public int descriPraticaExercicios;
+    public String descriPraticaExercicios;
     public String selectedOptionTechnology;
     public String haLimitacaoExercicios;
     public String estaExercitando;
@@ -169,7 +169,7 @@ public class Usuario {
 
                   ,String haLimitacao,String estaExercitando,String praticaExercicios,String temLugarParaBrincar,
                    String haLimitacaoExercicios,String selectedOptionTechnology, String acriancaEstaSeExercitandoAtualmene
-                    ,String descricaoDeQuais , String descricaoFrequencia) {
+                    ,String descricaoDeQuais , String descricaoFrequencia,String descriPraticaExercicios) {
 
 
 
@@ -298,6 +298,7 @@ public class Usuario {
         this.acriancaEstaSeExercitandoAtualmene=acriancaEstaSeExercitandoAtualmene;
         this.descricaoDeQuais=descricaoDeQuais;
         this.descricaoFrequencia=descricaoFrequencia;
+        this.descriPraticaExercicios=descriPraticaExercicios;
 
 
 

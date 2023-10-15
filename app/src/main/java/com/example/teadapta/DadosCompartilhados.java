@@ -139,11 +139,10 @@ public class DadosCompartilhados {
     private String haLimitacaoExercicios;
     private String selectedOptionTechnology;
     private TextInputEditText limitacaoExercicios;
-    private View descriPraticaExercicios;
     private String acriancaEstaSeExercitandoAtualmene;
     private TextInputEditText descricaoDeQuais;
     private TextInputEditText descricaoFrequencia;
-
+    private String descriPraticaExercicios;
 
 
     //..................................Fim.........................................................
@@ -832,13 +831,7 @@ public class DadosCompartilhados {
         return limitacaoExercicios;
     }
 
-    public void setDescriPraticaExercicios(View descriPraticaExercicios) {
-        this.descriPraticaExercicios = descriPraticaExercicios;
-    }
-
-    public View getDescriPraticaExercicios() {
-        return descriPraticaExercicios;
-    }
+   
 
 
     public String getAcriancaEstaSeExercitandoAtualmene() {
@@ -866,6 +859,13 @@ public class DadosCompartilhados {
     }
 
 
+    public String getDescriPraticaExercicios() {
+        return descriPraticaExercicios;
+    }
+
+    public void setDescriPraticaExercicios(String descriPraticaExercicios) {
+        this.descriPraticaExercicios = descriPraticaExercicios;
+    }
 }
 
 
