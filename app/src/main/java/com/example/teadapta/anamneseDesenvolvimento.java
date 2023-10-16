@@ -29,9 +29,7 @@ public class anamneseDesenvolvimento extends AppCompatActivity {
         return editTextRolouLateralmente;
     }
 
-    public TextInputEditText getEditTextVirouse() {
-        return editTextVirouse;
-    }
+    public TextInputEditText getEditTextVirouse() {return editTextVirouse;}
 
     public TextInputEditText getEditTextSentouComApoio() {
         return editTextSentouComApoio;

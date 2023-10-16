@@ -4,9 +4,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
@@ -51,6 +53,7 @@ public class anamnese extends AppCompatActivity {
 
 
     private TextInputEditText editTextNome, editTextIdade, editTextPeso,editTextAltura,editTextData;
+  
     //private Spinner escolar;
 /*
     public AutoCompleteTextView getEscolha() {
@@ -93,6 +96,8 @@ public class anamnese extends AppCompatActivity {
                 .build();
         TextInputEditText dataEditText = findViewById(R.id.data);
         TextInputLayout textInputLayout = findViewById(R.id.textdata);
+
+
 
         dataEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -194,7 +199,13 @@ public class anamnese extends AppCompatActivity {
                 android.R.layout.simple_dropdown_item_1line, listaEscola);
         escolar.setAdapter(adapterEscolhaEscola);
 
+
+
+
+
+
     }
+
 
 //<<<<<<< HEAD
     private boolean validateFields() {
@@ -204,7 +215,16 @@ public class anamnese extends AppCompatActivity {
         TextInputLayout idadeLayout = findViewById(R.id.textIdade);
         TextInputLayout pesoLayout = findViewById(R.id.Field);
         TextInputLayout alturaLayout = findViewById(R.id.altura);
-        //TextInputLayout escolhaLayout = findViewById(R.id.InputLayout); // Substitua pelo ID correto
+
+        String escolhaFilhoUnico = escolha.getText().toString();
+        String escolhaEscolaridade = escolaridade.getText().toString();
+        String escolhaEscolar = escolar.getText().toString();
+
+
+        TextInputLayout escolaLayout = findViewById(R.id.InputLayout);
+        TextInputLayout escolaridadeLayout = findViewById(R.id.Input);
+        TextInputLayout escolarLayout = findViewById(R.id.InputEscola);
+        
 
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
@@ -312,10 +332,103 @@ public class anamnese extends AppCompatActivity {
                 alturaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
                 alturaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
                 alturaLayout.setError("Campo vazio");
+
+
             }
             valid = false;
         } else {
             alturaLayout.setError(null);
+
+        }
+        escolha.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                escolaLayout.setError(null); // Remove a mensagem de erro
+                escolaLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                escolaLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                escolaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaFilhoUnico.equals("Selecionar"))
+        {
+            escolaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            escolaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            escolaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            escolaLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            escolaLayout.setError(null);
+
+        }
+
+
+        escolaridade.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                escolaridadeLayout.setError(null); // Remove a mensagem de erro
+                escolaridadeLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                escolaridadeLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                escolaridadeLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaEscolaridade.equals("Selecionar"))
+        {
+            escolaridadeLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            escolaridadeLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            escolaridadeLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            escolaridadeLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            escolaridadeLayout.setError(null);
+
+        }
+
+
+        escolar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                escolarLayout.setError(null); // Remove a mensagem de erro
+                escolarLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                escolarLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                escolarLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaEscolar.equals("Selecionar"))
+        {
+            escolarLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            escolarLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            escolarLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            escolarLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            escolarLayout.setError(null);
 
         }
 
