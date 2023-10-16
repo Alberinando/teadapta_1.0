@@ -224,7 +224,7 @@ public class anamnese extends AppCompatActivity {
         TextInputLayout escolaLayout = findViewById(R.id.InputLayout);
         TextInputLayout escolaridadeLayout = findViewById(R.id.Input);
         TextInputLayout escolarLayout = findViewById(R.id.InputEscola);
-        
+
 
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);

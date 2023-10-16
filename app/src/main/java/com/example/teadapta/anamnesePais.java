@@ -158,6 +158,11 @@ public class anamnesePais extends AppCompatActivity {
     private boolean validateFields() {
         boolean valid = true; //editTextIdadeMae
 
+        String escolhaReligiao = escolha2.getText().toString();
+
+
+        TextInputLayout religiaoLayout = findViewById(R.id.InputLayout);
+
         TextInputLayout idadeMaeLayout = findViewById(R.id.textIdadeMae);
         TextInputLayout nomeMaeLayout = findViewById(R.id.outlinedTextFieldMae);
         TextInputLayout telefoneMaeLayout = findViewById(R.id.textNumberTel);
@@ -507,6 +512,36 @@ public class anamnesePais extends AppCompatActivity {
         } else {
             emailLayout.setError(null);
         }
+
+        escolha2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                religiaoLayout.setError(null); // Remove a mensagem de erro
+                religiaoLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                religiaoLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                religiaoLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaReligiao.equals("Selecionar"))
+        {
+            religiaoLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            religiaoLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            religiaoLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            religiaoLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            religiaoLayout.setError(null);
+
+        }
        
        
 
@@ -520,6 +555,7 @@ public class anamnesePais extends AppCompatActivity {
 
     public void submit (View view){
         if (validateFields()) {
+
 
             String nomeMae = editTextNomeMae.getText().toString().trim();
             int idadeMae = Integer.parseInt(editTextIdadeMae.getText().toString().trim());
