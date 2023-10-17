@@ -438,6 +438,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
     public void submit (View view) {
 
 
+
             String haLimitacao = escolha.getText().toString(); // Valor do primeiro AutoCompleteTextView
             String estaExercitando = escolha2.getText().toString(); // Valor do segundo AutoCompleteTextView
             String praticaExercicios = escolha3.getText().toString();

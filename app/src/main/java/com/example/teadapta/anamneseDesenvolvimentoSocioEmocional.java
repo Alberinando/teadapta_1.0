@@ -1,8 +1,11 @@
 package com.example.teadapta;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -239,42 +242,410 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
     public void Back (View view){
         super.onBackPressed();
     }
+
+    private boolean validateFields()
+    {
+        boolean valid = true;
+
+        TextInputLayout regePessoasLayout = findViewById(R.id.InputLayout);
+        TextInputLayout brincarCirancasLayout = findViewById(R.id.InputLayout2);
+        TextInputLayout expressaNecessidadesLayout = findViewById(R.id.InputLayout3);
+        TextInputLayout apresentaBirrasLayout = findViewById(R.id.InputLayout4);
+        TextInputLayout seAdaptaBemLayout = findViewById(R.id.InputLayout5);
+        TextInputLayout choraFrequenciaLayout = findViewById(R.id.InputLayout6);
+        TextInputLayout fazAmigosFrequenciaLayout = findViewById(R.id.InputLayout7);
+        TextInputLayout expressaEmocoesFacilidadeLayout = findViewById(R.id.InputLayout8);
+        TextInputLayout mudaComportamentoComEstranhoLayout = findViewById(R.id.InputLayout9);
+        TextInputLayout reageFavoravelmenteNovidadeLayout = findViewById(R.id.InputLayout00);
+        TextInputLayout procuraProtecaoPaisLayout = findViewById(R.id.InputLayout01);
+
+        String escolhaRegePessoas = escolha.getText().toString();
+        String escolhaBrincarCirancas = escolha2.getText().toString();
+        String escolhaExpressaNecessidades = escolha3.getText().toString();
+        String escolhaApresentaBirras = escolha4.getText().toString();
+        String escolhaSeAdaptaBem = escolha5.getText().toString();
+        String escolhaChoraFrequencia = escolha6.getText().toString();
+        String escolhaFazAmigosFrequencia = escolha7.getText().toString();
+        String escolhaExpressaEmocoesFacilidade = escolha8.getText().toString();
+        String escolhaMudaComportamentoComEstranho = escolha9.getText().toString();
+        String escolhaReageFavoravelmenteNovidade = escolha00.getText().toString();
+        String escolhaProcuraProtecaoPais = escolha01.getText().toString();
+
+        int errorColor = ContextCompat.getColor(this, R.color.error_color);
+        int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
+
+        escolha.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                regePessoasLayout.setError(null); // Remove a mensagem de erro
+                regePessoasLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                regePessoasLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                regePessoasLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaRegePessoas.equals("Selecionar"))
+        {
+            regePessoasLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            regePessoasLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            regePessoasLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            regePessoasLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            regePessoasLayout.setError(null);
+
+        }
+
+        escolha2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                brincarCirancasLayout.setError(null); // Remove a mensagem de erro
+                brincarCirancasLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                brincarCirancasLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                brincarCirancasLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaBrincarCirancas.equals("Selecionar"))
+        {
+            brincarCirancasLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            brincarCirancasLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            brincarCirancasLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            brincarCirancasLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            brincarCirancasLayout.setError(null);
+
+        }
+
+        escolha3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                expressaNecessidadesLayout.setError(null); // Remove a mensagem de erro
+                expressaNecessidadesLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                expressaNecessidadesLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                expressaNecessidadesLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaExpressaNecessidades.equals("Selecionar"))
+        {
+            expressaNecessidadesLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            expressaNecessidadesLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            expressaNecessidadesLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            expressaNecessidadesLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            expressaNecessidadesLayout.setError(null);
+
+        }
+
+        escolha4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                apresentaBirrasLayout.setError(null); // Remove a mensagem de erro
+                apresentaBirrasLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                apresentaBirrasLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                apresentaBirrasLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaApresentaBirras.equals("Selecionar"))
+        {
+            apresentaBirrasLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            apresentaBirrasLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            apresentaBirrasLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            apresentaBirrasLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            apresentaBirrasLayout.setError(null);
+
+        }
+
+        escolha5.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                seAdaptaBemLayout.setError(null); // Remove a mensagem de erro
+                seAdaptaBemLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                seAdaptaBemLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                seAdaptaBemLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaSeAdaptaBem.equals("Selecionar"))
+        {
+            seAdaptaBemLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            seAdaptaBemLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            seAdaptaBemLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            seAdaptaBemLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            seAdaptaBemLayout.setError(null);
+
+        }
+
+        escolha6.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                choraFrequenciaLayout.setError(null); // Remove a mensagem de erro
+                choraFrequenciaLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                choraFrequenciaLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                choraFrequenciaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaChoraFrequencia.equals("Selecionar"))
+        {
+            choraFrequenciaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            choraFrequenciaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            choraFrequenciaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            choraFrequenciaLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            choraFrequenciaLayout.setError(null);
+
+        }
+
+        escolha7.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                fazAmigosFrequenciaLayout.setError(null); // Remove a mensagem de erro
+                fazAmigosFrequenciaLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                fazAmigosFrequenciaLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                fazAmigosFrequenciaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaFazAmigosFrequencia.equals("Selecionar"))
+        {
+            fazAmigosFrequenciaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            fazAmigosFrequenciaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            fazAmigosFrequenciaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            fazAmigosFrequenciaLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            fazAmigosFrequenciaLayout.setError(null);
+
+        }
+
+        escolha8.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                expressaEmocoesFacilidadeLayout.setError(null); // Remove a mensagem de erro
+                expressaEmocoesFacilidadeLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                expressaEmocoesFacilidadeLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                expressaEmocoesFacilidadeLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaExpressaEmocoesFacilidade.equals("Selecionar"))
+        {
+            expressaEmocoesFacilidadeLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            expressaEmocoesFacilidadeLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            expressaEmocoesFacilidadeLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            expressaEmocoesFacilidadeLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            expressaEmocoesFacilidadeLayout.setError(null);
+
+        }
+
+        escolha9.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                mudaComportamentoComEstranhoLayout.setError(null); // Remove a mensagem de erro
+                mudaComportamentoComEstranhoLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                mudaComportamentoComEstranhoLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                mudaComportamentoComEstranhoLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaMudaComportamentoComEstranho.equals("Selecionar"))
+        {
+            mudaComportamentoComEstranhoLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            mudaComportamentoComEstranhoLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            mudaComportamentoComEstranhoLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            mudaComportamentoComEstranhoLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            mudaComportamentoComEstranhoLayout.setError(null);
+
+        }
+
+        escolha00.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                reageFavoravelmenteNovidadeLayout.setError(null); // Remove a mensagem de erro
+                reageFavoravelmenteNovidadeLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                reageFavoravelmenteNovidadeLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                reageFavoravelmenteNovidadeLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaReageFavoravelmenteNovidade.equals("Selecionar"))
+        {
+            reageFavoravelmenteNovidadeLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            reageFavoravelmenteNovidadeLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            reageFavoravelmenteNovidadeLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            reageFavoravelmenteNovidadeLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            reageFavoravelmenteNovidadeLayout.setError(null);
+
+        }
+
+        escolha01.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                procuraProtecaoPaisLayout.setError(null); // Remove a mensagem de erro
+                procuraProtecaoPaisLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                procuraProtecaoPaisLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                procuraProtecaoPaisLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaProcuraProtecaoPais.equals("Selecionar"))
+        {
+            procuraProtecaoPaisLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            procuraProtecaoPaisLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            procuraProtecaoPaisLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            procuraProtecaoPaisLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            procuraProtecaoPaisLayout.setError(null);
+
+        }
+
+        return valid;
+    }
     public void submit (View view){
 
-        String reageFavoravelmentePessoa = escolha.getText().toString();
-        String brincaCriancaAdulto = escolha2.getText().toString();
-        String expressaNecessidades = escolha3.getText().toString();
-        String apresentaBirrasComFrequencia = escolha4.getText().toString();
-        String seAdaptaCasaEscola = escolha5.getText().toString();
-        String choraFrequencia = escolha6.getText().toString();
-        String fazAmigosFacilidade = escolha7.getText().toString();
-        String expressaEmocoesComFacilidade = escolha8.getText().toString();
-        String mudaComportamentoComEstranho = escolha9.getText().toString();
-        String reageFavoravelmenteNovidades = escolha00.getText().toString();
-        String procuraProtecaoPais = escolha01.getText().toString();
+        if (validateFields())
+        {
+            String reageFavoravelmentePessoa = escolha.getText().toString();
+            String brincaCriancaAdulto = escolha2.getText().toString();
+            String expressaNecessidades = escolha3.getText().toString();
+            String apresentaBirrasComFrequencia = escolha4.getText().toString();
+            String seAdaptaCasaEscola = escolha5.getText().toString();
+            String choraFrequencia = escolha6.getText().toString();
+            String fazAmigosFacilidade = escolha7.getText().toString();
+            String expressaEmocoesComFacilidade = escolha8.getText().toString();
+            String mudaComportamentoComEstranho = escolha9.getText().toString();
+            String reageFavoravelmenteNovidades = escolha00.getText().toString();
+            String procuraProtecaoPais = escolha01.getText().toString();
 
 
-        comportamentoDoFilho=comportamentoDoFilho;
+            comportamentoDoFilho=comportamentoDoFilho;
 
-        DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
-        dadosCompartilhados.setReageFavoravelmentePessoa(reageFavoravelmentePessoa);
-        dadosCompartilhados.setBrincaCriancaAdulto(brincaCriancaAdulto);
-        dadosCompartilhados.setExpressaNecessidades(expressaNecessidades);
+            DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+            dadosCompartilhados.setReageFavoravelmentePessoa(reageFavoravelmentePessoa);
+            dadosCompartilhados.setBrincaCriancaAdulto(brincaCriancaAdulto);
+            dadosCompartilhados.setExpressaNecessidades(expressaNecessidades);
 
-        dadosCompartilhados.setApresentaBirrasComFrequencia(apresentaBirrasComFrequencia);
-        dadosCompartilhados.setSeAdaptaCasaEscola(seAdaptaCasaEscola);
-        dadosCompartilhados.setChoraFrequencia(choraFrequencia);
-        dadosCompartilhados.setFazAmigosFacilidade(fazAmigosFacilidade);
-        dadosCompartilhados.setExpressaEmocoesComFacilidade(expressaEmocoesComFacilidade);
-        dadosCompartilhados.setMudaComportamentoComEstranho(mudaComportamentoComEstranho);
-        dadosCompartilhados.setReageFavoravelmenteNovidades(reageFavoravelmenteNovidades);
-        dadosCompartilhados.setProcuraProtecaoPais(procuraProtecaoPais);
+            dadosCompartilhados.setApresentaBirrasComFrequencia(apresentaBirrasComFrequencia);
+            dadosCompartilhados.setSeAdaptaCasaEscola(seAdaptaCasaEscola);
+            dadosCompartilhados.setChoraFrequencia(choraFrequencia);
+            dadosCompartilhados.setFazAmigosFacilidade(fazAmigosFacilidade);
+            dadosCompartilhados.setExpressaEmocoesComFacilidade(expressaEmocoesComFacilidade);
+            dadosCompartilhados.setMudaComportamentoComEstranho(mudaComportamentoComEstranho);
+            dadosCompartilhados.setReageFavoravelmenteNovidades(reageFavoravelmenteNovidades);
+            dadosCompartilhados.setProcuraProtecaoPais(procuraProtecaoPais);
 
-        dadosCompartilhados.setComportamentoDoFilho(comportamentoDoFilho);
+            dadosCompartilhados.setComportamentoDoFilho(comportamentoDoFilho);
 
 
 
-        Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional2.class);
-        startActivity(intent);
+            Intent intent = new Intent(anamneseDesenvolvimentoSocioEmocional.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional2.class);
+            startActivity(intent);
+        }
+
     }
 }
