@@ -77,6 +77,12 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
 
     private boolean validateFields() {
         boolean valid = true;
+
+        String escolhaProblemaComunicacaoVerbal = escolhaProblemasComunicacao.getText().toString();
+
+
+        TextInputLayout problemaComunicacaoVerbalLayout = findViewById(R.id.InputLayout);
+
         TextInputLayout inputLayout = findViewById(R.id.Field);
         TextInputLayout dataLayout = findViewById(R.id.Field2);
         TextInputLayout vocalizouLayout = findViewById(R.id.Field3);
@@ -232,6 +238,36 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
             valid = false;
         } else {
             rasedataLayout.setError(null);
+        }
+
+        escolhaProblemasComunicacao.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                problemaComunicacaoVerbalLayout.setError(null); // Remove a mensagem de erro
+                problemaComunicacaoVerbalLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                problemaComunicacaoVerbalLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                problemaComunicacaoVerbalLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+
+        if(escolhaProblemaComunicacaoVerbal.equals("Selecionar"))
+        {
+            problemaComunicacaoVerbalLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+            problemaComunicacaoVerbalLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+            problemaComunicacaoVerbalLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+            problemaComunicacaoVerbalLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+            problemaComunicacaoVerbalLayout.setError(null);
+
         }
 
         return valid;

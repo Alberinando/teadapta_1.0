@@ -49,7 +49,9 @@
             android:textColorHint="@color/black"
             android:textCursorDrawable="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
-            app:hintTextColor="#000000">
+            app:hintTextColor="#000000"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/input"

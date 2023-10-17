@@ -380,6 +380,7 @@ public class anamneseDesenvolvimento extends AppCompatActivity {
             andouSemApoioLayout.setError(null);
         }
 
+
         return valid;
     }
     
@@ -387,10 +388,10 @@ public class anamneseDesenvolvimento extends AppCompatActivity {
         super.onBackPressed();
     }
 
+
     public void submit (View view){
 
         if (validateFields()) {
-
 
             int sustentouCabeca = Integer.parseInt(editTextSustentouCabeca.getText().toString().trim());
             int rolouLateralmente = Integer.parseInt(editTextRolouLateralmente.getText().toString().trim());
