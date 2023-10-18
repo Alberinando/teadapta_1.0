@@ -2,11 +2,8 @@ package com.example.teadapta;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -292,6 +289,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         startActivity(intent);
     }
 
+<<<<<<< HEAD
     private boolean validateFields()
     {
         boolean valid = true;
@@ -436,6 +434,8 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         return valid;
     }
 
+=======
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
 
         public void submit (View view)
@@ -450,11 +450,22 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
                 //  descriPraticaExercicios = descriPraticaExercicios;
 
+<<<<<<< HEAD
 
                 selectedOptionTechnology =selectedOptionTechnology;
+=======
+        String haLimitacao = escolha.getText().toString(); // Valor do primeiro AutoCompleteTextView
+        String estaExercitando = escolha2.getText().toString(); // Valor do segundo AutoCompleteTextView
+        String praticaExercicios = escolha3.getText().toString();
+        String temLugarParaBrincar = escolha4.getText().toString();
+        String haLimitacaoExercicios = limitacaoExercicios.getText().toString().trim();
+
+      //  descriPraticaExercicios = descriPraticaExercicios;
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
                 acriancaEstaSeExercitandoAtualmene=acriancaEstaSeExercitandoAtualmene;
 
+<<<<<<< HEAD
                 String descricaoDeQuais = descricaoDeQuais2.getText().toString();
                 String descricaoFrequencia = descricaoFrequencia2.getText().toString();
 
@@ -470,6 +481,25 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 // DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
 
 
+=======
+        selectedOptionTechnology =selectedOptionTechnology;
+
+        acriancaEstaSeExercitandoAtualmene=acriancaEstaSeExercitandoAtualmene;
+
+        String descricaoDeQuais = descricaoDeQuais2.getText().toString();
+        String descricaoFrequencia = descricaoFrequencia2.getText().toString();
+
+        TextInputLayout textInputLayout = findViewById(R.id.TextField4);
+        TextInputEditText textInputEditText = textInputLayout.findViewById(R.id.subescolha4);
+
+        String descriPraticaExercicios = textInputEditText.getText().toString().trim();
+
+
+        // descricaoDeQuais=descricaoDeQuais;
+
+
+       // DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
 
 
@@ -481,15 +511,34 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 dadosCompartilhados.setTemLugarParaBrincar(temLugarParaBrincar);
                 dadosCompartilhados.setHaLimitacaoExercicios(haLimitacaoExercicios);
 
+<<<<<<< HEAD
 
                 dadosCompartilhados.setSelectedOptionTechnology(selectedOptionTechnology);
                 dadosCompartilhados.setDescriPraticaExercicios(descriPraticaExercicios);
+=======
+        DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+
+        dadosCompartilhados.setHaLimitacao(haLimitacao);
+        dadosCompartilhados.setEstaExercitando(estaExercitando);
+        dadosCompartilhados.setPraticaExercicios(praticaExercicios);
+        dadosCompartilhados.setTemLugarParaBrincar(temLugarParaBrincar);
+        dadosCompartilhados.setHaLimitacaoExercicios(haLimitacaoExercicios);
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
                 dadosCompartilhados.setDescricaoDeQuais(descricaoDeQuais2);
                 dadosCompartilhados.setDescricaoFrequencia(descricaoFrequencia2);
                 dadosCompartilhados.setAcriancaEstaSeExercitandoAtualmene(acriancaEstaSeExercitandoAtualmene);
 
+<<<<<<< HEAD
 
+=======
+        dadosCompartilhados.setSelectedOptionTechnology(selectedOptionTechnology);
+        dadosCompartilhados.setDescriPraticaExercicios(descriPraticaExercicios);
+
+        dadosCompartilhados.setDescricaoDeQuais(descricaoDeQuais2);
+        dadosCompartilhados.setDescricaoFrequencia(descricaoFrequencia2);
+        dadosCompartilhados.setAcriancaEstaSeExercitandoAtualmene(acriancaEstaSeExercitandoAtualmene);
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
                 String nome = dadosCompartilhados.getNome();
                 String data = dadosCompartilhados.getData();
@@ -512,6 +561,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 String escolhaValores = dadosCompartilhados.getEscolhaValores();
                 String descricaoEscolhaValores = dadosCompartilhados.getDescricaoEscolhaValores();
 
+<<<<<<< HEAD
 
                 int andouSemApoio = dadosCompartilhados.getAndouSemApoio();
                 int sustentouCabeca = dadosCompartilhados.getSustentouCabeca();
@@ -525,6 +575,40 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 int andouComApoio = dadosCompartilhados.getAndouComApoio();
 
 
+=======
+        String nome = dadosCompartilhados.getNome();
+        String data = dadosCompartilhados.getData();
+        int idade = dadosCompartilhados.getIdade();
+        double peso = dadosCompartilhados.getPeso();
+        double altura = dadosCompartilhados.getAltura();
+
+        String nomeMae = dadosCompartilhados.getNomeMae();
+        int idadeMae = dadosCompartilhados.getIdadeMae();
+        String telefoneMae = dadosCompartilhados.getTelefoneMae();
+        String profissaoMae = dadosCompartilhados.getProfissaoMae();
+        String formacaoAcademica = dadosCompartilhados.getFormacaoAcademica();
+        String nomePai = dadosCompartilhados.getNomePai();
+        int idadePai = dadosCompartilhados.getIdadePai();
+        String telefonePai = dadosCompartilhados.getTelefonePai();
+        String formacaoAcademicaPai = dadosCompartilhados.getFormacaoAcademicaPai();
+        String profissaoPai = dadosCompartilhados.getProfissaoPai();
+        String email = dadosCompartilhados.getEmail();
+        String composicaoFamilia = dadosCompartilhados.getComposicaoFamilia();
+        String escolhaValores = dadosCompartilhados.getEscolhaValores();
+        String descricaoEscolhaValores = dadosCompartilhados.getDescricaoEscolhaValores();
+
+
+        int andouSemApoio = dadosCompartilhados.getAndouSemApoio();
+        int sustentouCabeca = dadosCompartilhados.getSustentouCabeca();
+        int rolouLateralmente = dadosCompartilhados.getRolouLateralmente();
+        int virouSe = dadosCompartilhados.getVirouSe();
+        int sentouComApoio = dadosCompartilhados.getSentouComApoio();
+        int arrastou = dadosCompartilhados.getArrastou();
+        int engatinhou = dadosCompartilhados.getEngatinhou();
+        int ficouDePeComApoio = dadosCompartilhados.getFicouDePeComApoio();
+        int ficouDePeSemApoio = dadosCompartilhados.getFicouDePeSemApoio();
+        int andouComApoio = dadosCompartilhados.getAndouComApoio();
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
                 String escolhaValue = dadosCompartilhados.getEscolhaValue();
                 String escolaridadeValue = dadosCompartilhados.getEscolaridadeValue();
@@ -540,6 +624,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 String formasPeculiaresDeOrganizacaoMotora= dadosCompartilhados.getFormasPeculiaresDeOrganizacaoMotora();
                 String escolhaAMao= dadosCompartilhados.getEscolhaAMao();
 
+<<<<<<< HEAD
 
                 String investeMomentosFamilia= dadosCompartilhados.getInvesteMomentosFamilia();
                 String medosFobias= dadosCompartilhados.getMedosFobias();
@@ -549,6 +634,29 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 String investeEmMomentosFamilia = dadosCompartilhados.getInvesteEmMomentosFamilia();
 
 
+=======
+        String escolhaValue = dadosCompartilhados.getEscolhaValue();
+        String escolaridadeValue = dadosCompartilhados.getEscolaridadeValue();
+        String escolarValue = dadosCompartilhados.getEscolarValue();
+
+        String usoDuasMaos = dadosCompartilhados.getUsoDuasMaos();
+        String dificuldadeCordenacao = dadosCompartilhados.getDificuldadeCordenacao();
+        String caiComFrequencia= dadosCompartilhados.getCaiComFrequencia();
+        String apanhaObjetosSemDiculdade= dadosCompartilhados.getApanhaObjetosSemDiculdade();
+        String imitaGestosSimples= dadosCompartilhados.getImitaGestosSimples();
+        String arremessaObjetosSemDiculdade= dadosCompartilhados.getArremessaObjetosSemDiculdade();
+        String seguraObjetosSemDiculdade= dadosCompartilhados.getSeguraObjetosSemDiculdade();
+        String formasPeculiaresDeOrganizacaoMotora= dadosCompartilhados.getFormasPeculiaresDeOrganizacaoMotora();
+        String escolhaAMao= dadosCompartilhados.getEscolhaAMao();
+
+
+        String investeMomentosFamilia= dadosCompartilhados.getInvesteMomentosFamilia();
+        String medosFobias= dadosCompartilhados.getMedosFobias();
+        String comoSeSenteSeparadoDosPais = dadosCompartilhados.getComoSeSenteSeparadoDosPais();
+        String informacoesAdicionais = dadosCompartilhados.getInformacoesAdicionais();
+        String descricaoMedoFobia = dadosCompartilhados.getDescricaoMedoFobia();
+        String investeEmMomentosFamilia = dadosCompartilhados.getInvesteEmMomentosFamilia();
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
                 String frase = dadosCompartilhados.getFrase();
                 String primeirasPalavras = dadosCompartilhados.getPrimeirasPalavras();
@@ -559,6 +667,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 String descricaoDoProblemaComunicacao= dadosCompartilhados.getDescricaoDoProblemaComunicacao();
 
 
+<<<<<<< HEAD
                 String reageFavoravelmentePessoa = dadosCompartilhados.getReageFavoravelmentePessoa();
                 String brincaCriancaAdulto = dadosCompartilhados.getBrincaCriancaAdulto();
                 String expressaNecessidades= dadosCompartilhados.getExpressaNecessidades();
@@ -572,6 +681,28 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 String procuraProtecaoPais = dadosCompartilhados.getProcuraProtecaoPais();
 
 
+=======
+        String frase = dadosCompartilhados.getFrase();
+        String primeirasPalavras = dadosCompartilhados.getPrimeirasPalavras();
+        String vocalizou= dadosCompartilhados.getVocalizou();
+        String respondeuSomHumano= dadosCompartilhados.getRespondeuSomHumano();
+        String respondruSom= dadosCompartilhados.getRespondruSom();
+        String problemasComunicacao= dadosCompartilhados.getProblemasComunicacao();
+        String descricaoDoProblemaComunicacao= dadosCompartilhados.getDescricaoDoProblemaComunicacao();
+
+
+        String reageFavoravelmentePessoa = dadosCompartilhados.getReageFavoravelmentePessoa();
+        String brincaCriancaAdulto = dadosCompartilhados.getBrincaCriancaAdulto();
+        String expressaNecessidades= dadosCompartilhados.getExpressaNecessidades();
+        String apresentaBirrasComFrequencia= dadosCompartilhados.getApresentaBirrasComFrequencia();
+        String seAdaptaCasaEscola= dadosCompartilhados.getImitaGestosSimples();
+        String choraFrequencia= dadosCompartilhados.getChoraFrequencia();
+        String fazAmigosFacilidade= dadosCompartilhados.getFazAmigosFacilidade();
+        String expressaEmocoesComFacilidade= dadosCompartilhados.getExpressaEmocoesComFacilidade();
+        String mudaComportamentoComEstranho= dadosCompartilhados.getMudaComportamentoComEstranho();
+        String reageFavoravelmenteNovidades= dadosCompartilhados.getReageFavoravelmenteNovidades();
+        String procuraProtecaoPais = dadosCompartilhados.getProcuraProtecaoPais();
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
                 haLimitacao = dadosCompartilhados.getHaLimitacao();
                 estaExercitando = dadosCompartilhados.getEstaExercitando();
@@ -586,6 +717,20 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 descricaoFrequencia2 = dadosCompartilhados.getDescricaoFrequencia();
 
 
+<<<<<<< HEAD
+=======
+        haLimitacao = dadosCompartilhados.getHaLimitacao();
+        estaExercitando = dadosCompartilhados.getEstaExercitando();
+        praticaExercicios = dadosCompartilhados.getPraticaExercicios();
+        temLugarParaBrincar = dadosCompartilhados.getTemLugarParaBrincar();
+        haLimitacaoExercicios = dadosCompartilhados.getHaLimitacaoExercicios();
+        selectedOptionTechnology = dadosCompartilhados.getSelectedOptionTechnology();
+        descriPraticaExercicios = dadosCompartilhados.getDescriPraticaExercicios();
+        comportamentoDoFilho = dadosCompartilhados.getComportamentoDoFilho();
+        acriancaEstaSeExercitandoAtualmene = dadosCompartilhados.getAcriancaEstaSeExercitandoAtualmene();
+        descricaoDeQuais2 = dadosCompartilhados.getDescricaoDeQuais();
+        descricaoFrequencia2 = dadosCompartilhados.getDescricaoFrequencia();
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
 
 
@@ -601,13 +746,25 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                         idadePai, formacaoAcademicaPai,  profissaoPai, telefonePai,  email,composicaoFamilia,
                         escolhaValores,descricaoEscolhaValores
 
+<<<<<<< HEAD
 
                         //..............................Anamnese Desenvolvimento.................................................
                         , andouSemApoio, sustentouCabeca, rolouLateralmente, virouSe, sentouComApoio, arrastou, engatinhou
                         ,ficouDePeComApoio, ficouDePeSemApoio, andouComApoio
+=======
+        // Crie um objeto Usuario com os valores obtidos
+        Usuario usuario = new Usuario(//....................anamnese..............................................................
+                 nome, idade,data, peso, altura, escolhaValue,escolaridadeValue,  escolarValue
+
+                //..............................anamnese pai.........................................................
+                , nomeMae, idadeMae, telefoneMae,  formacaoAcademica, profissaoMae, nomePai,
+         idadePai, formacaoAcademicaPai,  profissaoPai, telefonePai,  email,composicaoFamilia,
+                escolhaValores,descricaoEscolhaValores
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
 
                         //............................Anamnese Desenvolvimento Crianca.........................................................
 
+<<<<<<< HEAD
                         , usoDuasMaos,dificuldadeCordenacao,caiComFrequencia, apanhaObjetosSemDiculdade,
                         imitaGestosSimples,arremessaObjetosSemDiculdade,seguraObjetosSemDiculdade,
                         formasPeculiaresDeOrganizacaoMotora, escolhaAMao,
@@ -658,6 +815,64 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                             }
                         });
             }
+=======
+        //..............................Anamnese Desenvolvimento.................................................
+            , andouSemApoio, sustentouCabeca, rolouLateralmente, virouSe, sentouComApoio, arrastou, engatinhou
+            ,ficouDePeComApoio, ficouDePeSemApoio, andouComApoio
+
+        //............................Anamnese Desenvolvimento Crianca.........................................................
+
+            , usoDuasMaos,dificuldadeCordenacao,caiComFrequencia, apanhaObjetosSemDiculdade,
+                 imitaGestosSimples,arremessaObjetosSemDiculdade,seguraObjetosSemDiculdade,
+                 formasPeculiaresDeOrganizacaoMotora, escolhaAMao,
+
+                //...........................Anamnese Desenvolvimento Linguistico...............................
+
+                frase,  primeirasPalavras, vocalizou,respondeuSomHumano, respondruSom,
+                problemasComunicacao,descricaoDoProblemaComunicacao,
+
+                //......................Anamnese Desenvolvimento SocioEmocional................................
+
+                reageFavoravelmentePessoa, brincaCriancaAdulto, expressaNecessidades,
+                 apresentaBirrasComFrequencia, seAdaptaCasaEscola,choraFrequencia ,fazAmigosFacilidade,
+                 expressaEmocoesComFacilidade, mudaComportamentoComEstranho, reageFavoravelmenteNovidades,
+                 procuraProtecaoPais,comportamentoDoFilho,
+
+                //......................Anamnese Desenvolvimento SocioEmocional2................................
+
+                 investeMomentosFamilia,medosFobias,comoSeSenteSeparadoDosPais,informacoesAdicionais,descricaoMedoFobia,
+                investeEmMomentosFamilia
+
+
+                ,haLimitacao,estaExercitando, praticaExercicios,temLugarParaBrincar,
+                haLimitacaoExercicios, selectedOptionTechnology,acriancaEstaSeExercitandoAtualmene,descricaoDeQuais
+                ,descricaoFrequencia,descriPraticaExercicios);
+
+
+        // Inicialize o Firestore
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Crie um novo documento na coleção "usuarios" com um ID automático
+        db.collection("usuarios")
+                .add(usuario)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(anamneseDesenvolvimentoExercicio.this, "Dados inseridos com sucesso.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(anamneseDesenvolvimentoExercicio.this, com.example.teadapta.MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(anamneseDesenvolvimentoExercicio.this, "Erro ao inserir os dados: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+>>>>>>> 6144a7c257c8ac589d74330ea8af57969c541634
         }
 
     }
