@@ -207,7 +207,7 @@ public class anamnese extends AppCompatActivity {
     }
 
 
-//<<<<<<< HEAD
+
     private boolean validateFields() {
         boolean valid = true;
 

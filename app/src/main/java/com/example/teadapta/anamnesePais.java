@@ -162,14 +162,15 @@ public class anamnesePais extends AppCompatActivity {
 
 
         TextInputLayout religiaoLayout = findViewById(R.id.InputLayout);
+        TextInputLayout descricaoLayout = findViewById(R.id.outlinedTextFieldreligiao);
 
         TextInputLayout idadeMaeLayout = findViewById(R.id.textIdadeMae);
         TextInputLayout nomeMaeLayout = findViewById(R.id.outlinedTextFieldMae);
         TextInputLayout telefoneMaeLayout = findViewById(R.id.textNumberTel);
         TextInputLayout formacaoAcademicaLayout = findViewById(R.id.outlinedTextFieldformacaoMae);
         TextInputLayout profissaoMaeLayout = findViewById(R.id.outlinedTextFieldprofissaoMae);
-        TextInputLayout idadePaiLayout = findViewById(R.id.outlinedTextField);
-        TextInputLayout nomePaiLayout = findViewById(R.id.textIdade);
+        TextInputLayout idadePaiLayout = findViewById(R.id.textIdade);
+        TextInputLayout nomePaiLayout = findViewById(R.id.outlinedTextField);
         TextInputLayout telefonePaiLayout = findViewById(R.id.textNumber);
         TextInputLayout formacaoAcademicaPaiLayout = findViewById(R.id.outlinedTextFieldformacao);
         TextInputLayout profissaoPaiLayout = findViewById(R.id.outlinedTextFieldprofissao);
@@ -538,7 +539,39 @@ public class anamnesePais extends AppCompatActivity {
             religiaoLayout.setError("Campo vazio");
             valid = false;
         }
-        else {
+        else if(escolhaReligiao.equals("Sim"))
+        {
+            descreva.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    // Chamado após o texto ser alterado
+                    descricaoLayout.setError(null); // Remove a mensagem de erro
+                    descricaoLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                    descricaoLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                    descricaoLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                }
+            });
+
+            if (descreva.getText().toString().trim().isEmpty()) {
+                if (!descreva.isFocused()) {
+                    descricaoLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                    descricaoLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                    descricaoLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                    descricaoLayout.setError("Campo vazio");
+                }
+                valid = false;
+            } else {
+                descricaoLayout.setError(null);
+            }
+        }
+        else
+        {
             religiaoLayout.setError(null);
 
         }

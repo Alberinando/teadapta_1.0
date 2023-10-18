@@ -24,6 +24,7 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
     primeirasPalavrasdataEditText,frasedataEditText,descricaoProblemaComunicacao;
     //private AutoCompleteTextView descricaoProblemaComunicacao;
     private AutoCompleteTextView escolhaProblemasComunicacao;
+    private AutoCompleteTextView descricaoProblemaComunicacaoVerbal;
 
 
     @Override
@@ -79,16 +80,20 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
         boolean valid = true;
 
         String escolhaProblemaComunicacaoVerbal = escolhaProblemasComunicacao.getText().toString();
-
+       // String descricaoProblemaComunicacaoVerbal = descricaoProblemaComunicacao.getText().toString();
 
         TextInputLayout problemaComunicacaoVerbalLayout = findViewById(R.id.InputLayout);
+        TextInputLayout descricaoProblemaLayout = findViewById(R.id.outlinedTextFieldreligiao);
+        // descricaoProblemaComunicacaoVerbalLayout = findViewById(R.id.outlinedTextFieldreligiao);
+
+
 
         TextInputLayout inputLayout = findViewById(R.id.Field);
         TextInputLayout dataLayout = findViewById(R.id.Field2);
         TextInputLayout vocalizouLayout = findViewById(R.id.Field3);
         TextInputLayout primeirasPalavrasdataLayout = findViewById(R.id.Field4);
         TextInputLayout rasedataLayout = findViewById(R.id.Field5);
-        TextInputLayout descricaoProblemaLayout = findViewById(R.id.outlinedTextFieldreligiao);
+
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
 
@@ -265,7 +270,42 @@ public class anamneseDesenvolvimentoLinguistico extends AppCompatActivity {
             problemaComunicacaoVerbalLayout.setError("Campo vazio");
             valid = false;
         }
-        else {
+        else if(escolhaProblemaComunicacaoVerbal.equals("Sim"))
+        {
+            descricaoProblemaComunicacao.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    // Nada a fazer antes da mudança de texto
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    // Nada a fazer durante a mudança de texto
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    // Chamado após o texto ser alterado
+                    descricaoProblemaLayout.setError(null); // Remove a mensagem de erro
+                    descricaoProblemaLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                    descricaoProblemaLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                    descricaoProblemaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                }
+            });
+            if (descricaoProblemaComunicacao.getText().toString().trim().isEmpty()) {
+                if (!descricaoProblemaComunicacao.isFocused()) {
+                    descricaoProblemaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                    descricaoProblemaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                    descricaoProblemaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                    descricaoProblemaLayout.setError("Campo vazio");
+                }
+                valid = false;
+            } else {
+                descricaoProblemaLayout.setError(null);
+            }
+        }
+        else
+        {
             problemaComunicacaoVerbalLayout.setError(null);
 
         }

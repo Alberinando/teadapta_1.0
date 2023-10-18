@@ -38,8 +38,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
     private TextInputEditText descricaoFrequencia2;
     private TextInputEditText descricaoDeQuais2;
     private XmlPullParser textInputEditText;
-
-
+    private TextInputEditText limitacaoParaFazerExercicios,pqSeuFilhoPraticaExercicios;
 
 
     @Override
@@ -50,6 +49,9 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         escolha2 = findViewById(R.id.escolha2);
         escolha3 = findViewById(R.id.escolha3);
         escolha4 = findViewById(R.id.escolha4);
+
+        limitacaoParaFazerExercicios = findViewById(R.id.subescolha);
+        pqSeuFilhoPraticaExercicios = findViewById(R.id.subescolha4);
 
         religiaoLayout = findViewById(R.id.TextField);
         religiaoLayout2 = findViewById(R.id.TextField2);
@@ -181,6 +183,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         ArrayAdapter<String> adapterEscolha4 = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, listaEscolha4);
         escolha4.setAdapter(adapterEscolha4);
+
         escolha.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -302,6 +305,9 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         String escolhaPorquePraticaExercicios = escolha3.getText().toString();
         String escolhaExisteLocalBrincar = escolha4.getText().toString();
 
+        TextInputLayout limitacaoParaFazerExerciciosLayout = findViewById(R.id.TextField);
+        TextInputLayout pqSeuFilhoPraticaExerciciosLayout = findViewById(R.id.TextField4);
+
 
         TextInputLayout limiteExerciciosLayout = findViewById(R.id.InputLayout);
         TextInputLayout lixerciciosFrequentementeLayout = findViewById(R.id.InputLayout2);
@@ -336,7 +342,38 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
             limiteExerciciosLayout.setError("Campo vazio");
             valid = false;
         }
-        else {
+        else if(escolhaLimiteExercicios.equals("Sim"))
+        {
+            limitacaoParaFazerExercicios.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}   // Nada a fazer antes da mudança de texto
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    // Chamado após o texto ser alterado
+                    limitacaoParaFazerExerciciosLayout.setError(null); // Remove a mensagem de erro
+                    limitacaoParaFazerExerciciosLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                    limitacaoParaFazerExerciciosLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                    limitacaoParaFazerExerciciosLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                }
+            });
+            if (limitacaoParaFazerExercicios.getText().toString().trim().isEmpty()) {
+                if (!limitacaoParaFazerExercicios.isFocused()) {
+                    limitacaoParaFazerExerciciosLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                    limitacaoParaFazerExerciciosLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                    limitacaoParaFazerExerciciosLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                    limitacaoParaFazerExerciciosLayout.setError("Campo vazio");
+                }
+                valid = false;
+            } else {
+                limitacaoParaFazerExerciciosLayout.setError(null);
+            }
+        }
+        else
+        {
             limiteExerciciosLayout.setError(null);
 
         }
@@ -398,7 +435,39 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
             porquePraticaExerciciosLayout.setError("Campo vazio");
             valid = false;
         }
-        else {
+        else if(escolhaPorquePraticaExercicios.equals("Sim")) {
+            pqSeuFilhoPraticaExercicios.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                }   // Nada a fazer antes da mudança de texto
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    // Chamado após o texto ser alterado
+                    pqSeuFilhoPraticaExerciciosLayout.setError(null); // Remove a mensagem de erro
+                    pqSeuFilhoPraticaExerciciosLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                    pqSeuFilhoPraticaExerciciosLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                    pqSeuFilhoPraticaExerciciosLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                }
+            });
+            if (pqSeuFilhoPraticaExercicios.getText().toString().trim().isEmpty()) {
+                if (!pqSeuFilhoPraticaExercicios.isFocused()) {
+                    pqSeuFilhoPraticaExerciciosLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                    pqSeuFilhoPraticaExerciciosLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                    pqSeuFilhoPraticaExerciciosLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                    pqSeuFilhoPraticaExerciciosLayout.setError("Campo vazio");
+                }
+                valid = false;
+            } else {
+                pqSeuFilhoPraticaExerciciosLayout.setError(null);
+            }
+        }
+        else
+        {
             porquePraticaExerciciosLayout.setError(null);
 
         }

@@ -1,7 +1,6 @@
 package com.example.teadapta;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatEditText;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
@@ -13,7 +12,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -22,9 +20,16 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
     private AutoCompleteTextView escolha;
     private AutoCompleteTextView escolha2;
     private TextInputLayout religiaoLayout;
-    private TextInputLayout lunedTextFieldDes2;
-    private TextInputEditText seSenteSeparadoPais;
-    private TextInputEditText informacoesImportantes;
+   // private TextInputLayout lunedTextFieldDes2;
+    private TextInputEditText seSenteSeparadoPais2;
+    private TextInputEditText informacoesImportantes2;
+    private AutoCompleteTextView descricaoMedoFobia,investeMomentosFamilia;
+
+
+    private String comoSeSenteSeparadoDosPais;
+    private String informacoesAdicionais;
+    private TextInputLayout lunedTextFieldDes3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,12 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
         escolha = findViewById(R.id.escolha);
         escolha2 = findViewById(R.id.escolha2);
         religiaoLayout = findViewById(R.id.TextField);
+
+        seSenteSeparadoPais2 = findViewById(R.id.input);
+        informacoesImportantes2 = findViewById(R.id.input2);
+
+        //descricaoMedoFobia = findViewById(R.id.subescolha);
+        //investeMomentosFamilia = findViewById(R.id.subescolha2);
 
 
         String[] listaEscolha = getResources().getStringArray(R.array.Escolha);
@@ -59,7 +70,7 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
         });
 
         escolha2 = findViewById(R.id.escolha2);
-        lunedTextFieldDes2 = findViewById(R.id.lunedTextFieldDes2);
+        lunedTextFieldDes3 = findViewById(R.id.lunedTextFieldDes2);
 
         String[] listaEscolha2 = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha2 = new ArrayAdapter<>(this,
@@ -73,7 +84,7 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String escolhaValue2 = s.toString().trim();
-                updateLayoutVisibility(escolhaValue2, lunedTextFieldDes2);
+                updateLayoutVisibility(escolhaValue2, lunedTextFieldDes3);
             }
 
             @Override
@@ -95,11 +106,19 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
     private boolean validateFields()
     {
         boolean valid = true;
+        
+        /*
+        TextInputLayout seSenteSeparadoPaisLayout = findViewById(R.id.outlinedTextField);
+        TextInputLayout informacoesImportantesLayout = findViewById(R.id.outlinedTextField2);
+        
+         */
+        String escolhaMedosFobias = escolha.getText().toString();
+        String escolhaInvesteMomentos = escolha2.getText().toString();
 
         TextInputLayout seSenteSeparadoPaisLayout = findViewById(R.id.outlinedTextField);
         TextInputLayout informacoesImportantesLayout = findViewById(R.id.outlinedTextField2);
-        String escolhaMedosFobias = escolha.getText().toString();
-        String escolhaInvesteMomentos = escolha2.getText().toString();
+        //TextInputLayout descricaoMedoFobiaLayout = findViewById(R.id.TextField);
+      //  TextInputLayout investeMomentosFamiliaLayout = findViewById(R.id.lunedTextFieldDes2);
 
 
         TextInputLayout medosFobiasLayout = findViewById(R.id.InputLayout);
@@ -109,6 +128,61 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
 
 
+        informacoesImportantes2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}   // Nada a fazer antes da mudança de texto
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                informacoesImportantesLayout.setError(null); // Remove a mensagem de erro
+                informacoesImportantesLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                informacoesImportantesLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                informacoesImportantesLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+        if (informacoesImportantes2.getText().toString().trim().isEmpty()) {
+            if (!informacoesImportantes2.isFocused()) {
+                informacoesImportantesLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                informacoesImportantesLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                informacoesImportantesLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                informacoesImportantesLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            informacoesImportantesLayout.setError(null);
+        }
+
+        seSenteSeparadoPais2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}   // Nada a fazer antes da mudança de texto
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                seSenteSeparadoPaisLayout.setError(null); // Remove a mensagem de erro
+                seSenteSeparadoPaisLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                seSenteSeparadoPaisLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                seSenteSeparadoPaisLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+        if (seSenteSeparadoPais2.getText().toString().trim().isEmpty()) {
+            if (!seSenteSeparadoPais2.isFocused()) {
+                seSenteSeparadoPaisLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                seSenteSeparadoPaisLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                seSenteSeparadoPaisLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                seSenteSeparadoPaisLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            seSenteSeparadoPaisLayout.setError(null);
+        }
         escolha.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -134,7 +208,41 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
             medosFobiasLayout.setError("Campo vazio");
             valid = false;
         }
-        else {
+        /*
+        else if(escolhaMedosFobias.equals("Sim"))
+        {
+            descricaoMedoFobia.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}   // Nada a fazer antes da mudança de texto
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    // Chamado após o texto ser alterado
+                    descricaoMedoFobiaLayout.setError(null); // Remove a mensagem de erro
+                    descricaoMedoFobiaLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                    descricaoMedoFobiaLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                    descricaoMedoFobiaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                }
+            });
+            if (descricaoMedoFobia.getText().toString().trim().isEmpty()) {
+                if (!descricaoMedoFobia.isFocused()) {
+                    descricaoMedoFobiaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                    descricaoMedoFobiaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                    descricaoMedoFobiaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                    descricaoMedoFobiaLayout.setError("Campo vazio");
+                }
+                valid = false;
+            } else {
+                descricaoMedoFobiaLayout.setError(null);
+            }
+        }
+
+         */
+        else
+        {
             medosFobiasLayout.setError(null);
 
         }
@@ -165,10 +273,44 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
             investeMomentossLayout.setError("Campo vazio");
             valid = false;
         }
-        else {
+        /*
+        else if(escolhaInvesteMomentos.equals("Sim"))
+        {
+            investeMomentosFamilia.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}   // Nada a fazer antes da mudança de texto
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    // Chamado após o texto ser alterado
+                    investeMomentosFamiliaLayout.setError(null); // Remove a mensagem de erro
+                    investeMomentosFamiliaLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                    investeMomentosFamiliaLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                    investeMomentosFamiliaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                }
+            });
+            if (investeMomentosFamilia.getText().toString().trim().isEmpty()) {
+                if (!investeMomentosFamilia.isFocused()) {
+                    investeMomentosFamiliaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                    investeMomentosFamiliaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                    investeMomentosFamiliaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                    investeMomentosFamiliaLayout.setError("Campo vazio");
+                }
+                valid = false;
+            } else {
+                investeMomentosFamiliaLayout.setError(null);
+            }
+        }
+        else
+        {
             investeMomentossLayout.setError(null);
 
         }
+
+         */
 
         return valid;
     }
@@ -179,13 +321,20 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
             String medosFobias = escolha.getText().toString();
             String investeMomentosFamilia = escolha2.getText().toString();
 
+            comoSeSenteSeparadoDosPais  = seSenteSeparadoPais2.getText().toString().trim();
+            informacoesAdicionais  = informacoesImportantes2.getText().toString().trim();
+
+            /*
             TextInputLayout textInputLayout = findViewById(R.id.outlinedTextField);
             TextInputEditText textInputEditText = textInputLayout.findViewById(R.id.input);
             String comoSeSenteSeparadoDosPais = textInputEditText.getText().toString().trim();
+            
 
             TextInputLayout informacoes= findViewById(R.id.outlinedTextField2);
             TextInputEditText textInputInformacoes = informacoes.findViewById(R.id.input2);
             String informacoesAdicionais = textInputInformacoes.getText().toString().trim();
+
+             */
 
             TextInputLayout descricao= findViewById(R.id.TextField);
             TextInputEditText textInputDescricao = descricao.findViewById(R.id.subescolha);
