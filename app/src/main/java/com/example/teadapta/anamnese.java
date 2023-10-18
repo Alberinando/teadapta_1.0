@@ -436,32 +436,37 @@ public class anamnese extends AppCompatActivity {
         return valid;
     }
 
+    private void gravaDados()
+    {
+        // Obtém os valores dos campos de entrada
+        String nome = editTextNome.getText().toString().trim();
+        String data = editTextData.getText().toString().trim();
+        int idade = Integer.parseInt(editTextIdade.getText().toString().trim());
+        double peso = Double.parseDouble(editTextPeso.getText().toString().trim());
+        double altura = Double.parseDouble(editTextAltura.getText().toString().trim());
+        String escolhaValue = escolha.getText().toString(); // Valor do primeiro AutoCompleteTextView
+        String escolaridadeValue = escolaridade.getText().toString(); // Valor do segundo AutoCompleteTextView
+        String escolarValue = escolar.getText().toString();
+
+        DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
+        dadosCompartilhados.setNome(nome);
+        dadosCompartilhados.setIdade(idade);
+        dadosCompartilhados.setPeso(peso);
+        dadosCompartilhados.setAltura(altura);
+        dadosCompartilhados.setData(data);
+
+        dadosCompartilhados.setEscolhaValue(escolhaValue);
+        dadosCompartilhados.setEscolaridadeValue(escolaridadeValue);
+        dadosCompartilhados.setEscolarValue(escolarValue);
+
+        Intent intent = new Intent(anamnese.this, anamnesePais.class);
+        startActivity(intent);
+
+    }
+
     public void submit(View view) {
         if (validateFields()) {
-            // Obtém os valores dos campos de entrada
-            String nome = editTextNome.getText().toString().trim();
-            String data = editTextData.getText().toString().trim();
-            int idade = Integer.parseInt(editTextIdade.getText().toString().trim());
-            double peso = Double.parseDouble(editTextPeso.getText().toString().trim());
-            double altura = Double.parseDouble(editTextAltura.getText().toString().trim());
-            String escolhaValue = escolha.getText().toString(); // Valor do primeiro AutoCompleteTextView
-            String escolaridadeValue = escolaridade.getText().toString(); // Valor do segundo AutoCompleteTextView
-            String escolarValue = escolar.getText().toString();
-
-            DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
-            dadosCompartilhados.setNome(nome);
-            dadosCompartilhados.setIdade(idade);
-            dadosCompartilhados.setPeso(peso);
-            dadosCompartilhados.setAltura(altura);
-            dadosCompartilhados.setData(data);
-
-            dadosCompartilhados.setEscolhaValue(escolhaValue);
-            dadosCompartilhados.setEscolaridadeValue(escolaridadeValue);
-            dadosCompartilhados.setEscolarValue(escolarValue);
-
-            Intent intent = new Intent(anamnese.this, anamnesePais.class);
-            startActivity(intent);
-
+            gravaDados();
         }
     }
 

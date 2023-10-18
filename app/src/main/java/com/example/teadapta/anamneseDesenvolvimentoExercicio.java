@@ -40,6 +40,8 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
     private XmlPullParser textInputEditText;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -302,8 +304,8 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         TextInputLayout limiteExerciciosLayout = findViewById(R.id.InputLayout);
         TextInputLayout lixerciciosFrequentementeLayout = findViewById(R.id.InputLayout2);
-        TextInputLayout porquePraticaExerciciosLayout = findViewById(R.id.InputLayout3);
-        TextInputLayout existeLocalBrincarLayout = findViewById(R.id.InputLayout4);
+        TextInputLayout porquePraticaExerciciosLayout = findViewById(R.id.InputLayout4);
+        TextInputLayout existeLocalBrincarLayout = findViewById(R.id.InputLayout5);
 
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
@@ -435,227 +437,227 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
     }
 
 
-    public void submit (View view) {
 
+        public void submit (View view)
+        {
+            if (validateFields())
+            {
+                String haLimitacao = escolha.getText().toString(); // Valor do primeiro AutoCompleteTextView
+                String estaExercitando = escolha2.getText().toString(); // Valor do segundo AutoCompleteTextView
+                String praticaExercicios = escolha3.getText().toString();
+                String temLugarParaBrincar = escolha4.getText().toString();
+                String haLimitacaoExercicios = limitacaoExercicios.getText().toString().trim();
 
+                //  descriPraticaExercicios = descriPraticaExercicios;
 
-            String haLimitacao = escolha.getText().toString(); // Valor do primeiro AutoCompleteTextView
-            String estaExercitando = escolha2.getText().toString(); // Valor do segundo AutoCompleteTextView
-            String praticaExercicios = escolha3.getText().toString();
-            String temLugarParaBrincar = escolha4.getText().toString();
-            String haLimitacaoExercicios = limitacaoExercicios.getText().toString().trim();
 
-            //  descriPraticaExercicios = descriPraticaExercicios;
+                selectedOptionTechnology =selectedOptionTechnology;
 
+                acriancaEstaSeExercitandoAtualmene=acriancaEstaSeExercitandoAtualmene;
 
-            selectedOptionTechnology =selectedOptionTechnology;
+                String descricaoDeQuais = descricaoDeQuais2.getText().toString();
+                String descricaoFrequencia = descricaoFrequencia2.getText().toString();
 
-            acriancaEstaSeExercitandoAtualmene=acriancaEstaSeExercitandoAtualmene;
+                TextInputLayout textInputLayout = findViewById(R.id.TextField4);
+                TextInputEditText textInputEditText = textInputLayout.findViewById(R.id.subescolha4);
 
-            String descricaoDeQuais = descricaoDeQuais2.getText().toString();
-            String descricaoFrequencia = descricaoFrequencia2.getText().toString();
+                String descriPraticaExercicios = textInputEditText.getText().toString().trim();
 
-            TextInputLayout textInputLayout = findViewById(R.id.TextField4);
-            TextInputEditText textInputEditText = textInputLayout.findViewById(R.id.subescolha4);
 
-            String descriPraticaExercicios = textInputEditText.getText().toString().trim();
+                // descricaoDeQuais=descricaoDeQuais;
 
 
-            // descricaoDeQuais=descricaoDeQuais;
+                // DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
 
 
-            // DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
 
 
 
+                DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
 
+                dadosCompartilhados.setHaLimitacao(haLimitacao);
+                dadosCompartilhados.setEstaExercitando(estaExercitando);
+                dadosCompartilhados.setPraticaExercicios(praticaExercicios);
+                dadosCompartilhados.setTemLugarParaBrincar(temLugarParaBrincar);
+                dadosCompartilhados.setHaLimitacaoExercicios(haLimitacaoExercicios);
 
-            DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
 
-            dadosCompartilhados.setHaLimitacao(haLimitacao);
-            dadosCompartilhados.setEstaExercitando(estaExercitando);
-            dadosCompartilhados.setPraticaExercicios(praticaExercicios);
-            dadosCompartilhados.setTemLugarParaBrincar(temLugarParaBrincar);
-            dadosCompartilhados.setHaLimitacaoExercicios(haLimitacaoExercicios);
+                dadosCompartilhados.setSelectedOptionTechnology(selectedOptionTechnology);
+                dadosCompartilhados.setDescriPraticaExercicios(descriPraticaExercicios);
 
+                dadosCompartilhados.setDescricaoDeQuais(descricaoDeQuais2);
+                dadosCompartilhados.setDescricaoFrequencia(descricaoFrequencia2);
+                dadosCompartilhados.setAcriancaEstaSeExercitandoAtualmene(acriancaEstaSeExercitandoAtualmene);
 
-            dadosCompartilhados.setSelectedOptionTechnology(selectedOptionTechnology);
-            dadosCompartilhados.setDescriPraticaExercicios(descriPraticaExercicios);
 
-            dadosCompartilhados.setDescricaoDeQuais(descricaoDeQuais2);
-            dadosCompartilhados.setDescricaoFrequencia(descricaoFrequencia2);
-            dadosCompartilhados.setAcriancaEstaSeExercitandoAtualmene(acriancaEstaSeExercitandoAtualmene);
 
+                String nome = dadosCompartilhados.getNome();
+                String data = dadosCompartilhados.getData();
+                int idade = dadosCompartilhados.getIdade();
+                double peso = dadosCompartilhados.getPeso();
+                double altura = dadosCompartilhados.getAltura();
 
+                String nomeMae = dadosCompartilhados.getNomeMae();
+                int idadeMae = dadosCompartilhados.getIdadeMae();
+                String telefoneMae = dadosCompartilhados.getTelefoneMae();
+                String profissaoMae = dadosCompartilhados.getProfissaoMae();
+                String formacaoAcademica = dadosCompartilhados.getFormacaoAcademica();
+                String nomePai = dadosCompartilhados.getNomePai();
+                int idadePai = dadosCompartilhados.getIdadePai();
+                String telefonePai = dadosCompartilhados.getTelefonePai();
+                String formacaoAcademicaPai = dadosCompartilhados.getFormacaoAcademicaPai();
+                String profissaoPai = dadosCompartilhados.getProfissaoPai();
+                String email = dadosCompartilhados.getEmail();
+                String composicaoFamilia = dadosCompartilhados.getComposicaoFamilia();
+                String escolhaValores = dadosCompartilhados.getEscolhaValores();
+                String descricaoEscolhaValores = dadosCompartilhados.getDescricaoEscolhaValores();
 
-            String nome = dadosCompartilhados.getNome();
-            String data = dadosCompartilhados.getData();
-            int idade = dadosCompartilhados.getIdade();
-            double peso = dadosCompartilhados.getPeso();
-            double altura = dadosCompartilhados.getAltura();
 
-            String nomeMae = dadosCompartilhados.getNomeMae();
-            int idadeMae = dadosCompartilhados.getIdadeMae();
-            String telefoneMae = dadosCompartilhados.getTelefoneMae();
-            String profissaoMae = dadosCompartilhados.getProfissaoMae();
-            String formacaoAcademica = dadosCompartilhados.getFormacaoAcademica();
-            String nomePai = dadosCompartilhados.getNomePai();
-            int idadePai = dadosCompartilhados.getIdadePai();
-            String telefonePai = dadosCompartilhados.getTelefonePai();
-            String formacaoAcademicaPai = dadosCompartilhados.getFormacaoAcademicaPai();
-            String profissaoPai = dadosCompartilhados.getProfissaoPai();
-            String email = dadosCompartilhados.getEmail();
-            String composicaoFamilia = dadosCompartilhados.getComposicaoFamilia();
-            String escolhaValores = dadosCompartilhados.getEscolhaValores();
-            String descricaoEscolhaValores = dadosCompartilhados.getDescricaoEscolhaValores();
+                int andouSemApoio = dadosCompartilhados.getAndouSemApoio();
+                int sustentouCabeca = dadosCompartilhados.getSustentouCabeca();
+                int rolouLateralmente = dadosCompartilhados.getRolouLateralmente();
+                int virouSe = dadosCompartilhados.getVirouSe();
+                int sentouComApoio = dadosCompartilhados.getSentouComApoio();
+                int arrastou = dadosCompartilhados.getArrastou();
+                int engatinhou = dadosCompartilhados.getEngatinhou();
+                int ficouDePeComApoio = dadosCompartilhados.getFicouDePeComApoio();
+                int ficouDePeSemApoio = dadosCompartilhados.getFicouDePeSemApoio();
+                int andouComApoio = dadosCompartilhados.getAndouComApoio();
 
 
-            int andouSemApoio = dadosCompartilhados.getAndouSemApoio();
-            int sustentouCabeca = dadosCompartilhados.getSustentouCabeca();
-            int rolouLateralmente = dadosCompartilhados.getRolouLateralmente();
-            int virouSe = dadosCompartilhados.getVirouSe();
-            int sentouComApoio = dadosCompartilhados.getSentouComApoio();
-            int arrastou = dadosCompartilhados.getArrastou();
-            int engatinhou = dadosCompartilhados.getEngatinhou();
-            int ficouDePeComApoio = dadosCompartilhados.getFicouDePeComApoio();
-            int ficouDePeSemApoio = dadosCompartilhados.getFicouDePeSemApoio();
-            int andouComApoio = dadosCompartilhados.getAndouComApoio();
 
+                String escolhaValue = dadosCompartilhados.getEscolhaValue();
+                String escolaridadeValue = dadosCompartilhados.getEscolaridadeValue();
+                String escolarValue = dadosCompartilhados.getEscolarValue();
 
+                String usoDuasMaos = dadosCompartilhados.getUsoDuasMaos();
+                String dificuldadeCordenacao = dadosCompartilhados.getDificuldadeCordenacao();
+                String caiComFrequencia= dadosCompartilhados.getCaiComFrequencia();
+                String apanhaObjetosSemDiculdade= dadosCompartilhados.getApanhaObjetosSemDiculdade();
+                String imitaGestosSimples= dadosCompartilhados.getImitaGestosSimples();
+                String arremessaObjetosSemDiculdade= dadosCompartilhados.getArremessaObjetosSemDiculdade();
+                String seguraObjetosSemDiculdade= dadosCompartilhados.getSeguraObjetosSemDiculdade();
+                String formasPeculiaresDeOrganizacaoMotora= dadosCompartilhados.getFormasPeculiaresDeOrganizacaoMotora();
+                String escolhaAMao= dadosCompartilhados.getEscolhaAMao();
 
-            String escolhaValue = dadosCompartilhados.getEscolhaValue();
-            String escolaridadeValue = dadosCompartilhados.getEscolaridadeValue();
-            String escolarValue = dadosCompartilhados.getEscolarValue();
 
-            String usoDuasMaos = dadosCompartilhados.getUsoDuasMaos();
-            String dificuldadeCordenacao = dadosCompartilhados.getDificuldadeCordenacao();
-            String caiComFrequencia= dadosCompartilhados.getCaiComFrequencia();
-            String apanhaObjetosSemDiculdade= dadosCompartilhados.getApanhaObjetosSemDiculdade();
-            String imitaGestosSimples= dadosCompartilhados.getImitaGestosSimples();
-            String arremessaObjetosSemDiculdade= dadosCompartilhados.getArremessaObjetosSemDiculdade();
-            String seguraObjetosSemDiculdade= dadosCompartilhados.getSeguraObjetosSemDiculdade();
-            String formasPeculiaresDeOrganizacaoMotora= dadosCompartilhados.getFormasPeculiaresDeOrganizacaoMotora();
-            String escolhaAMao= dadosCompartilhados.getEscolhaAMao();
+                String investeMomentosFamilia= dadosCompartilhados.getInvesteMomentosFamilia();
+                String medosFobias= dadosCompartilhados.getMedosFobias();
+                String comoSeSenteSeparadoDosPais = dadosCompartilhados.getComoSeSenteSeparadoDosPais();
+                String informacoesAdicionais = dadosCompartilhados.getInformacoesAdicionais();
+                String descricaoMedoFobia = dadosCompartilhados.getDescricaoMedoFobia();
+                String investeEmMomentosFamilia = dadosCompartilhados.getInvesteEmMomentosFamilia();
 
 
-            String investeMomentosFamilia= dadosCompartilhados.getInvesteMomentosFamilia();
-            String medosFobias= dadosCompartilhados.getMedosFobias();
-            String comoSeSenteSeparadoDosPais = dadosCompartilhados.getComoSeSenteSeparadoDosPais();
-            String informacoesAdicionais = dadosCompartilhados.getInformacoesAdicionais();
-            String descricaoMedoFobia = dadosCompartilhados.getDescricaoMedoFobia();
-            String investeEmMomentosFamilia = dadosCompartilhados.getInvesteEmMomentosFamilia();
 
+                String frase = dadosCompartilhados.getFrase();
+                String primeirasPalavras = dadosCompartilhados.getPrimeirasPalavras();
+                String vocalizou= dadosCompartilhados.getVocalizou();
+                String respondeuSomHumano= dadosCompartilhados.getRespondeuSomHumano();
+                String respondruSom= dadosCompartilhados.getRespondruSom();
+                String problemasComunicacao= dadosCompartilhados.getProblemasComunicacao();
+                String descricaoDoProblemaComunicacao= dadosCompartilhados.getDescricaoDoProblemaComunicacao();
 
 
-            String frase = dadosCompartilhados.getFrase();
-            String primeirasPalavras = dadosCompartilhados.getPrimeirasPalavras();
-            String vocalizou= dadosCompartilhados.getVocalizou();
-            String respondeuSomHumano= dadosCompartilhados.getRespondeuSomHumano();
-            String respondruSom= dadosCompartilhados.getRespondruSom();
-            String problemasComunicacao= dadosCompartilhados.getProblemasComunicacao();
-            String descricaoDoProblemaComunicacao= dadosCompartilhados.getDescricaoDoProblemaComunicacao();
+                String reageFavoravelmentePessoa = dadosCompartilhados.getReageFavoravelmentePessoa();
+                String brincaCriancaAdulto = dadosCompartilhados.getBrincaCriancaAdulto();
+                String expressaNecessidades= dadosCompartilhados.getExpressaNecessidades();
+                String apresentaBirrasComFrequencia= dadosCompartilhados.getApresentaBirrasComFrequencia();
+                String seAdaptaCasaEscola= dadosCompartilhados.getImitaGestosSimples();
+                String choraFrequencia= dadosCompartilhados.getChoraFrequencia();
+                String fazAmigosFacilidade= dadosCompartilhados.getFazAmigosFacilidade();
+                String expressaEmocoesComFacilidade= dadosCompartilhados.getExpressaEmocoesComFacilidade();
+                String mudaComportamentoComEstranho= dadosCompartilhados.getMudaComportamentoComEstranho();
+                String reageFavoravelmenteNovidades= dadosCompartilhados.getReageFavoravelmenteNovidades();
+                String procuraProtecaoPais = dadosCompartilhados.getProcuraProtecaoPais();
 
 
-            String reageFavoravelmentePessoa = dadosCompartilhados.getReageFavoravelmentePessoa();
-            String brincaCriancaAdulto = dadosCompartilhados.getBrincaCriancaAdulto();
-            String expressaNecessidades= dadosCompartilhados.getExpressaNecessidades();
-            String apresentaBirrasComFrequencia= dadosCompartilhados.getApresentaBirrasComFrequencia();
-            String seAdaptaCasaEscola= dadosCompartilhados.getImitaGestosSimples();
-            String choraFrequencia= dadosCompartilhados.getChoraFrequencia();
-            String fazAmigosFacilidade= dadosCompartilhados.getFazAmigosFacilidade();
-            String expressaEmocoesComFacilidade= dadosCompartilhados.getExpressaEmocoesComFacilidade();
-            String mudaComportamentoComEstranho= dadosCompartilhados.getMudaComportamentoComEstranho();
-            String reageFavoravelmenteNovidades= dadosCompartilhados.getReageFavoravelmenteNovidades();
-            String procuraProtecaoPais = dadosCompartilhados.getProcuraProtecaoPais();
 
+                haLimitacao = dadosCompartilhados.getHaLimitacao();
+                estaExercitando = dadosCompartilhados.getEstaExercitando();
+                praticaExercicios = dadosCompartilhados.getPraticaExercicios();
+                temLugarParaBrincar = dadosCompartilhados.getTemLugarParaBrincar();
+                haLimitacaoExercicios = dadosCompartilhados.getHaLimitacaoExercicios();
+                selectedOptionTechnology = dadosCompartilhados.getSelectedOptionTechnology();
+                descriPraticaExercicios = dadosCompartilhados.getDescriPraticaExercicios();
+                comportamentoDoFilho = dadosCompartilhados.getComportamentoDoFilho();
+                acriancaEstaSeExercitandoAtualmene = dadosCompartilhados.getAcriancaEstaSeExercitandoAtualmene();
+                descricaoDeQuais2 = dadosCompartilhados.getDescricaoDeQuais();
+                descricaoFrequencia2 = dadosCompartilhados.getDescricaoFrequencia();
 
 
-            haLimitacao = dadosCompartilhados.getHaLimitacao();
-            estaExercitando = dadosCompartilhados.getEstaExercitando();
-            praticaExercicios = dadosCompartilhados.getPraticaExercicios();
-            temLugarParaBrincar = dadosCompartilhados.getTemLugarParaBrincar();
-            haLimitacaoExercicios = dadosCompartilhados.getHaLimitacaoExercicios();
-            selectedOptionTechnology = dadosCompartilhados.getSelectedOptionTechnology();
-            descriPraticaExercicios = dadosCompartilhados.getDescriPraticaExercicios();
-            comportamentoDoFilho = dadosCompartilhados.getComportamentoDoFilho();
-            acriancaEstaSeExercitandoAtualmene = dadosCompartilhados.getAcriancaEstaSeExercitandoAtualmene();
-            descricaoDeQuais2 = dadosCompartilhados.getDescricaoDeQuais();
-            descricaoFrequencia2 = dadosCompartilhados.getDescricaoFrequencia();
 
 
 
 
 
 
+                // Crie um objeto Usuario com os valores obtidos
+                Usuario usuario = new Usuario(//....................anamnese..............................................................
+                        nome, idade,data, peso, altura, escolhaValue,escolaridadeValue,  escolarValue
 
+                        //..............................anamnese pai.........................................................
+                        , nomeMae, idadeMae, telefoneMae,  formacaoAcademica, profissaoMae, nomePai,
+                        idadePai, formacaoAcademicaPai,  profissaoPai, telefonePai,  email,composicaoFamilia,
+                        escolhaValores,descricaoEscolhaValores
 
-            // Crie um objeto Usuario com os valores obtidos
-            Usuario usuario = new Usuario(//....................anamnese..............................................................
-                    nome, idade,data, peso, altura, escolhaValue,escolaridadeValue,  escolarValue
 
-                    //..............................anamnese pai.........................................................
-                    , nomeMae, idadeMae, telefoneMae,  formacaoAcademica, profissaoMae, nomePai,
-                    idadePai, formacaoAcademicaPai,  profissaoPai, telefonePai,  email,composicaoFamilia,
-                    escolhaValores,descricaoEscolhaValores
+                        //..............................Anamnese Desenvolvimento.................................................
+                        , andouSemApoio, sustentouCabeca, rolouLateralmente, virouSe, sentouComApoio, arrastou, engatinhou
+                        ,ficouDePeComApoio, ficouDePeSemApoio, andouComApoio
 
+                        //............................Anamnese Desenvolvimento Crianca.........................................................
 
-                    //..............................Anamnese Desenvolvimento.................................................
-                    , andouSemApoio, sustentouCabeca, rolouLateralmente, virouSe, sentouComApoio, arrastou, engatinhou
-                    ,ficouDePeComApoio, ficouDePeSemApoio, andouComApoio
+                        , usoDuasMaos,dificuldadeCordenacao,caiComFrequencia, apanhaObjetosSemDiculdade,
+                        imitaGestosSimples,arremessaObjetosSemDiculdade,seguraObjetosSemDiculdade,
+                        formasPeculiaresDeOrganizacaoMotora, escolhaAMao,
 
-                    //............................Anamnese Desenvolvimento Crianca.........................................................
+                        //...........................Anamnese Desenvolvimento Linguistico...............................
 
-                    , usoDuasMaos,dificuldadeCordenacao,caiComFrequencia, apanhaObjetosSemDiculdade,
-                    imitaGestosSimples,arremessaObjetosSemDiculdade,seguraObjetosSemDiculdade,
-                    formasPeculiaresDeOrganizacaoMotora, escolhaAMao,
+                        frase,  primeirasPalavras, vocalizou,respondeuSomHumano, respondruSom,
+                        problemasComunicacao,descricaoDoProblemaComunicacao,
 
-                    //...........................Anamnese Desenvolvimento Linguistico...............................
+                        //......................Anamnese Desenvolvimento SocioEmocional................................
 
-                    frase,  primeirasPalavras, vocalizou,respondeuSomHumano, respondruSom,
-                    problemasComunicacao,descricaoDoProblemaComunicacao,
+                        reageFavoravelmentePessoa, brincaCriancaAdulto, expressaNecessidades,
+                        apresentaBirrasComFrequencia, seAdaptaCasaEscola,choraFrequencia ,fazAmigosFacilidade,
+                        expressaEmocoesComFacilidade, mudaComportamentoComEstranho, reageFavoravelmenteNovidades,
+                        procuraProtecaoPais,comportamentoDoFilho,
 
-                    //......................Anamnese Desenvolvimento SocioEmocional................................
+                        //......................Anamnese Desenvolvimento SocioEmocional2................................
 
-                    reageFavoravelmentePessoa, brincaCriancaAdulto, expressaNecessidades,
-                    apresentaBirrasComFrequencia, seAdaptaCasaEscola,choraFrequencia ,fazAmigosFacilidade,
-                    expressaEmocoesComFacilidade, mudaComportamentoComEstranho, reageFavoravelmenteNovidades,
-                    procuraProtecaoPais,comportamentoDoFilho,
+                        investeMomentosFamilia,medosFobias,comoSeSenteSeparadoDosPais,informacoesAdicionais,descricaoMedoFobia,
+                        investeEmMomentosFamilia
 
-                    //......................Anamnese Desenvolvimento SocioEmocional2................................
 
-                    investeMomentosFamilia,medosFobias,comoSeSenteSeparadoDosPais,informacoesAdicionais,descricaoMedoFobia,
-                    investeEmMomentosFamilia
+                        ,haLimitacao,estaExercitando, praticaExercicios,temLugarParaBrincar,
+                        haLimitacaoExercicios, selectedOptionTechnology,acriancaEstaSeExercitandoAtualmene,descricaoDeQuais
+                        ,descricaoFrequencia,descriPraticaExercicios);
 
 
-                    ,haLimitacao,estaExercitando, praticaExercicios,temLugarParaBrincar,
-                    haLimitacaoExercicios, selectedOptionTechnology,acriancaEstaSeExercitandoAtualmene,descricaoDeQuais
-                    ,descricaoFrequencia,descriPraticaExercicios);
+                // Inicialize o Firestore
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
-            // Inicialize o Firestore
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
+                // Crie um novo documento na coleção "usuarios" com um ID automático
+                db.collection("usuarios")
+                        .add(usuario)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Toast.makeText(anamneseDesenvolvimentoExercicio.this, "Dados inseridos com sucesso.", Toast.LENGTH_SHORT).show();
 
-
-            // Crie um novo documento na coleção "usuarios" com um ID automático
-            db.collection("usuarios")
-                    .add(usuario)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Toast.makeText(anamneseDesenvolvimentoExercicio.this, "Dados inseridos com sucesso.", Toast.LENGTH_SHORT).show();
-
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(anamneseDesenvolvimentoExercicio.this, "Erro ao inserir os dados: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
-
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(anamneseDesenvolvimentoExercicio.this, "Erro ao inserir os dados: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
         }
 
     }
