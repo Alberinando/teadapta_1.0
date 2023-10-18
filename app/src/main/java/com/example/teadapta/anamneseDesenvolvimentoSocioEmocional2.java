@@ -1,6 +1,7 @@
 package com.example.teadapta;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -21,6 +23,8 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
     private AutoCompleteTextView escolha2;
     private TextInputLayout religiaoLayout;
     private TextInputLayout lunedTextFieldDes2;
+    private TextInputEditText seSenteSeparadoPais;
+    private TextInputEditText informacoesImportantes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +96,8 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
     {
         boolean valid = true;
 
+        TextInputLayout seSenteSeparadoPaisLayout = findViewById(R.id.outlinedTextField);
+        TextInputLayout informacoesImportantesLayout = findViewById(R.id.outlinedTextField2);
         String escolhaMedosFobias = escolha.getText().toString();
         String escolhaInvesteMomentos = escolha2.getText().toString();
 
@@ -101,6 +107,7 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
 
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
+
 
         escolha.addTextChangedListener(new TextWatcher() {
             @Override
