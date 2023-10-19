@@ -30,7 +30,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/pais"
+            android:id="@+id/criancas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/desenvolvimento_integral_da_crian_a_desenvolvimento_motor"

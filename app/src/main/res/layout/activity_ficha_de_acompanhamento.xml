@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#deebf7"
     android:orientation="vertical"
     tools:context=".ficha_de_acompanhamento"
@@ -15,6 +16,306 @@
         android:orientation="vertical"
         android:paddingLeft="15dp"
         android:paddingRight="15dp">
+        <TextView
+            android:id="@+id/anamnese"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/relat_rio"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/criancas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/identifica_o_da_crian_a"
+            android:textColor="#000000"
+            android:textAlignment="center" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextField"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/nome"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáàâãäéêëíîïóòôõöúûüÁÀÂÃÄÉÊËÍÎÏÓÒÔÕÖÚÛÜ "
+                android:inputType="textCapWords|text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textIdade"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:maxLength="3"
+            android:hint="@string/idade"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Idade"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/g_nero"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome"
+            app:startIconTint="@color/black"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
+
+            <AutoCompleteTextView
+                android:id="@+id/escolha"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:imeOptions="actionNext"
+                android:inputType="none"
+                android:text="@string/selecionar"
+                android:textColor="#000000"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/azul"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/azul"
+                app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+                tools:ignore="LabelFor,VisualLintTextFieldSize"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/diagn_stico"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/geral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/informa_es_gerais_da_crian_a"
+            android:textColor="#000000" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlined"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000"
+            app:counterEnabled="true"
+            app:counterMaxLength="300"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inform"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/informa_o"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/adptacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/informa_es_sobre_a_aula_proposta"
+            android:textColor="#000000" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedInputAdptacoes"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000"
+            app:counterEnabled="true"
+            app:counterMaxLength="300"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ad"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/descreva"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"
+                tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/realizado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/informa_es_sobre_a_aula_proposta"
+            android:textColor="#000000" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedInputRealizado"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:counterEnabled="true"
+            app:counterMaxLength="300"
+            app:hintTextColor="#000000"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/aulaRealizado"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/descreva"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/sobre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/informa_es_sobre_a_aula_proposta"
+            android:textColor="#000000" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedInput"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@color/black"
+            app:counterEnabled="true"
+            app:counterMaxLength="300"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="#000000"
+            app:boxStrokeErrorColor="@color/error_color"
+            app:errorIconTint="@color/error_icon_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/aula"
+                style="@style/MyTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sugestoes"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textColorHint="#616161"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:counterEnabled="true"
+                app:counterMaxLength="300"
+                app:errorIconTint="@color/error_icon_color"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/enviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:drawablePadding="4dp"
+            android:background="@drawable/background_button"
+            android:gravity="center|center_horizontal"
+            android:text="@string/enviar"
+            tools:ignore="VisualLintButtonSize" />
 
     </LinearLayout>
 </ScrollView>
