@@ -40,6 +40,8 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
     private XmlPullParser textInputEditText;
     private TextInputEditText limitacaoParaFazerExercicios,pqSeuFilhoPraticaExercicios;
 
+    private TextInputEditText quaisExercicios;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         limitacaoParaFazerExercicios = findViewById(R.id.subescolha);
         pqSeuFilhoPraticaExercicios = findViewById(R.id.subescolha4);
+
 
         religiaoLayout = findViewById(R.id.TextField);
         religiaoLayout2 = findViewById(R.id.TextField2);
@@ -307,6 +310,9 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         TextInputLayout limitacaoParaFazerExerciciosLayout = findViewById(R.id.TextField);
         TextInputLayout pqSeuFilhoPraticaExerciciosLayout = findViewById(R.id.TextField4);
+        TextInputLayout descricaoDeQuaisLayout = findViewById(R.id.TextField2);
+        TextInputLayout descricaoFrequenciaLayout = findViewById(R.id.TextField3);
+
 
 
         TextInputLayout limiteExerciciosLayout = findViewById(R.id.InputLayout);
@@ -404,7 +410,69 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
             lixerciciosFrequentementeLayout.setError("Campo vazio");
             valid = false;
         }
-        else {
+        else if(escolhaExerciciosFrequentemente.equals("Sim"))
+        {
+            descricaoDeQuais2.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    // Chamado após o texto ser alterado
+                    descricaoDeQuaisLayout.setError(null); // Remove a mensagem de erro
+                    descricaoDeQuaisLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                    descricaoDeQuaisLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                    descricaoDeQuaisLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                }
+            });
+
+            if (descricaoDeQuais2.getText().toString().trim().isEmpty()) {
+                if (!descricaoDeQuais2.isFocused()) {
+                    descricaoDeQuaisLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                    descricaoDeQuaisLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                    descricaoDeQuaisLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                    descricaoDeQuaisLayout.setError("Campo vazio");
+                }
+                valid = false;
+            } else {
+                descricaoDeQuaisLayout.setError(null);
+            }
+
+
+            descricaoFrequencia2.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    // Chamado após o texto ser alterado
+                    descricaoFrequenciaLayout.setError(null); // Remove a mensagem de erro
+                    descricaoFrequenciaLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                    descricaoFrequenciaLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                    descricaoFrequenciaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+                }
+            });
+            if (descricaoFrequencia2.getText().toString().trim().isEmpty()) {
+                if (!descricaoFrequencia2.isFocused()) {
+                    descricaoFrequenciaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                    descricaoFrequenciaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                    descricaoFrequenciaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                    descricaoFrequenciaLayout.setError("Campo vazio");
+                }
+                valid = false;
+            } else {
+                descricaoFrequenciaLayout.setError(null);
+            }
+
+        }
+        else
+        {
             lixerciciosFrequentementeLayout.setError(null);
 
         }

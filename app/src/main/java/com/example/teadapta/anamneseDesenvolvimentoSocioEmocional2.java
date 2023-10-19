@@ -16,6 +16,8 @@ import android.widget.AutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.xmlpull.v1.XmlPullParser;
+
 public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
     private AutoCompleteTextView escolha;
     private AutoCompleteTextView escolha2;
@@ -23,12 +25,18 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
    // private TextInputLayout lunedTextFieldDes2;
     private TextInputEditText seSenteSeparadoPais2;
     private TextInputEditText informacoesImportantes2;
-    private AutoCompleteTextView descricaoMedoFobia,investeMomentosFamilia;
+    private TextInputEditText descricaoMedoFobia2;
+    private TextInputEditText investeMomentosFamilia2;
+    private TextInputLayout lunedTextFieldDes3;
 
 
     private String comoSeSenteSeparadoDosPais;
     private String informacoesAdicionais;
-    private TextInputLayout lunedTextFieldDes3;
+    //private String descricaoMedoFobia;
+
+    private XmlPullParser subescolha;
+    private String descricaoMedoFobia;
+    private String investeEmMomentosFamilia;
 
 
     @Override
@@ -71,6 +79,11 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
 
         escolha2 = findViewById(R.id.escolha2);
         lunedTextFieldDes3 = findViewById(R.id.lunedTextFieldDes2);
+        //lunedTextFieldDes3 = findViewById(R.id.subescolha2);
+
+
+        investeMomentosFamilia2 = findViewById(R.id.subescolha2);
+        descricaoMedoFobia2 = findViewById(R.id.subescolha);
 
         String[] listaEscolha2 = getResources().getStringArray(R.array.Escolha);
         ArrayAdapter<String> adapterEscolha2 = new ArrayAdapter<>(this,
@@ -106,19 +119,14 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
     private boolean validateFields()
     {
         boolean valid = true;
-        
-        /*
-        TextInputLayout seSenteSeparadoPaisLayout = findViewById(R.id.outlinedTextField);
-        TextInputLayout informacoesImportantesLayout = findViewById(R.id.outlinedTextField2);
-        
-         */
+
         String escolhaMedosFobias = escolha.getText().toString();
         String escolhaInvesteMomentos = escolha2.getText().toString();
 
         TextInputLayout seSenteSeparadoPaisLayout = findViewById(R.id.outlinedTextField);
         TextInputLayout informacoesImportantesLayout = findViewById(R.id.outlinedTextField2);
-        //TextInputLayout descricaoMedoFobiaLayout = findViewById(R.id.TextField);
-      //  TextInputLayout investeMomentosFamiliaLayout = findViewById(R.id.lunedTextFieldDes2);
+        TextInputLayout descricaoMedoFobiaLayout = findViewById(R.id.TextField);
+        TextInputLayout investeMomentosFamiliaLayout = findViewById(R.id.lunedTextFieldDes2);
 
 
         TextInputLayout medosFobiasLayout = findViewById(R.id.InputLayout);
@@ -208,10 +216,10 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
             medosFobiasLayout.setError("Campo vazio");
             valid = false;
         }
-        /*
+
         else if(escolhaMedosFobias.equals("Sim"))
         {
-            descricaoMedoFobia.addTextChangedListener(new TextWatcher() {
+            descricaoMedoFobia2.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}   // Nada a fazer antes da mudança de texto
 
@@ -227,8 +235,8 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
                     descricaoMedoFobiaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
                 }
             });
-            if (descricaoMedoFobia.getText().toString().trim().isEmpty()) {
-                if (!descricaoMedoFobia.isFocused()) {
+            if (descricaoMedoFobia2.getText().toString().trim().isEmpty()) {
+                if (!descricaoMedoFobia2.isFocused()) {
                     descricaoMedoFobiaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
                     descricaoMedoFobiaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
                     descricaoMedoFobiaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
@@ -240,7 +248,7 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
             }
         }
 
-         */
+
         else
         {
             medosFobiasLayout.setError(null);
@@ -273,10 +281,10 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
             investeMomentossLayout.setError("Campo vazio");
             valid = false;
         }
-        /*
+
         else if(escolhaInvesteMomentos.equals("Sim"))
         {
-            investeMomentosFamilia.addTextChangedListener(new TextWatcher() {
+            investeMomentosFamilia2.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}   // Nada a fazer antes da mudança de texto
 
@@ -292,8 +300,8 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
                     investeMomentosFamiliaLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
                 }
             });
-            if (investeMomentosFamilia.getText().toString().trim().isEmpty()) {
-                if (!investeMomentosFamilia.isFocused()) {
+            if (investeMomentosFamilia2.getText().toString().trim().isEmpty()) {
+                if (!investeMomentosFamilia2.isFocused()) {
                     investeMomentosFamiliaLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
                     investeMomentosFamiliaLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
                     investeMomentosFamiliaLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
@@ -304,13 +312,14 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
                 investeMomentosFamiliaLayout.setError(null);
             }
         }
+
         else
         {
             investeMomentossLayout.setError(null);
 
         }
 
-         */
+
 
         return valid;
     }
@@ -320,29 +329,14 @@ public class anamneseDesenvolvimentoSocioEmocional2 extends AppCompatActivity {
         {
             String medosFobias = escolha.getText().toString();
             String investeMomentosFamilia = escolha2.getText().toString();
+            investeEmMomentosFamilia = investeMomentosFamilia2.getText().toString().trim();
+            descricaoMedoFobia = descricaoMedoFobia2.getText().toString().trim();
+
+
 
             comoSeSenteSeparadoDosPais  = seSenteSeparadoPais2.getText().toString().trim();
             informacoesAdicionais  = informacoesImportantes2.getText().toString().trim();
 
-            /*
-            TextInputLayout textInputLayout = findViewById(R.id.outlinedTextField);
-            TextInputEditText textInputEditText = textInputLayout.findViewById(R.id.input);
-            String comoSeSenteSeparadoDosPais = textInputEditText.getText().toString().trim();
-            
-
-            TextInputLayout informacoes= findViewById(R.id.outlinedTextField2);
-            TextInputEditText textInputInformacoes = informacoes.findViewById(R.id.input2);
-            String informacoesAdicionais = textInputInformacoes.getText().toString().trim();
-
-             */
-
-            TextInputLayout descricao= findViewById(R.id.TextField);
-            TextInputEditText textInputDescricao = descricao.findViewById(R.id.subescolha);
-            String descricaoMedoFobia = textInputDescricao.getText().toString().trim();
-
-            TextInputLayout investeMomentos= findViewById(R.id.TextField);
-            TextInputEditText textInputInvesteMomentos = investeMomentos.findViewById(R.id.subescolha);
-            String investeEmMomentosFamilia = textInputInvesteMomentos.getText().toString().trim();
 
 
             DadosCompartilhados dadosCompartilhados = DadosCompartilhados.getInstance();
