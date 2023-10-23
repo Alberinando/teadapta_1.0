@@ -19,6 +19,7 @@ import android.widget.RadioGroup;
 import android.util.Log;
 import android.widget.RadioGroup;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -28,6 +29,7 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
     private AutoCompleteTextView escolha, escolha2,escolha3,escolha4,escolha5,escolha6,escolha7, escolha8;
     private String escolhaAMao = "";
     private XmlPullParser radioDestro;
+    private View escolhaDestroLayout;
 
 
     @Override
@@ -139,6 +141,10 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
         String escolhaSeguraObjetoSemDificuldade = escolha7.getText().toString();
         String escolhaFormasParticularesOrganizacao = escolha8.getText().toString();
 
+        TextInputLayout escolhaDestroCanhotoLayout = findViewById(R.id.TextInpuLayouts);
+
+      //  escolhaDestroLayout = findViewById(R.id.radioDestro);
+
 
         TextInputLayout usoDasMãosLayout = findViewById(R.id.InputLayout);
         TextInputLayout coordenacaoMotoraLayout = findViewById(R.id.InputLayout2);
@@ -152,6 +158,15 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
 
+
+
+        if (escolhaAMao.equals("")) {
+            escolhaDestroCanhotoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+           // escolhaDestroLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+            valid = false;
+        } else {
+            escolhaDestroCanhotoLayout.setBackgroundResource(R.drawable.contorno);
+        }
         escolha.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}

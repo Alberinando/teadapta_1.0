@@ -29,12 +29,12 @@ import org.xmlpull.v1.XmlPullParser;
 public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
     private AutoCompleteTextView escolha, escolha2, escolha3, escolha4;
-    private TextInputLayout religiaoLayout, religiaoLayout2, religiaoLayout3, religiaoLayout4;
+    private TextInputLayout religiaoLayout, religiaoLayout2, religiaoLayout3, religiaoLayout4,selecionetecnologiaLayout;
     private TextInputEditText limitacaoExercicios;
-    private String selectedOptionTechnology;
+    private String selectedOptionTechnology="";
     private View descriPraticaExercicios;
     private String comportamentoDoFilho;
-    private String acriancaEstaSeExercitandoAtualmene;
+    private String acriancaEstaSeExercitandoAtualmene="";
     private TextInputEditText descricaoFrequencia2;
     private TextInputEditText descricaoDeQuais2;
     private XmlPullParser textInputEditText;
@@ -60,6 +60,11 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         religiaoLayout2 = findViewById(R.id.TextField2);
         religiaoLayout3 = findViewById(R.id.TextField3);
         religiaoLayout4 = findViewById(R.id.TextField4);
+
+
+        selecionetecnologiaLayout = findViewById(R.id.TextField4);
+
+
 
        // descricaoFrequencia = findViewById(R.id.subescolha3);
 
@@ -187,6 +192,9 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 android.R.layout.simple_dropdown_item_1line, listaEscolha4);
         escolha4.setAdapter(adapterEscolha4);
 
+
+
+
         escolha.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -313,6 +321,8 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         TextInputLayout descricaoDeQuaisLayout = findViewById(R.id.TextField2);
         TextInputLayout descricaoFrequenciaLayout = findViewById(R.id.TextField3);
 
+        TextInputLayout selecionetecnologiaLayout = findViewById(R.id.checkBoxGroup2);
+        TextInputLayout acriancaEstaSeExercitandoAtualmeneLayout = findViewById(R.id.checkBoxGroup);
 
 
         TextInputLayout limiteExerciciosLayout = findViewById(R.id.InputLayout);
@@ -322,6 +332,25 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
+
+        if (selectedOptionTechnology.equals("")) {
+            selecionetecnologiaLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+            valid = false;
+        }
+        else
+        {
+            selecionetecnologiaLayout.setBackgroundResource(R.drawable.contorno);
+        }
+
+        if (acriancaEstaSeExercitandoAtualmene.equals("")) {
+            acriancaEstaSeExercitandoAtualmeneLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+            valid = false;
+        }
+        else
+        {
+            acriancaEstaSeExercitandoAtualmeneLayout.setBackgroundResource(R.drawable.contorno);
+        }
+
 
         escolha.addTextChangedListener(new TextWatcher() {
             @Override

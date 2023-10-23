@@ -3,6 +3,7 @@ package com.example.teadapta;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.assist.AssistStructure;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -15,6 +16,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -24,7 +26,14 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
     private AutoCompleteTextView escolha,escolha2,escolha3,escolha4,escolha5,escolha6,escolha7,escolha8,escolha9,
             escolha00,escolha01;
 
-    private String comportamentoDoFilho;
+    private TextInputEditText editTextEscolhaOpcao;
+
+
+   // private AutoCompleteTextView escolhaCaracteristica;
+
+    private String comportamentoDoFilho="";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +51,11 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
         escolha9 = findViewById(R.id.escolha9);
         escolha00 = findViewById(R.id.escolha00);
         escolha01 = findViewById(R.id.escolha01);
+
+        editTextEscolhaOpcao = findViewById(R.id.titulo);
+
+
+
 
         AutoCompleteTextView escolha = findViewById(R.id.escolha);
         AutoCompleteTextView escolha2 = findViewById(R.id.escolha2);
@@ -180,6 +194,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 sensivelQuandoTocadoCheckBox.setChecked(false);
                 nervosoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
+
             }
         });
         nervosoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -238,6 +253,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
             }
         });
 
+
     }
     public void Back (View view){
         super.onBackPressed();
@@ -259,6 +275,13 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
         TextInputLayout reageFavoravelmenteNovidadeLayout = findViewById(R.id.InputLayout00);
         TextInputLayout procuraProtecaoPaisLayout = findViewById(R.id.InputLayout01);
 
+        TextInputLayout editTextEscolhaOpcaoLayout = findViewById(R.id.checkBoxGroup);
+
+
+       // nx = findViewById(R.id.checkBoxGroup);
+
+
+
         String escolhaRegePessoas = escolha.getText().toString();
         String escolhaBrincarCirancas = escolha2.getText().toString();
         String escolhaExpressaNecessidades = escolha3.getText().toString();
@@ -271,8 +294,12 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
         String escolhaReageFavoravelmenteNovidade = escolha00.getText().toString();
         String escolhaProcuraProtecaoPais = escolha01.getText().toString();
 
+       // String bhx = editTextEscolhaOpcao.getText().toString();
+
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
+
+
 
         escolha.addTextChangedListener(new TextWatcher() {
             @Override
@@ -303,6 +330,31 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
             regePessoasLayout.setError(null);
 
         }
+
+      //***************************************************************************************
+
+        if (comportamentoDoFilho.equals("")) {
+            editTextEscolhaOpcaoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+            valid = false;
+        } else {
+            editTextEscolhaOpcaoLayout.setBackgroundResource(R.drawable.contorno);
+        }
+        /*
+        if(comportamentoDoFilho.equals("Destraido"))
+        {
+            nx.setBackgroundResource(R.drawable.contorno);
+           // editTextEscolhaOpcaoLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+           // editTextEscolhaOpcaoLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+           // editTextEscolhaOpcaoLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+           // editTextEscolhaOpcaoLayout.setError("Campo vazio");
+            valid = false;
+        }
+        else {
+          //  editTextEscolhaOpcaoLayout.setError(null);
+
+        }
+
+         */
 
         escolha2.addTextChangedListener(new TextWatcher() {
             @Override

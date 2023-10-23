@@ -71,7 +71,7 @@
                 tools:ignore="LabelFor,VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/checkBoxGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             android:orientation="vertical"
             android:padding="2dp">
 
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,7 +91,9 @@
                 android:textColorHighlight="@color/black"
                 android:textColorHint="@color/black"
                 android:textColorLink="@color/black"
-                android:textCursorDrawable="@color/black" />
+                android:textCursorDrawable="@color/black"
+                app:boxStrokeErrorColor="@color/error_color"
+                app:errorIconTint="@color/error_icon_color"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -180,7 +182,7 @@
                     android:text="@string/desinteressado" />
             </LinearLayout>
 
-        </LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/InputLayout2"
