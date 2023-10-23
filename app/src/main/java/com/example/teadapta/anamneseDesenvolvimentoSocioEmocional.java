@@ -15,6 +15,8 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -32,7 +34,15 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
    // private AutoCompleteTextView escolhaCaracteristica;
 
     private String comportamentoDoFilho="";
+    private CheckBox checkBoxSelecionado;
 
+    private CheckBox destraidoCheckBox;
+    private CheckBox hiperativoCheckBox;
+    private CheckBox sensivelVibracoesCheckBox;
+    private CheckBox sensivelQuandoTocadoCheckBox;
+    private CheckBox calmoCheckBox;
+    private CheckBox nervosoCheckBox;
+    private CheckBox desinteressadoCheckBox;
 
 
     @Override
@@ -139,6 +149,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
 
         // Adicione outros CheckBoxes aqui
 
+
         destraidoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 comportamentoDoFilho = "Destraido";
@@ -149,6 +160,11 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 nervosoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
                 comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
+            }
+            else
+            {
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+                comportamentoDoFilho ="";
             }
         });
 
@@ -163,6 +179,11 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 desinteressadoCheckBox.setChecked(false);
                 comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
             }
+            else
+            {
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+                comportamentoDoFilho ="";
+            }
         });
         sensivelVibracoesCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -174,6 +195,11 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 nervosoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
                 comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
+            }
+            else
+            {
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+                comportamentoDoFilho ="";
             }
         });
 
@@ -188,6 +214,11 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 desinteressadoCheckBox.setChecked(false);
                 comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
             }
+            else
+            {
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+                comportamentoDoFilho ="";
+            }
         });
         calmoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -201,6 +232,11 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
 
             }
+            else
+            {
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+                comportamentoDoFilho ="";
+            }
         });
         nervosoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -212,6 +248,11 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 calmoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
                 comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
+            }
+            else
+            {
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+                comportamentoDoFilho ="";
             }
         });
 
@@ -227,7 +268,13 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
 
             }
+            else
+            {
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
+                comportamentoDoFilho ="";
+            }
         });
+
 
 
 
@@ -260,6 +307,8 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
 
 
     }
+
+
     public void Back (View view){
         super.onBackPressed();
     }

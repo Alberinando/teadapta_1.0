@@ -93,7 +93,8 @@
                 android:textColorLink="@color/black"
                 android:textCursorDrawable="@color/black"
                 app:boxStrokeErrorColor="@color/error_color"
-                app:errorIconTint="@color/error_icon_color"/>
+                app:errorIconTint="@color/error_icon_color"
+                android:background="@android:color/transparent"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

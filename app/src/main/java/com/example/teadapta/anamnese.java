@@ -99,6 +99,8 @@ public class anamnese extends AppCompatActivity {
 
 
 
+
+
         dataEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -216,6 +218,8 @@ public class anamnese extends AppCompatActivity {
         TextInputLayout pesoLayout = findViewById(R.id.Field);
         TextInputLayout alturaLayout = findViewById(R.id.altura);
 
+        TextInputLayout editTextDataLayout = findViewById(R.id.textdata);
+
         String escolhaFilhoUnico = escolha.getText().toString();
         String escolhaEscolaridade = escolaridade.getText().toString();
         String escolhaEscolar = escolar.getText().toString();
@@ -226,8 +230,37 @@ public class anamnese extends AppCompatActivity {
         TextInputLayout escolarLayout = findViewById(R.id.InputEscola);
 
 
+
         int errorColor = ContextCompat.getColor(this, R.color.error_color);
         int errorIconColor = ContextCompat.getColor(this, R.color.error_icon_color);
+
+        editTextData.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}   // Nada a fazer antes da mudança de texto
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Chamado após o texto ser alterado
+                editTextDataLayout.setError(null); // Remove a mensagem de erro
+                editTextDataLayout.setBoxStrokeErrorColor(null); // Remove a cor do contorno de erro
+                editTextDataLayout.setErrorTextColor(null); // Remove a cor do texto de erro
+                editTextDataLayout.setErrorIconTintList(null); // Remove a cor do ícone de erro
+            }
+        });
+        if (editTextData.getText().toString().trim().isEmpty()) {
+            if (!editTextData.isFocused()) {
+                editTextDataLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
+                editTextDataLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
+                editTextDataLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
+                editTextDataLayout.setError("Campo vazio");
+            }
+            valid = false;
+        } else {
+            editTextDataLayout.setError(null);
+        }
 
         editTextNome.addTextChangedListener(new TextWatcher() {
             @Override
