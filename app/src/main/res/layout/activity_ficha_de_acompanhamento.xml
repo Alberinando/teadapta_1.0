@@ -16,6 +16,7 @@
         android:orientation="vertical"
         android:paddingLeft="15dp"
         android:paddingRight="15dp">
+
         <TextView
             android:id="@+id/anamnese"
             android:layout_width="match_parent"
@@ -38,7 +39,7 @@
             android:textAlignment="center" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlinedTextField"
+            android:id="@+id/outlinedTextFieldNome"
             style="@style/MyTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,7 +54,7 @@
             app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input"
+                android:id="@+id/inputNome"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,12 +64,12 @@
                 android:textColorHint="#616161"
                 app:boxStrokeErrorColor="@color/error_color"
                 app:errorIconTint="@color/error_icon_color"
-                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                tools:ignore="VisualLintTextFieldSize" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textIdade"
+            android:id="@+id/textRelatorioIdade"
             style="@style/MyTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -84,7 +85,7 @@
             app:errorIconTint="@color/error_icon_color">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Idade"
+                android:id="@+id/RelatorioIdade"
                 style="@style/MyTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -152,8 +153,12 @@
             android:id="@+id/geral"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/baseline_help_24"
             android:text="@string/informa_es_gerais_da_crian_a"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:onClick="showHelpDialog"/>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/outlined"
@@ -164,10 +169,11 @@
             android:textColor="#000000"
             android:textColorHint="@color/black"
             android:textCursorDrawable="@color/black"
-            app:hintTextAppearance="@style/FloatingHint"
-            app:hintTextColor="#000000"
             app:counterEnabled="true"
             app:counterMaxLength="300"
+            app:counterTextColor="@color/black"
+            app:hintTextAppearance="@style/FloatingHint"
+            app:hintTextColor="@color/black"
             app:boxStrokeErrorColor="@color/error_color"
             app:errorIconTint="@color/error_icon_color">
 
@@ -191,8 +197,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/baseline_help_24"
             android:text="@string/informa_es_sobre_a_aula_proposta"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:onClick="showHelpDialog2"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/outlinedInputAdptacoes"
@@ -207,6 +216,7 @@
             app:hintTextColor="#000000"
             app:counterEnabled="true"
             app:counterMaxLength="300"
+            app:counterTextColor="@color/black"
             app:boxStrokeErrorColor="@color/error_color"
             app:errorIconTint="@color/error_icon_color">
 
@@ -230,7 +240,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/informa_es_sobre_a_aula_proposta"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/baseline_help_24"
+            android:text="@string/adapta_es_realizadas_pelo_professor"
+            android:onClick="showHelpDialog3"
             android:textColor="#000000" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -245,6 +258,7 @@
             app:hintTextAppearance="@style/FloatingHint"
             app:counterEnabled="true"
             app:counterMaxLength="300"
+            app:counterTextColor="@color/black"
             app:hintTextColor="#000000"
             app:boxStrokeErrorColor="@color/error_color"
             app:errorIconTint="@color/error_icon_color">
@@ -269,8 +283,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/informa_es_sobre_a_aula_proposta"
-            android:textColor="#000000" />
+            android:layout_weight="1"
+            android:drawableRight="@drawable/baseline_help_24"
+            android:text="@string/recomenda_es_para_a_continuidade_do_trabalho"
+            android:textColor="#000000"
+            android:onClick="showHelpDialog4"
+            android:tooltipText="Texto de dica do tooltip aqui" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/outlinedInput"
@@ -283,6 +301,7 @@
             android:textCursorDrawable="@color/black"
             app:counterEnabled="true"
             app:counterMaxLength="300"
+            app:counterTextColor="@color/black"
             app:hintTextAppearance="@style/FloatingHint"
             app:hintTextColor="#000000"
             app:boxStrokeErrorColor="@color/error_color"
@@ -298,10 +317,7 @@
                 android:textColor="#000000"
                 android:textColorHint="#616161"
                 app:boxStrokeErrorColor="@color/error_color"
-                app:counterEnabled="true"
-                app:counterMaxLength="300"
-                app:errorIconTint="@color/error_icon_color"
-                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                app:errorIconTint="@color/error_icon_color" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -315,7 +331,7 @@
             android:background="@drawable/background_button"
             android:gravity="center|center_horizontal"
             android:text="@string/enviar"
+            android:onClick="onClick"
             tools:ignore="VisualLintButtonSize" />
-
     </LinearLayout>
 </ScrollView>

@@ -34,6 +34,9 @@ android {
 
 dependencies {
 
+    implementation ("androidx.appcompat:appcompat:1.3.0");
+    implementation ("com.itextpdf:itext7-core:7.1.12");
+    implementation ("com.itextpdf:itextg:5.5.10");
     implementation ("com.github.pires:obd-java-api:1.0");
     implementation ("com.googlecode.libphonenumber:libphonenumber:8.12.32");
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))

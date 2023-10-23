@@ -166,6 +166,8 @@
     <string name="informa_es_sobre_a_aula_proposta">Informações sobre a aula proposta:</string>
     <string name="sugestoes">Sugestões</string>
     <string name="enviar">Enviar</string>
+    <string name="adapta_es_realizadas_pelo_professor">Adaptações realizadas pelo professor:</string>
+    <string name="recomenda_es_para_a_continuidade_do_trabalho">Recomendações para a continuidade do trabalho:</string>
 
     <string-array name="Genero">
         <item>Masculino</item>
