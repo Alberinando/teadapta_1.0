@@ -31,8 +31,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, com.example.teadapta.ficha_de_acompanhamento.class);
         startActivity(intent);
     }
-    public void submit6 (View view){
-        Intent intent = new Intent(MainActivity.this, com.example.teadapta.observacao.class);
-        startActivity(intent);
-    }
 }
