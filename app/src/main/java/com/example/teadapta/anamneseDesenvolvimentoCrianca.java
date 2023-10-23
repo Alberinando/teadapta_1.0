@@ -16,6 +16,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 
+
+
 import android.util.Log;
 import android.widget.RadioGroup;
 
@@ -30,6 +32,7 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
     private String escolhaAMao = "";
     private XmlPullParser radioDestro;
     private View escolhaDestroLayout;
+
 
 
     @Override
@@ -61,17 +64,22 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
         RadioButton radioCanhoto = findViewById(R.id.radioCanhoto);
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
 
+        TextInputLayout escolhaDestroCanhotoLayout = findViewById(R.id.TextInpuLayouts);
+
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.radioDestro) {
+                    escolhaDestroCanhotoLayout.setBackgroundResource(R.drawable.contorno);
                     escolhaAMao = "destro";
                 } else if (checkedId == R.id.radioCanhoto) {
+                    escolhaDestroCanhotoLayout.setBackgroundResource(R.drawable.contorno);
                     escolhaAMao = "canhoto";
                 }
             }
         });
+
 
 
 
@@ -164,9 +172,8 @@ public class anamneseDesenvolvimentoCrianca extends AppCompatActivity {
             escolhaDestroCanhotoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
            // escolhaDestroLayout.setBackgroundResource(R.drawable.contorno_vermelho);
             valid = false;
-        } else {
-            escolhaDestroCanhotoLayout.setBackgroundResource(R.drawable.contorno);
         }
+
         escolha.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}

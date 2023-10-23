@@ -82,6 +82,9 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         final CheckBox raramenteCheckBox = findViewById(R.id.raramente);
         final CheckBox naoUsaCheckBox = findViewById(R.id.nao);
 
+        TextInputLayout selecionetecnologiaLayout2 = findViewById(R.id.checkBoxGroup2);
+
+
         // Adicione outros CheckBoxes aqui
 
         controladoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -91,7 +94,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 muitoFrequenteCheckBox.setChecked(false);
                 raramenteCheckBox.setChecked(false);
                 naoUsaCheckBox.setChecked(false);
-                // Desmarque os outros CheckBoxes aqui, se necessário
+                selecionetecnologiaLayout2.setBackgroundResource(R.drawable.contorno);
             }
         });
 
@@ -102,7 +105,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 muitoFrequenteCheckBox.setChecked(false);
                 raramenteCheckBox.setChecked(false);
                 naoUsaCheckBox.setChecked(false);
-                // Desmarque os outros CheckBoxes aqui, se necessário
+                selecionetecnologiaLayout2.setBackgroundResource(R.drawable.contorno);
             }
         });
         muitoFrequenteCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -112,7 +115,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 controladoCheckBox.setChecked(false);
                 raramenteCheckBox.setChecked(false);
                 naoUsaCheckBox.setChecked(false);
-                // Desmarque os outros CheckBoxes aqui, se necessário
+                selecionetecnologiaLayout2.setBackgroundResource(R.drawable.contorno);
             }
         });
 
@@ -124,7 +127,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 frequenteCheckBox.setChecked(false);
                 muitoFrequenteCheckBox.setChecked(false);
 
-                // Desmarque os outros CheckBoxes aqui, se necessário
+                selecionetecnologiaLayout2.setBackgroundResource(R.drawable.contorno);
             }
         });
         naoUsaCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -134,7 +137,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 frequenteCheckBox.setChecked(false);
                 muitoFrequenteCheckBox.setChecked(false);
                 raramenteCheckBox.setChecked(false);
-                // Desmarque os outros CheckBoxes aqui, se necessário
+                selecionetecnologiaLayout2.setBackgroundResource(R.drawable.contorno);
             }
         });
 
@@ -143,6 +146,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         final CheckBox seisMesesCheckBox = findViewById(R.id.seisMeses);
         final CheckBox EntreCheckBox = findViewById(R.id.Entre);
         final CheckBox MaisCheckBox = findViewById(R.id.Mais);
+        TextInputLayout acriancaEstaSeExercitandoAtualmeneLayout = findViewById(R.id.checkBoxGroup);
 
 
 
@@ -153,6 +157,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 acriancaEstaSeExercitandoAtualmene = "Menos de 6 meses";
                 EntreCheckBox.setChecked(false);
                 MaisCheckBox.setChecked(false);
+                acriancaEstaSeExercitandoAtualmeneLayout.setBackgroundResource(R.drawable.contorno);
             }
         });
 
@@ -161,6 +166,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 acriancaEstaSeExercitandoAtualmene = "Entre seis meses a 1 ano";
                 seisMesesCheckBox.setChecked(false);
                 MaisCheckBox.setChecked(false);
+                acriancaEstaSeExercitandoAtualmeneLayout.setBackgroundResource(R.drawable.contorno);
             }
         });
         MaisCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -168,6 +174,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
                 acriancaEstaSeExercitandoAtualmene = "Mais de 1 ano";
                 seisMesesCheckBox.setChecked(false);
                 EntreCheckBox.setChecked(false);
+                acriancaEstaSeExercitandoAtualmeneLayout.setBackgroundResource(R.drawable.contorno);
             }
         });
 

@@ -133,6 +133,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
         final CheckBox calmoCheckBox = findViewById(R.id.calmo);
         final CheckBox nervosoCheckBox = findViewById(R.id.nervoso);
         final CheckBox desinteressadoCheckBox = findViewById(R.id.desinteressado);
+        TextInputLayout comportamentoDoFilhoLayout = findViewById(R.id.checkBoxGroup);
 
 
 
@@ -147,7 +148,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 calmoCheckBox.setChecked(false);
                 nervosoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
-                // Desmarque os outros CheckBoxes aqui, se necessário
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
             }
         });
 
@@ -160,6 +161,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 calmoCheckBox.setChecked(false);
                 nervosoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
             }
         });
         sensivelVibracoesCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -171,6 +173,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 calmoCheckBox.setChecked(false);
                 nervosoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
             }
         });
 
@@ -183,6 +186,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 calmoCheckBox.setChecked(false);
                 nervosoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
             }
         });
         calmoCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -194,6 +198,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 sensivelQuandoTocadoCheckBox.setChecked(false);
                 nervosoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
 
             }
         });
@@ -206,6 +211,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 sensivelQuandoTocadoCheckBox.setChecked(false);
                 calmoCheckBox.setChecked(false);
                 desinteressadoCheckBox.setChecked(false);
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
             }
         });
 
@@ -218,11 +224,10 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 sensivelQuandoTocadoCheckBox.setChecked(false);
                 calmoCheckBox.setChecked(false);
                 nervosoCheckBox.setChecked(false);
+                comportamentoDoFilhoLayout.setBackgroundResource(R.drawable.contorno);
 
             }
         });
-
-
 
 
 
@@ -333,28 +338,13 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
 
       //***************************************************************************************
 
-        if (comportamentoDoFilho.equals("")) {
+        if (comportamentoDoFilho.isEmpty()) {
             editTextEscolhaOpcaoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
             valid = false;
         } else {
             editTextEscolhaOpcaoLayout.setBackgroundResource(R.drawable.contorno);
         }
-        /*
-        if(comportamentoDoFilho.equals("Destraido"))
-        {
-            nx.setBackgroundResource(R.drawable.contorno);
-           // editTextEscolhaOpcaoLayout.setBoxStrokeErrorColor(ColorStateList.valueOf(errorColor));
-           // editTextEscolhaOpcaoLayout.setErrorTextColor(ColorStateList.valueOf(Color.parseColor("#FF0000")));
-           // editTextEscolhaOpcaoLayout.setErrorIconTintList(ColorStateList.valueOf(errorIconColor));
-           // editTextEscolhaOpcaoLayout.setError("Campo vazio");
-            valid = false;
-        }
-        else {
-          //  editTextEscolhaOpcaoLayout.setError(null);
 
-        }
-
-         */
 
         escolha2.addTextChangedListener(new TextWatcher() {
             @Override
