@@ -53,12 +53,5 @@
             android:onClick="submit5"
             android:text="@string/relat_rio" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/obs"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_button"
-            android:text="@string/observacoes"
-            android:onClick="submit6"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
