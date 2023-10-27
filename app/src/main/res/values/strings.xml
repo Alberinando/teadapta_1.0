@@ -168,6 +168,27 @@
     <string name="enviar">Enviar</string>
     <string name="adapta_es_realizadas_pelo_professor">Adaptações realizadas pelo professor:</string>
     <string name="recomenda_es_para_a_continuidade_do_trabalho">Recomendações para a continuidade do trabalho:</string>
+    <string name="_1_criar_com_o_corpo_formas_diversificadas_de_express_o_de_sentimentos_sensa_es_e_emo_es_n_n2_demonstrar_controle_e_adequa_o_do_uso_de_seu_corpo_em_brincadeiras_e_jogos_n_n3_criar_movimentos_gestos_olhares_e_m_micas_em_brincadeiras_jogos_e_atividades_art_sticas_n_n4_adotar_h_bitos_de_autocuidado_relacionados_a_higiene_alimenta_o_conforto_e_apar_ncia_n_n5_coordenar_suas_habilidades_manuais_no_atendimento_adequado_a_seus_interesses_e_em_situa_es_diversas">1 - Criar com o corpo formas diversificadas de expressão de sentimentos, sensações e emoções; \n\n2 - Demonstrar controle e adequação do uso de seu corpo em brincadeiras e jogos;\n\n3 - Criar movimentos, gestos, olhares e mímicas em brincadeiras, jogos e atividades artísticas;\n\n4 - Adotar hábitos de autocuidado relacionados a higiene, alimentação, conforto e aparência;\n\n5 - Coordenar suas habilidades manuais no atendimento adequado a seus interesses e em situações diversas.</string>
+    <string name="metas_de_aprendizagem">METAS DE APRENDIZAGEM</string>
+    <string name="meta_1">Meta 1</string>
+    <string name="criar_com_o_corpo_formas_diversificadas_de_express_o_de_sentimentos_sensa_es_e_emo_es">Criar com o corpo formas diversificadas de expressão de sentimentos, sensações e emoções;</string>
+    <string name="demonstrar_controle_e_adequa_o_do_uso_de_seu_corpo_em_brincadeiras_e_jogos">Demonstrar controle e adequação do uso de seu corpo em brincadeiras e jogos;</string>
+    <string name="criar_movimentos_gestos_olhares_e_m_micas_em_brincadeiras_jogos_e_atividades_art_sticas">Criar movimentos, gestos, olhares e mímicas em brincadeiras, jogos e atividades artísticas;</string>
+    <string name="adotar_h_bitos_de_autocuidado_relacionados_a_higiene_alimenta_o_conforto_e_apar_ncia">Adotar hábitos de autocuidado relacionados a higiene, alimentação, conforto e aparência;</string>
+    <string name="coordenar_suas_habilidades_manuais_no_atendimento_adequado_a_seus_interesses_e_em_situa_es_diversas">Coordenar suas habilidades manuais no atendimento adequado a seus interesses e em situações diversas.</string>
+    <string name="meta_2">Meta 2</string>
+    <string name="meta_3">Meta 3</string>
+    <string name="meta_4">Meta 4</string>
+    <string name="meta_5">Meta 5</string>
+    <string name="oportunizar_a_explora_o_do_mundo_do_espa_o_e_dos_objetos_pela_crian_a">Oportunizar a exploração do mundo, do espaço e dos objetos pela criança;</string>
+    <string name="possibilitar_o_conhecimento_e_reconhecimento_das_sensa_es_e_fun_es_de_seu_corpo_e_com_seus_gestos_e_movimentos_identificar_suas_potencialidades_e_seus_limites">Possibilitar o conhecimento e reconhecimento das sensações e funções de seu corpo e, com seus gestos e movimentos, identificar suas potencialidades e seus limites;</string>
+    <string name="promover_oportunidades_ricas_para_que_as_crian_as_possam_com_seus_pares_explorar_e_vivenciar_um_amplo_repert_rio_de_movimentos_gestos_olhares_sons_e_m_micas_com_o_corpo_para_descobrir_variados_modos_de_ocupa_o_e_uso_do_espa_o_com_o_corpo">Promover oportunidades ricas para que as crianças possam, com seus pares, explorar e vivenciar um amplo repertório de movimentos, gestos, olhares, sons e mímicas com o corpo, para descobrir variados modos de ocupação e uso do espaço com o corpo;</string>
+    <string name="estabelecer_rela_es_e_viv_ncias_que_produzem_conhecimentos_sobre_si_sobre_o_outro_e_sobre_o_universo_social_e_cultural">Estabelecer relações e vivências que produzem conhecimentos sobre si, sobre o outro e sobre o universo social e cultural;</string>
+    <string name="direcionamento_4">Direcionamento 4</string>
+    <string name="direcionamento_3">Direcionamento 3</string>
+    <string name="direcionamento_2">Direcionamento 2</string>
+    <string name="direcionamento_1">Direcionamento 1</string>
+    <string name="direcionamento">DIRECIONAMENTO</string>
 
     <string-array name="Genero">
         <item>Masculino</item>

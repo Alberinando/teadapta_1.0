@@ -23,7 +23,7 @@ public class Conhecendo_tea extends AppCompatActivity {
 
         arrowIcon1 = findViewById(R.id.arrowIcon1);
         arrowIcon2 = findViewById(R.id.arrowIcon2);
-        arrowIcon3 = findViewById(R.id.arrowIcon3);
+        arrowIcon3 = findViewById(R.id.arrowIcon4);
     }
 
     public void toggleArrow(View view) {
@@ -98,7 +98,7 @@ public class Conhecendo_tea extends AppCompatActivity {
     // Método para manipular o segundp conjunto
     public void toggleText3(View view) {
         TextView textAdditional = findViewById(R.id.textAdditional3);
-        ImageView arrowIcon = findViewById(R.id.arrowIcon3);
+        ImageView arrowIcon = findViewById(R.id.arrowIcon4);
 
         // Verifique a visibilidade atual do texto adicional
         int visibility = textAdditional.getVisibility();
