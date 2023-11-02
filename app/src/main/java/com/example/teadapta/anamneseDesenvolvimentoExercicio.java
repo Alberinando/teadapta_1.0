@@ -349,9 +349,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
     }
 
     public void Back (View view){
-
-        Intent intent = new Intent(anamneseDesenvolvimentoExercicio.this, com.example.teadapta.anamneseDesenvolvimentoSocioEmocional2.class);
-        startActivity(intent);
+        super.onBackPressed();
     }
 
 //<<<<<<< HEAD
@@ -388,6 +386,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
         else
         {
             selecionetecnologiaLayout.setBackgroundResource(R.drawable.contorno);
+            valid=true;
         }
 
         if (acriancaEstaSeExercitandoAtualmene.equals("")) {
