@@ -41,6 +41,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
     private TextInputEditText limitacaoParaFazerExercicios,pqSeuFilhoPraticaExercicios;
 
     private TextInputEditText quaisExercicios;
+    private String Nao = " ";
 
 
     @Override
@@ -302,6 +303,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
 
                 if (escolhaValue.equals("Sim")) {
                     checkBoxGroup.setVisibility(View.VISIBLE);
+                    Nao = escolhaValue;
                 } else {
                     checkBoxGroup.setVisibility(View.GONE);
                 }
@@ -389,7 +391,7 @@ public class anamneseDesenvolvimentoExercicio extends AppCompatActivity {
             valid=true;
         }
 
-        if (acriancaEstaSeExercitandoAtualmene.equals("")) {
+        if (acriancaEstaSeExercitandoAtualmene.equals("") && Nao == "Sim") {
             acriancaEstaSeExercitandoAtualmeneLayout.setBackgroundResource(R.drawable.contorno_vermelho);
             valid = false;
         }

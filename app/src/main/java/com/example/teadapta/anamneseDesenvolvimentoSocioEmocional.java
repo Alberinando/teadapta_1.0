@@ -43,6 +43,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
     private CheckBox calmoCheckBox;
     private CheckBox nervosoCheckBox;
     private CheckBox desinteressadoCheckBox;
+    private String Nao=" ";
 
 
     @Override
@@ -294,6 +295,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
                 // Verifica se a escolha é "Não" para mostrar ou ocultar o campo de religião
                 if (escolhaValue.equals("Não")) {
                     checkBoxGroup.setVisibility(View.VISIBLE);
+                    Nao = escolhaValue;
                 } else {
                     checkBoxGroup.setVisibility(View.GONE);
                 }
@@ -387,7 +389,7 @@ public class anamneseDesenvolvimentoSocioEmocional extends AppCompatActivity {
 
       //***************************************************************************************
 
-        if (comportamentoDoFilho.isEmpty()) {
+        if (comportamentoDoFilho.isEmpty() && Nao=="Não") {
             editTextEscolhaOpcaoLayout.setBackgroundResource(R.drawable.contorno_vermelho);
             valid = false;
         } else {
